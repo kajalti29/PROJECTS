@@ -1,12 +1,17 @@
 <!-- what is js ? -->
 Javascript is a high-level, interprited and object-oriented programming language used to make websites interactive and dynamic.It work in the brower and also on the server.
 
+JavaScript is interpreted (runs line by line).
 <!-- Features -->
 
 <!-- Lightweight – Simple aur fast. -->
-<!-- Dynamic – Variables ka type run-time par decide hota hai. -->
-<!-- Event-Driven – User actions par kaam karta hai. -->
+<!-- Dynamic – Variables ka type run-time par decide hota hai "The type of variables is decided at run time"-->
+<!-- Event-Driven – User actions par kaam karta hai."It works based on user actions" -->
 <!-- Prototype-based – Classes ki jagah prototypes use karta hai. -->
+
+👉 HTML = structure
+👉 CSS = design
+👉 JS = logic / brain 🧠
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -35,15 +40,471 @@ naming rules:-
              console.log(message);
               -->
 
-* Const :- Variable cannot be re-declared and cannot be update.
+* Const(fix value) :- Variable cannot be re-declared and cannot be update.
 
 <!-- Example:-  const country = "India";
            console.log(country);   //India -->
 
 
-* var :- 
+* var(old, avoid) :- Variable can be re-declared and updated.
+<!-- 
+var y = 10;
+var y = 20;
+console.log(y); -->
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATA TYPES IN JAVASCRIPT:-
+👉 A Data Type tells us what kind of value is stored in a variable.
+
+JavaScript has two main categories of data types 👇
+🔹 1. Primitive Data Types (Simple values) ->Immutable
+🔹 2. Non-Primitive (Reference) Data Types -> Mutable
+
+🔹 1.  Primitive Data Types (Simple values):-
+1.String:-
+A string represent sequence of characters(text value)
+<!-- 
+let name = "Kajal";
+let message = 'Hello World'; -->
+📌 Strings can be written using " " or ' '.
+
+2. Number:-
+Used to store numbers (integers and decimals)
+<!-- 
+let age = 20;
+let price = 99.5; -->
+📌 JavaScript does not have int or float.
+All numbers are of type Number.
+
+3. Boolean:-
+Represents a logical entity and can have to values true or false.
+<!-- 
+let isLoggedIn = true;
+let isAdult = false; -->
+
+4️⃣ Undefined :-
+A variable is declared but not assigned a value.
+<!-- 
+let x;
+console.log(x); // undefined -->
+📌 Means: value is not defined.
+
+5️⃣ Null:-
+Represents an empty value (intentionally).
+
+<!-- let data = null; -->
+
+6️⃣ BigInt:-
+Used to store very large numbers.
+
+<!-- let bigNumber = 12345678901234567890n; -->
+📌 n at the end is required.
+
+7️⃣ Symbol:-
+Used to create unique values (advanced use).
+
+<!-- let id = Symbol("id"); -->
+
+
+🔹 2. Non-Primitive (Reference) Data Types:-
+
+8️⃣ Object:-
+A object is a collection of key-value pairs.
+<!-- 
+let student = {
+  name: "Kajal",
+  age: 20,
+  course: "JavaScript"
+}; 
+console.log(student.name)
+-->
+
+9️⃣ Array:-
+An array is a collection of multiple values store in a single variable.
+<!-- let marks = [80, 90, 85]; -->
+
+🔟 Function:-
+A function is a block of code that parform the specific code and can be reused.
+<!-- 
+function add(a, b) {
+  return a + b;
+} -->
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+🔥 JavaScript Operators:-
+operators are symbol used to peform operation on value & variable.
+Example: + , - , * , / , == , ===.
+
+1️⃣ Arithmetic Operators
+Used for mathematical calculations.| Operator | Kaam      |
+| -------- | --------- |
+| `+`      | Add       |
+| `-`      | Minus     |
+| `*`      | Multiply  |
+| `/`      | Divide    |
+| `%`      | Remainder |
+| `**`     | Power     |
+<!-- 
+let a = 10;
+let b = 3;
+
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // 3.33
+console.log(a % b); // 1
+console.log(2 ** 3); // 8 -->
+
+2️⃣ Assignment Operators:-
+Used to assign values.
+👉 Value assign / update karne ke liye.
+
+| Operator | Meaning           |
+| -------- | ----------------- |
+| `=`      | Assign            |
+| `+=`     | Add + assign      |
+| `-=`     | Minus + assign    |
+| `*=`     | Multiply + assign |
+| `/=`     | Divide + assign   |
+<!-- 
+let x = 10;
+x += 5;  // x = x + 5
+console.log(x); // 15 -->
+
+3️⃣ Comparison Operators:-
+Used to compare values.
+👉 Compare karte hain
+👉 Result hamesha true / false
+
+| Operator | Meaning                |
+| -------- | ---------------------- |
+| `==`     | Sirf value check       |
+| `===`    | Value + type check ✅   |
+| `!=`     | Value not equal        |
+| `!==`    | Value + type not equal |
+| `>`      | Greater                |
+| `<`      | Less                   |
+| `>=`     | Greater or equal       |
+| `<=`     | Less or equal          |
+<!-- 
+5 == "5"    // true
+5 === "5"   // false -->
+
+> (Greater than)
+👉 left wali value badi hoti hai right wali se
+Example: 10 > 5 (10 bada hai 5 se)
+
+< (Less than)
+👉 left wali value chhoti hoti hai right wali se
+Example: 5 < 10 (5 chhota hai 10 se)
+
+
+4️⃣ Logical Operators
+Used with conditions.
+👉 Multiple conditions ko join karne ke liye
+
+Operator	Meaning
+&&	AND (sab true hona chahiye)
+`	
+!	NOT (ulta kar deta hai)
+<!-- 
+let age = 20;
+
+console.log(age > 18 && age < 25); // true
+console.log(age < 18 || age > 60); // false
+console.log(!true); // false -->
+Login, signup, eligibility check.
+
+5️⃣ Unary Operators:-
+Work on a single operand.
+👉 Single value par kaam.
+| Operator | Kaam            |
+| -------- | --------------- |
+| `++`     | 1 add           |
+| `--`     | 1 minus         |
+| `typeof` | Data type check |
+
+<!-- 
+let n = 5;
+n++;
+console.log(n); // 6
+
+console.log(typeof 10); // number
+console.log(typeof "Hi"); // string -->
+
+
+6️⃣ Ternary Operator:-
+Short form of if-else.
+
+condition ? trueValue : falseValue
+<!-- 
+let age = 17;
+
+let msg = age >= 18 ? "Adult" : "Minor";
+console.log(msg); -->
+
+🧠 Use kaha?
+UI show/hide, button enable/disable
+
+
+8️⃣ Type Conversion Operators
+👉 Data type badalne ke liye
+<!-- 
+Number("10");   // 10
+String(10);     // "10"
+Boolean(1);     // true
+Boolean(0);     // false -->
+
+9️⃣ Bitwise Operators (Advanced)
+👉 Binary level par kaam karta hai
+| Operator | Meaning |    |
+| -------- | ------- | -- |
+| `&`      | AND     |    |
+| `        | `       | OR |
+| `^`      | XOR     |    |
+
+IMP:_
+✅ Arithmetic
+✅ Assignment
+✅ Comparison (===)
+✅ Logical
+✅ Ternary
+✅ typeof
+----------------------------------------------------------------------------------------------------------------------------------------------------
+# 🔥 Conditions in JavaScript (Full)
+Conditions statement allow JavaScript to make decisions and execute different code blocks based on true or false expressions.
+
+🔹 1. if statement:-
+
+Executes a block if the condition is true.
+<!-- 
+let age = 20;
+
+if (age >= 18) {
+  console.log("You are eligible to vote");
+} -->
+🧠Agar condition true hogi tabhi code chalega**
+
+🔹 2. if–else statement:-
+Runs one block if condition is true, otherwise another block.
+👉 Jab true / false dono cases handle karne ho
+<!-- 
+let age = 16;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+} -->
+
+## 3️⃣ `if...else if...else`
+Used to check multiple conditions.
+<!-- 
+let marks = 75;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 60) {
+  console.log("Grade B");
+} else {
+  console.log("Fail");
+} -->
+
+## 4️⃣ Ternary Operator (Short Condition)
+
+👉 **One-line if-else**
+<!-- 
+let age = 17;
+
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result); -->
+```
+**Interview me favorite**
+
+<!--5️⃣ `switch` Statement -->
+Used when comparing one value with many cases.
+👉 Jab fixed options ho (menu, days, cases)
+
+<!-- let day = 3;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+}
+
+## 7️⃣ Truthy & Falsy Values (INTERVIEW 🔥)
+
+### ❌ Falsy values:
+
+```js
+false, 0, "", null, undefined, NaN
+```
+
+### ✅ Truthy:
+
+👉 Inke alawa **sab kuch**
+
+```js
+if ("hello") {
+  console.log("Run hoga");
+}
+
+-------------------------------------------
+🔹 Truthy & Falsy:-
+
+JS me sirf ye 7 values falsy hoti hain 👇
+
+false
+0
+-0
+0n        // BigInt zero
+""        // empty string
+null
+undefined
+NaN
+
+// if (0) {
+//   console.log("Run");
+// } else {
+//   console.log("Falsy value");
+// }
+// Output: Falsy value
+
+
+if ("") {
+  console.log("Run");
+} else {
+  console.log("Falsy value");
+}
+// Output: Falsy value
+
+✅ Truthy values
+👉 Falsy ke alawa sab kuch truthy hota hai
+
+Common Truthy Examples
+true
+1
+-1
+"0"
+"false"
+[]
+{}
+function(){}
+
+Example
+if ("false") {
+  console.log("Truthy");
+}
+// Output: Truthy
+----------------------
+if ([]) {
+  console.log("Truthy");
+}
+// Output: Truthy 😲
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Loops in JavaScript:-
+// 🔹 What are loops?
+Loops are used to repeat a block of code multiple times until a condition is false.
+
+🔹 1️⃣ for loop:-
+Used when you know the number of iterations.
+
+for (initialization; condition; increment/decrement) {
+  // code to run
+}
+
+// for (let i = 1; i <= 5; i++) {
+//   console.log(i);
+// }
+// // Output: 1 2 3 4 5
+
+🔹 2️⃣ while loop:-
+Runs as long as a condition is true.
+Used when number of iterations is not known.
+
+while (condition) {
+  // code to run
+}
+
+// let i = 1;
+// while (i <= 5) {
+//   console.log(i);
+//   i++;
+// }
+// // Output: 1 2 3 4 5
+
+🔹 3️⃣ do...while loop:-
+Similar to while, but executes the code at least once.
+
+do {
+  // code to run
+} while (condition);
+
+
+let i = 6;
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);
+// Output: 6  (executes once even if condition false)
+
+🔹 4️⃣ for...in loop:-
+Used to iterate over object keys.
+
+for (let key in object) {
+  console.log(key, object[key]);
+}
+
+// let person = {name: "Kajal", age: 22};
+// for (let key in person) {
+//   console.log(key, person[key]);
+// }
+// Output:
+// name Kajal
+// age 22
+
+🔹 5️⃣ for...of loop:-
+Used to iterate over iterable objects (arrays, strings).
+
+for (let value of iterable) {
+  console.log(value);
+}
+
+
+let arr = [10, 20, 30];
+for (let val of arr) {
+  console.log(val);
+}
+// Output: 10 20 30
+
+🔹 6️⃣ Loop Control Statements:-
+break → exit loop immediately.
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) break;
+  console.log(i);
+}
+// Output: 1 2
+
+continue → skip current iteration.
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+// Output: 1 2 4 5
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
 🟠 Functions :-
 
 <!-- Functions -->
@@ -71,64 +532,23 @@ Syntax
 * Code reuse
 * Easy to read
 * Easy to maintain
------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- Function Declaration  -->
-Function Declaration means defining a function using the function keyword with a name.
-✔ Hoisting supported (call before define)
-
-Example:- 1
+<!-- Types of Function:- -->
+* Noraml function
+* Arrow function
+* Function with parameters
+* Function without return
+* Function Expression
+-------------------------------------------------------------
+<!-- * Noraml function -->
+Function ko pahle declare kiya jata hai. Hosting support karta hai.
 <!-- 
-function add(a, b) {
-    return a + b;
+function add(a,  b){
+  return a + b;
 }
-console.log(add(3, 4)); // 7
- -->
+console.log(add(2, 3)); // 5 -->
 
-
-Example:- 2
-<!-- 
-console.log(add(2, 3)); // 5
-
-function add(a, b) {
-    return a + b;
-} -->
-
-------------------------------------------------------------------------------------------------------------------------------------
-
-Real Life Example (Samajhne ke liye)
-🏠 Function Declaration
-
-Jaise ghar pehle se bana ho
-
-Jab chaaho use kar sakte ho
-
-🏠 Function Expression
-
-Jaise ghar baad me ban raha ho
-
-Pehle use karoge to error
-
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-<!--Function Expression -->
-Function Expression is a function stored in a variable and is not hoisted like function declarations.
-<!-- 
-console.log(add(2, 3)); // ❌ Error
-
-const add = function(a, b) {
-    return a + b;
-}; -->
-
-Example:-2
-const multiply = function(a, b) {
-  return a * b;
-};
-
-console.log(multiply(2, 4));
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------
 <!-- Arrow Functions -->
 An Arrow Function is a shorter and modern way to write a function in JavaScript using the => syntax. It is a type of function expression and does not have its own this.
 
@@ -156,6 +576,7 @@ Easy Example (Normal Function)
 
 <!-- 
 const student = {
+
     name: "Rahul",
     showName: function() {
         console.log(this.name);
@@ -170,6 +591,64 @@ student object ne showName() call kiya
 Isliye this = student
 Output:
 <!-- Rahul -->
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Real Life Example (Samajhne ke liye)
+🏠 Function Declaration
+
+Jaise ghar pehle se bana ho
+
+Jab chaaho use kar sakte ho
+
+🏠 Function Expression
+
+Jaise ghar baad me ban raha ho
+
+Pehle use karoge to error
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!--Function Expression -->
+Function Expression is a function stored in a variable and is not hoisted like function declarations.
+
+Hosting nhi hoti hai.45
+<!-- 
+console.log(add(2, 3)); // ❌ Error
+
+const add = function(a, b) {
+    return a + b;
+}; -->
+
+Example:-2
+const multiply = function(a, b) {
+  return a * b;
+};
+
+console.log(multiply(2, 4));
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- Function Declaration  -->
+Function Declaration means defining a function using the function keyword with a name.
+✔ Hoisting supported (call before define)
+
+Example:- 1
+<!-- 
+function add(a, b) {
+    return a + b;
+}
+console.log(add(3, 4)); // 7
+ -->
+
+Example:- 2
+<!-- 
+console.log(add(2, 3)); // 5
+
+function add(a, b) {
+    return a + b;
+} -->
+-----------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 <!-- Parameters  -->
@@ -198,7 +677,8 @@ function add(a, b) {
 let result = add(3, 4);
 console.log(result); // 7 -->
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------
+------------------------------------------------------------------------------------------
 <!-- Callback Functions -->
 A callback function is a function that is passed as an argument to another function and is executed later.
 
