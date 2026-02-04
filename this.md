@@ -40,10 +40,25 @@ naming rules:-
              console.log(message);
               -->
 
+              Example (Basic)
+let name = "Kajalti";
+console.log(name);
+
+
+<!-- Block Scope Example (IMPORTANT ⭐) -->
+{
+  let a = 5;
+  console.log(a); // ✅ 5
+}
+console.log(a); // ❌ Error (a block ke bahar available nahi
+
+----------------------------------------------------------------------------------------------------
 * Const(fix value) :- Variable cannot be re-declared and cannot be update.
 
 <!-- Example:-  const country = "India";
            console.log(country);   //India -->
+
+<!-- const pi = 3.14; // pi kabhi change nahi hota -->
 
 
 * var(old, avoid) :- Variable can be re-declared and updated.
@@ -52,6 +67,10 @@ var y = 10;
 var y = 20;
 console.log(y); -->
 
+<!-- 8️⃣ What is scope in JavaScript? -->
+Scope defines where a variable can be accessed.
+var → function scope
+let, const → block scope
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DATA TYPES IN JAVASCRIPT:-
 👉 A Data Type tells us what kind of value is stored in a variable.
@@ -69,7 +88,7 @@ let message = 'Hello World'; -->
 📌 Strings can be written using " " or ' '.
 
 2. Number:-
-Used to store numbers (integers and decimals)
+It is used to store numeric values.(integers and decimals).
 <!-- 
 let age = 20;
 let price = 99.5; -->
@@ -130,13 +149,22 @@ function add(a, b) {
   return a + b;
 } -->
 
+
+----------------------------------------------------------------------------
+<!-- 1️⃣1️⃣ What is typeof operator? -->
+It is used to check the data type of a variable.
+
+typeof 10;      // "number"
+typeof "hi";    // "string
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 🔥 JavaScript Operators:-
 operators are symbol used to peform operation on value & variable.
 Example: + , - , * , / , == , ===.
 
 1️⃣ Arithmetic Operators
-Used for mathematical calculations.| Operator | Kaam      |
+Used for mathematical calculations.
+
+| Operator | Kaam      |
 | -------- | --------- |
 | `+`      | Add       |
 | `-`      | Minus     |
@@ -172,8 +200,7 @@ x += 5;  // x = x + 5
 console.log(x); // 15 -->
 
 3️⃣ Comparison Operators:-
-Used to compare values.
-👉 Compare karte hain
+Used to compare two values and return boolean.
 👉 Result hamesha true / false
 
 | Operator | Meaning                |
@@ -248,6 +275,7 @@ UI show/hide, button enable/disable
 
 
 8️⃣ Type Conversion Operators
+useed to convert data type
 👉 Data type badalne ke liye
 <!-- 
 Number("10");   // 10
@@ -275,7 +303,6 @@ IMP:_
 Conditions statement allow JavaScript to make decisions and execute different code blocks based on true or false expressions.
 
 🔹 1. if statement:-
-
 Executes a block if the condition is true.
 <!-- 
 let age = 20;
@@ -341,6 +368,7 @@ switch (day) {
     console.log("Invalid day");
 }
 
+---------------------------------------------------------------------------------------------------------------------------------
 ## 7️⃣ Truthy & Falsy Values (INTERVIEW 🔥)
 
 ### ❌ Falsy values:
@@ -359,7 +387,7 @@ if ("hello") {
 }
 
 -------------------------------------------
-🔹 Truthy & Falsy:-
+🔹 Falsy:-
 
 JS me sirf ye 7 values falsy hoti hain 👇
 
@@ -486,7 +514,7 @@ for (let val of arr) {
   console.log(val);
 }
 // Output: 10 20 30
-
+-----------------------------------------------------------------------------------------------------------------------------
 🔹 6️⃣ Loop Control Statements:-
 break → exit loop immediately.
 
