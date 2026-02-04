@@ -448,7 +448,7 @@ Loops are used to repeat a block of code multiple times until a condition is fal
 Used when you know the number of iterations.
 
 for (initialization; condition; increment/decrement) {
-  // code to run
+  // code to rune
 }
 
 // for (let i = 1; i <= 5; i++) {
