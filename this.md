@@ -907,27 +907,34 @@ let b = [3, 4];
 let c = a.concat(b);
 console.log(c);      //[1, 2, 3, 4] -->
 
-🔹 7. slice() – Extract part (does NOT change original)
-                Return a part of the array.
-<!-- 
-let arr = [1, 2, 3, 4];
-let newArr = arr.slice(1, 3);
-console.log(neArr);   //[2, 3] 
--->
+-------------------------------------------------------------------
+🔹 7.slice(start, end) = start se uthao, end se pehle tak
 
+let fruits = ["Apple", "Banana", "Mango", "Orange"];
+let result = fruits.slice(1, 3);
+console.log(result);
+
+Index:   0       1        2        3
+Value: ["Apple","Banana","Mango","Orange"]
+
+// output:- Banana, Mango.
+
+---------------------------------------------------------------------
 🔹 8. splice() – Add / Remove / replace elements (changes original)
 <!-- 
 let arr = [1, 2, 3, 4];
 arr.splice(1, 2);
 console.log(arr); // [1, 4] -->
 
+--------------------------------------------------------
 🔹 9. indexOf() – Find index
 <!-- 
 let arr = [10, 20, 30];
 console.log(arr.indexOf(20)); // 1
  -->
 
- 🔹 10. includes() – Check value exists or not
+ 🔹 10. includes() – Check value exists or not.
+ Ye value true or false me deta hai.
 <!-- 
 let arr = [1, 2, 3];
 console.log(arr.includes(2)); // true -->
