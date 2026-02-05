@@ -554,7 +554,7 @@ Syntax
   // code
 } 
 -->
-
+-------------------------------------------------------------------------
 * Why use functions?
 
 * Code reuse
@@ -565,16 +565,18 @@ Syntax
 * Noraml function
 * Arrow function
 * Function with parameters
-* Function without return
+* Function with return
 * Function Expression
 -------------------------------------------------------------
 <!-- * Noraml function -->
 Function ko pahle declare kiya jata hai. Hosting support karta hai.
-<!-- 
-function add(a,  b){
-  return a + b;
-}
-console.log(add(2, 3)); // 5 -->
+
+// function greet() {
+//   console.log("Hello");
+// }
+
+// greet(); // function call
+
 
 ---------------------------------------------------------------------
 <!-- Arrow Functions -->
@@ -596,15 +598,30 @@ const greet = () => {
     return a + b;
 }; -->
 
+-----------------------------------------------------------------------------------
 this:-
 this refers to the object that is currently calling the function.
+
 this us object ko refer karta hai jo function ko call kar raha hota hai.
 
+let user = {
+  name: "Kajal",
+  greet() {
+    console.log(this.name);
+  }
+};
+
+user.greet();
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
 Easy Example (Normal Function)
 
 <!-- 
 const student = {
-
     name: "Rahul",
     showName: function() {
         console.log(this.name);
@@ -711,11 +728,13 @@ console.log(result); // 7 -->
 A callback function is a function that is passed as an argument to another function and is executed later.
 
 Callback function ek aisa function hota hai jo kisi dusre function ko argument ke roop me pass kiya jata hai aur baad me call hota hai.
+
+// 🌍 Real-World Example: Online Order (Callback)
+Customer order karta hai → payment complete hota hai → confirmation message aata hai.
 <!-- 
 function greet(name) {
     console.log("Hello " + name);
 }
-
 function processUser(callback) {
     callback("Rahul");
 }
@@ -733,21 +752,100 @@ processUser ne baad me callback() call kiya
 <!-- IIFE (Immediately Invoked Function Expression) -->
 IIFE is a function expression that is executed immediately after it is defined.
 
-Basic Syntax:-
-<!-- 
-(function() {
-    console.log("IIFE executed");
-})(); -->
+🔹 Basic Syntax
+✅ Normal IIFE
+(function () {
+  console.log("IIFE executed");
+})();
 
-Arrow Function IIFE:-
-<!-- 
+✅ Arrow Function IIFE
 (() => {
-    console.log("Arrow IIFE");
-})(); -->
+  console.log("Arrow IIFE executed");
+})();
 
 
-IIFE is a function expression that runs immediately after creation.
-====================================================================================================================================================================================================
+“IIFE is used to execute code immediately and to avoid polluting the global scope by creating a private scope.”
+
+// IIFE kyun use karte hain?
+(function () {
+  console.log("Runs immediately");
+})();
+
+👉 Global scope bachane ke liye
+===================================================================================================================================================================================================
+// Why do we use functions in real applications?
+Functions are used to organize code, avoid repetition, and make applications easier to maintain and reuse.
+
+// function calculateTotal(price, tax) {
+//   return price + tax;
+// }
+
+// What is a callback function? Give a real example?
+A callback function is a function that passed as an argument to another function and is executed after a task is completed.
+
+
+setTimeout(() => {
+  console.log("Order confirmed");
+}, 2000);
+
+// Where are arrow functions used in real projects?
+Arrow functions are commonly used in event handlers, array methods, and callbacks because of their short syntax and lexical this.
+
+// users.map(user => user.name);
+
+
+// Why not use arrow functions everywhere?
+✅ Answer:Arrow function chhota hota hai, lekin isme apna this, arguments aur constructor nahi hota. Isliye hum ise har jagah use nahi karte.
+
+Arrow function ko tab avoid karna chahiye jab hume this, arguments, constructor ya hoisting ki zarurat ho.
+
+// ✅ Arrow Function kab use karna best hota hai?
+✔ Callback functions
+✔ map, filter, reduce
+✔ Short logic wale functions
+✔ setTimeout, setInterval
+
+// How do functions help in frontend development?
+Functions help in handling user events, validating forms, and interacting with APIs.
+
+🧠 Example:
+function validateForm() {
+  if (email === "") alert("Email required");
+}
+
+// Difference between function declaration and expression?
+Function declarations are hoisted, while function expressions are not.
+
+sayHi(); // works
+function sayHi() {}
+
+sayHello(); // error
+const sayHello = function() {};
+
+// What is a higher-order function?
+A higher-order function is a function that takes another function as an argument or returns a function.
+
+setTimeout(() => {}, 1000);
+
+
+// ❓ Q: Higher-order function kya hota hai?
+👉 Jo function ko argument me le ya return kare
+
+// ❓ Q: Function me parameter ka use kyun?
+Different values ke saath same logic use karne ke liye.
+
+function add(a, b) {
+  return a + b;
+}
+add(2, 3);
+
+
+// Function expression kya hota hai?
+
+const multiply = function (a, b) {
+  return a * b;
+};
+==============================================================================================
 
 <!-- * Arrays:- -->
 An array is a collection of multiple values stored in a single variable.
