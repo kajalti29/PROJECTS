@@ -1165,6 +1165,14 @@ console.log(arr.findIndex(num => num > 15)); // 1 -->
 🔹 20. some() – At least one true?
 🔹 21. every() – All true?
 
+------------------------------------------------------------------------
+Array Methods (frontend ka heart ❤️)
+
+map() vs forEach()
+filter() ka use
+reduce() ka use
+slice() vs splice()
+----------------------------------------------------------------
 ### 2️⃣ How do you create an array?
 let arr = [10, 20, 30];
 ### 3️⃣ How to find length of an array?
