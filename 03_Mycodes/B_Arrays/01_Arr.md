@@ -157,7 +157,15 @@ arr.splice(1,1); -->
 <!-- 5️⃣ Print all elements of an array -->
 let arr = [1, 2, 3, 4];
 
-for(let i = 1; i<= arr.length; i++){
+for(let i = 0; i<= arr.length; i++){
     console.log(arr[i]); 
 }
 
+<!-- 6️⃣ Find sum of array elements -->
+let arr = [2, 4, 6];
+let sum = 0;
+
+for(let i = 0; i < arr.length; i++){
+  sum += arr[i];
+}
+console.log(sum);
