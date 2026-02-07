@@ -7,3 +7,7 @@ for(let i=0; i<= arr.length; i++){
     }
 }
 console.log(count);
+
+// Logic:
+// Even number ⇒ num % 2 === 0
+// Count increase
