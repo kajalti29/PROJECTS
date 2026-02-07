@@ -1,22 +1,4 @@
-// 1️⃣ What is an array?
-// An array is a collection of multiple values store in a single variables. 
 
-// Why array instead of variables?
-// → Because it reduces code repetition and makes data processing easier.
-
-// 2️⃣ How do you access the first and last element of an array?
-let arr = [10, 20, 30, 40];
-console.log(arr[0]);              // first
-console.log(arr[arr.length - 1]); // last
-
-
-// 4️⃣ Does array index always start from 0? Why?
-// Yes, because arrays are zero-based indexed to optimize memory access.
-
-// 3️⃣ Difference between for loop and forEach() for arrays?
-// 👉 The for loop provides more control over iteration, while forEach() is a simpler and cleaner way to loop through arrays.
-
-// -------------------------------------------------------------------------
 // 🔥 TOP ARRAY METHODS – REAL INTERVIEW QUESTIONS
 // 1️⃣ push() & pop() (VERY COMMON)
 
@@ -231,3 +213,42 @@ for(let i = 0; i < arr.length; i++){
 console.log(unique);
 
 <!-- --------------------------------------------------------------------- -->
+
+<!--1️⃣ What is an array? -->
+// An array is a collection of multiple values store in a single variables. 
+
+<!-- 2️⃣ Why do we use arrays? -->
+We use arrays to store and manage large amounts of data efficiently and reduce code repetition.
+
+<!-- 3️⃣ What is array indexing? -->
+Indexing is the position number used to access elements in an array.
+
+<!--Why array instead of variables? -->
+Because it reduces code repetition and makes data processing easier.
+
+<!-- 2️⃣ How do you access the first and last element of an array? -->
+let arr = [10, 20, 30, 40];
+console.log(arr[0]);              // first
+console.log(arr[arr.length - 1]); // last
+
+<!-- 4️⃣ Does array index always start from 0? Why? -->
+ Yes, because arrays are zero-based indexed to optimize memory access.
+
+<!-- // 3️⃣ Difference between for loop and forEach() for arrays? -->
+// 👉 The for loop provides more control over iteration, while forEach() is a simpler and cleaner way to loop through arrays.
+
+<!-- 6️⃣ What is length property? -->
+length returns the total number of elements in an array.
+
+<!-- 8️⃣ Can arrays store different data types? -->
+Yes, JavaScript arrays can store mixed data types.
+
+<!-- [1, "hello", true] -->
+
+---------------------------------------------------------------------------------------
+<!-- 1️⃣ How do arrays help in frontend? -->
+Expected answer:
+Arrays are used to render lists, cards, tables, and dynamic UI elements.
+
+<!-- users.map(user => <Card />) -->
+
