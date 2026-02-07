@@ -161,6 +161,7 @@ for(let i = 0; i<= arr.length; i++){
     console.log(arr[i]); 
 }
 
+
 <!-- 6️⃣ Find sum of array elements -->
 let arr = [2, 4, 6];
 let sum = 0;
@@ -169,3 +170,16 @@ for(let i = 0; i < arr.length; i++){
   sum += arr[i];
 }
 console.log(sum);
+
+
+<!-- 3️⃣ Find maximum number in array -->
+let arr = [1, 2, 3, 4];
+let max = arr[0];
+
+for(let i = 0; i<= arr.length; i++){
+    if(arr[i] > max){
+        max = arr[i];
+    }
+}
+console.log(max); //4
+
