@@ -183,3 +183,26 @@ for(let i = 0; i<= arr.length; i++){
 }
 console.log(max); //4
 
+
+<!-- 4️⃣ Find minimum number in array -->
+let arr = [5, 8, 2, 10];
+let min = arr[0];
+
+for(let i = 1; i < arr.length; i++){
+  if(arr[i] < min){
+    min = arr[i];
+  }
+}
+console.log(min);
+
+
+<!-- 5️⃣ Count even numbers in array -->
+let arr = [1, 2, 3, 4, 6];
+let count = 0;
+
+for(let i = 0; i < arr.length; i++){
+  if(arr[i] % 2 === 0){
+    count++;
+  }
+}
+console.log(count);
