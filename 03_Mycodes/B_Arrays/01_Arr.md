@@ -209,3 +209,25 @@ console.log(count);
 
 
 <!-- 7️⃣ Reverse an array (without reverse()) -->
+let arr = [1, 2, 3];
+let rev = [];
+
+for(let i = arr.length - 1; i >= 0; i--){
+  rev.push(arr[i]);
+}
+console.log(rev);
+
+
+
+<!-- 9️⃣ Remove duplicate elements -->
+let arr = [1, 2, 2, 3, 1];
+let unique = [];
+
+for(let i = 0; i < arr.length; i++){
+  if(!unique.includes(arr[i])){
+    unique.push(arr[i]);
+  }
+}
+console.log(unique);
+
+<!-- --------------------------------------------------------------------- -->
