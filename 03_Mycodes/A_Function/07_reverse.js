@@ -7,5 +7,4 @@ function reverse(num) {
     } 
     return rev
 }
-
 console.log(reverse(123456));

@@ -214,7 +214,7 @@ add(2, 3);             // 2, 3 → arguments
 //   return fact;
 // }
 
-// “I initialize fact with 1. Then I run a loop from 1 to n and multiply each number with fact. Finally, I return the factorial.”
+// “I start with 1, run a loop from 1 to the given number, multiply each value, and return the final result.”
 
 
 // function reverseNumber(num) {
@@ -225,3 +225,73 @@ add(2, 3);             // 2, 3 → arguments
 //   }
 //   return rev;
 // }
+
+// | Step | num | last digit | rev           |
+// | ---- | --- | ---------- | ------------- |
+// | 1    | 123 | 3          | 0*10+3 = 3    |
+// | 2    | 12  | 2          | 3*10+2 = 32   |
+// | 3    | 1   | 1          | 32*10+1 = 321 |
+
+// num = Math.floor(num / 10); 
+// Number ko chhota karna
+// Decimal avoid karne ke liye Math.floor
+// 123 / 10 = 12.3 → 12
+
+// “I take the last digit using modulus, add it to a new number, remove the last digit using division, and repeat this until the number becomes zero.”
+
+// Hindi:-
+// “Main number ka last digit nikalti hoon, use new number me add karti hoon, phir original number se last digit hata deti hoon. Ye process tab tak repeat hota hai jab tak number zero na ho jaye.”
+
+function reverseString(str) {
+  let rev = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    rev += str[i];
+  }
+  return rev;
+}
+// 🗣️ Logic: Loops string from end to start.
+
+
+function isPalindrome(str) {
+  let rev = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    rev += str[i];
+  }
+  return str === rev;
+}
+
+
+// 🔴 HARD (But REAL Interview Favorite)
+
+function isPrime(num) {
+  if (num <= 1) return false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+
+function fibonacci(n) {
+  let a = 0, b = 1;
+  for (let i = 1; i <= n; i++) {
+    console.log(a);
+    let c = a + b;
+    a = b;
+    b = c;
+  }
+}
+// 🗣️ Logic: Each number is sum of previous two.
+
+function countVowels(str) {
+  let count = 0;
+  let vowels = "aeiouAEIOU";
+
+  for (let ch of str) {
+    if (vowels.includes(ch)) count++;
+  }
+  return count;
+}
+
+// ---------------------------------------------------------------------------
