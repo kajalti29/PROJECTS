@@ -51,3 +51,12 @@ for(let i = str.length - 1; i >= 0; i--){
 }
 console.log(rev);
 
+<!-- ------------------------------------------------ -->
+
+<!-- Why string immutability matters in frontend? -->
+Because state updates require new values to trigger re-render.
+
+<!-- ❓ How to handle user input safely? -->
+✔️ trim()
+✔️ toLowerCase()
+✔️ validation using length / includes
