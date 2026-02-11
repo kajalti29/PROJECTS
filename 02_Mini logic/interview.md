@@ -240,7 +240,225 @@ Output: True
 10. 
 
 ============================================================================================================
+<!-- 🔹 5️⃣ Check Leap Year -->
+<!-- 
+let year = 2024;
+
+if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+  console.log("Leap Year");
+} else {
+  console.log("Not Leap Year");
+} -->
+
+“A year is a leap year if it is divisible by 4, but not divisible by 100, unless it is also divisible by 400.”
+
+<!-- Step 1️⃣ – year % 4 === 0 -->
+
+Agar year 4 se divide ho jaye (remainder 0 aaye)
+👉 to wo leap year ho sakta hai.
+
+Example:
+2024 % 4 = 0 ✅
+
+<!-- Step 2️⃣ – year % 100 !== 0 -->
+
+Lekin agar year 100 se divide ho raha hai
+👉 to wo normally leap year nahi hota.
+
+Example:
+1900 % 100 = 0 ❌
+Isliye 1900 leap year nahi hai.
+
+<!-- 🔹 Step 3️⃣ – year % 400 === 0 -->
+
+Agar year 400 se divide ho jaye
+👉 to wo leap year hoga (even if 100 se divisible ho).
+
+Example:
+2000 % 400 = 0 ✅
+Isliye 2000 leap year hai.
 
 
+8️⃣ Divisible by 5 and 11
+<!-- 
+let num = 55;
+
+if (num % 5 === 0 && num % 11 === 0) {
+  console.log("Divisible by 5 and 11");
+} else {
+  console.log("Not divisible");
+}
+
+-->
+
+🔹 9️⃣ Check Character is Vowel or Consonant
+<!-- 
+let ch = "a";
+
+if (ch === "a" || ch === "e" || ch === "i" || ch === "o" || ch === "u") {
+  console.log("Vowel");
+} else {
+  console.log("Consonant");
+} -->
+===================================================================================================================================
+
+# 🔹 1️⃣ Print Numbers 1 to 10
+
+```js
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+📌 Basic syntax check karne ke liye puchte hain.
+
+🔹 2️⃣ Print Even Numbers (1 to 20)
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+🔹 3️⃣ Reverse a Number 🔥 (Very Common)
+let num = 1234;
+let reverse = 0;
+
+while (num > 0) {
+  let digit = num % 10;
+  reverse = reverse * 10 + digit;
+  num = Math.floor(num / 10);
+}
+
+console.log(reverse); // 4321
+```
+
+---
+
+# 🔹 4️⃣ Palindrome Number 🔥🔥
+
+```js
+let original = 121;
+let num = original;
+let reverse = 0;
+
+while (num > 0) {
+  let digit = num % 10;
+  reverse = reverse * 10 + digit;
+  num = Math.floor(num / 10);
+}
+
+if (original === reverse) {
+  console.log("Palindrome");
+} else {
+  console.log("Not Palindrome");
+}
+```
+
+---
+
+# 🔹 5️⃣ Factorial of a Number 🔥🔥
+
+```js
+let n = 5;
+let fact = 1;
+
+for (let i = 1; i <= n; i++) {
+  fact *= i;
+}
+
+console.log(fact); // 120
+```
+
+---
+
+# 🔹 6️⃣ Prime Number Check 🔥🔥🔥 (Interview Favorite)
+
+```js
+let num = 7;
+let isPrime = true;
+
+if (num <= 1) {
+  isPrime = false;
+} else {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+}
+
+console.log(isPrime ? "Prime" : "Not Prime");
+```
+
+---
+
+# 🔹 7️⃣ Fibonacci Series 🔥
+
+```js
+let n = 6;
+let a = 0, b = 1;
+
+for (let i = 1; i <= n; i++) {
+  console.log(a);
+  let next = a + b;
+  a = b;
+  b = next;
+}
+```
+
+---
+
+# 🔹 8️⃣ Sum of Digits
+
+```js
+let num = 123;
+let sum = 0;
+
+while (num > 0) {
+  sum += num % 10;
+  num = Math.floor(num / 10);
+}
+
+console.log(sum); // 6
+```
+
+---
+
+# 🔹 9️⃣ Pattern Printing 🔥🔥
+
+### Star Pattern
+
+```js
+for (let i = 1; i <= 5; i++) {
+  let star = "";
+  for (let j = 1; j <= i; j++) {
+    star += "* ";
+  }
+  console.log(star);
+}
+```
+
+Output:
+
+```
+*
+* *
+* * *
+* * * *
+* * * * *
+```
+
+---
+
+# 🔟 Count Vowels in a String
+let str = "javascript";
+let count = 0;
+
+for (let char of str) {
+  if ("aeiou".includes(char)) {
+    count++;
+  }
+}
+console.log(count);
+===================================================================================================================
 
 

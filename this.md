@@ -3,18 +3,17 @@ Javascript is a high-level, interprited and object-oriented programming language
 
 JavaScript is interpreted (runs line by line).
 <!-- Features -->
-
-<!-- Lightweight – Simple aur fast. -->
-<!-- Dynamic – Variables ka type run-time par decide hota hai "The type of variables is decided at run time"-->
-<!-- Event-Driven – User actions par kaam karta hai."It works based on user actions" -->
-<!-- Prototype-based – Classes ki jagah prototypes use karta hai. -->
+1️⃣ Interpreted Language
+2️⃣ Dynamically Typed
+3️⃣ First-Class Functions
+5️⃣ Event-Driven
+8️⃣ Object-Oriented
+9️⃣ Platform Independent 
 
 👉 HTML = structure
 👉 CSS = design
-👉 JS = logic / brain 🧠
-
+👉 JS = logic / brain 
 ---------------------------------------------------------------------------------------------------------------------
-
 <!-- What is variable ? -->
 A variable is a container used to store data(value) in a program.
 
@@ -59,6 +58,11 @@ console.log(a); // ❌ Error (a block ke bahar available nahi
            console.log(country);   //India -->
 
 <!-- const pi = 3.14; // pi kabhi change nahi hota -->
+NOTE:_  Objects and arrays inside const can be modified:
+
+const arr = [1, 2];
+arr.push(3);   // ✅ Allowed
+console.log(arr); // [1, 2, 3]
 
 
 * var(old, avoid) :- Variable can be re-declared and updated.
@@ -79,7 +83,27 @@ JavaScript has two main categories of data types 👇
 🔹 1. Primitive Data Types (Simple values) ->Immutable
 🔹 2. Non-Primitive (Reference) Data Types -> Mutable
 
+<!-- Primitive data types store single immutable values, while non-primitive data types store collections of values by reference. -->
+
 🔹 1.  Primitive Data Types (Simple values):-
+Primitive data types are simple values that are stored directly in memory and are immutable (cannot be changed).
+
+Types of Primitive
+String
+Number
+Boolean
+Undefined
+Null
+BigInt
+Symbol
+<!-- 
+let name = "Kajal";   // String
+let age = 22;         // Number
+let isStudent = true; // Boolean
+let x;                // Undefined
+let y = null;         // Null -->
+
+
 1.String:-
 A string represent sequence of characters(text value)
 <!-- 
@@ -126,6 +150,24 @@ Used to create unique values (advanced use).
 
 
 🔹 2. Non-Primitive (Reference) Data Types:-
+Non-primitive data types are stored by reference and can hold multiple values. They are mutable.
+
+📦 Types
+Object
+Array
+Function
+<!-- 
+let person = {
+  name: "Kajal",
+  age: 22
+};
+
+let arr = [1, 2, 3];
+
+function greet() {
+  console.log("Hello");
+} -->
+
 
 8️⃣ Object:-
 A object is a collection of key-value pairs.
@@ -386,7 +428,7 @@ if ("hello") {
   console.log("Run hoga");
 }
 
--------------------------------------------
+--=======================================================================================================================================================================-----------------------------------------
 🔹 Falsy:-
 
 JS me sirf ye 7 values falsy hoti hain 👇
@@ -486,34 +528,34 @@ do {
 } while (i <= 5);
 // Output: 6  (executes once even if condition false)
 
+for...in is used to iterate over object keys, while for...of is used to iterate over iterable values like arrays and strings.
+
 🔹 4️⃣ for...in loop:-
 Used to iterate over object keys.
 
-for (let key in object) {
-  console.log(key, object[key]);
+let person = {
+  name: "Kajal",
+  age: 22,
+  city: "Indore"
+};
+
+for (let key in person) {
+  console.log(key);          // name, age, city
+  console.log(person[key]);  // Kajal, 22, Indore
 }
 
-// let person = {name: "Kajal", age: 22};
-// for (let key in person) {
-//   console.log(key, person[key]);
-// }
-// Output:
-// name Kajal
-// age 22
+
 
 🔹 5️⃣ for...of loop:-
-Used to iterate over iterable objects (arrays, strings).
-
-for (let value of iterable) {
-  console.log(value);
-}
+for...of loop is used to iterate over the values of iterable objects like arrays, strings, maps, etc.
 
 
 let arr = [10, 20, 30];
-for (let val of arr) {
-  console.log(val);
+
+for (let value of arr) {
+  console.log(value); // 10, 20, 30
 }
-// Output: 10 20 30
+
 -----------------------------------------------------------------------------------------------------------------------------
 🔹 6️⃣ Loop Control Statements:-
 break → exit loop immediately.
@@ -536,15 +578,17 @@ for (let i = 1; i <= 5; i++) {
 🟠 Functions :-
 
 <!-- Functions -->
-A function is a block of code that performs a specific task and can be reused.
+A function is a block of code that performs a specific task and can be reused.It can accept parameters and return a value.”
 
-<!-- 
-function greet() {
-  console.log("Hello World");
-}
+“For example, if I want to add two numbers multiple times, I can create a function.”
 
-greet(); // function call 
--->
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add(2, 3));
+
+“Here, ‘add’ is a function that takes two parameters and returns their sum. When I call add(2, 3), it returns 5.”
+
 
 * Functions Basics:-
 
@@ -598,25 +642,29 @@ const greet = () => {
     return a + b;
 }; -->
 
------------------------------------------------------------------------------------
+Note:- “Arrow functions were introduced in ES6 to provide a shorter syntax and to solve the problem of ‘this’ keyword in regular functions.”
+// Normal Function:
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow Function:
+const add = (a, b) => a + b;
+👉 Code chhota aur clean ho gaya.
+------------------------------------------------------------------------------------------------------------------------
 this:-
-this refers to the object that is currently calling the function.
+this is a keyword that refers to the current object.
 
-this us object ko refer karta hai jo function ko call kar raha hota hai.
-
-let user = {
+const person = {
   name: "Kajal",
-  greet() {
+  greet: function() {
     console.log(this.name);
   }
 };
 
-user.greet();
-
-
-
-
-
+person.greet();
+👉 Yaha this = person object
+// Output: Kajal
 -------------------------------------------------------------------------------------------------------------
 Easy Example (Normal Function)
 
@@ -631,7 +679,6 @@ const student = {
 student.showName(); -->
 
 🔍 Explanation
-
 student object ne showName() call kiya
 Isliye this = student
 Output:
@@ -652,7 +699,27 @@ Jaise ghar baad me ban raha ho
 
 Pehle use karoge to error
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+<!-- Function Declaration  -->
+Function Declaration means defining a function using the function keyword with a name.
+✔ Hoisting supported (call before define)
+
+Example:- 1
+<!-- 
+function add(a, b) {
+    return a + b;
+}
+console.log(add(3, 4)); // 7
+ -->
+
+Example:- 2
+<!-- 
+console.log(add(2, 3)); // 5
+
+function add(a, b) {
+    return a + b;
+} -->
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 <!--Function Expression -->
 Function Expression is a function stored in a variable and is not hoisted like function declarations.
@@ -673,29 +740,6 @@ const multiply = function(a, b) {
 console.log(multiply(2, 4));
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-
-<!-- Function Declaration  -->
-Function Declaration means defining a function using the function keyword with a name.
-✔ Hoisting supported (call before define)
-
-Example:- 1
-<!-- 
-function add(a, b) {
-    return a + b;
-}
-console.log(add(3, 4)); // 7
- -->
-
-Example:- 2
-<!-- 
-console.log(add(2, 3)); // 5
-
-function add(a, b) {
-    return a + b;
-} -->
------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------------------------------
 <!-- Parameters  -->
 A parameter is a variable used in a function definition to receive values.
 
@@ -742,7 +786,6 @@ function processUser(callback) {
 processUser(greet); -->
 
 Explanation
-
 greet → callback function
 processUser → doosra function
 greet ko argument ki tarah pass kiya gaya
@@ -1767,7 +1810,7 @@ btn.addEventListener("click", () => {
 
 🔶 ADVANCED JAVASCRIPT (INTERVIEW COMPLETE):-
 
-🟢 1️⃣ Scope (Global, Local, Block)
+🟢 1️⃣ Scope (Global, Function(Local), Block)
 <!-- 🔹 Scope kya hota hai? -->
 Scope defines where a variable can be accessed in a program.
 Hindi:-Scope batata hai ki variable ko kaha access (use) kar sakte hain.

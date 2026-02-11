@@ -30,3 +30,369 @@ var x = 10;
 var x = 20;   // allowed
 x = 30;       // allowed -->
 
+<!-- 🔹 What is Scope? -->
+Scope defines where a variable can be accessed in a program.
+
+<!-- Types of Scope -->
+1️⃣ Global Scope
+2️⃣ Function Scope
+3️⃣ Block Scope
+
+Global → everywhere
+Local → inside function
+Block → inside { }
+
+<!-- 1️⃣ Global Scope -->
+A variable declared outside all functions is called a global variable, and it can be accessed from anywhere in the program.
+Example:_
+Jaise sun (suraj) — sab jagah roshni deta hai, har jagah visible hota hai.
+<!-- 
+let x = 10;   // global variable
+
+function show() {
+  console.log(x);
+}
+
+show();      // 10
+console.log(x); // 10 -->
+
+<!--2️⃣Local Scope (Function Scope) -->
+A variable declared inside a function is accessible only within that function.
+Example:-
+1. “The ATM PIN is required only for ATM transactions.”
+ATM ka PIN → sirf ATM transaction ke time
+
+2. “Like your bedroom — it is used only inside your room, not outside.”
+<!-- 
+function test() {
+  var a = 5;
+  let b = 6;
+  const c = 7;
+  console.log(a, b, c);
+}
+
+test();
+
+console.log(a); // ❌ error
+console.log(b); // ❌ error
+console.log(c); // ❌ error -->
+
+<!-- 3️⃣ Block Scope -->
+A variable declared with let or const inside a block { } is accessible only within that block.
+Example:-
+“The exam hall question paper is used only inside the exam hall.”
+Exam hall ka question paper → sirf exam hall ke andar
+<!-- 
+if (true) {
+  let x = 10;
+  const y = 20;
+  var z = 30;
+}
+
+console.log(x); // ❌ error
+console.log(y); // ❌ error
+console.log(z); // ✅ 30 -->
+
+👉 var block scope follow nahi karta 😱
+
+<!-- 🚀 Hoisting -->
+<!-- 🔹 What is Hoisting? -->
+Hoisting is JavaScript's behavior where variable and function declarations are moved to the top of their scope during the memory creation phase.
+
+In case of var, it is initialized with undefined, but let and const stay in Temporal Dead Zone.
+
+Jaise school me attendance register 📒
+Pehle naam likh liye jate hain
+Baad me present/absent mark hota hai
+
+<!-- var -->
+console.log(a);
+var a = 10;
+
+<!-- let -->
+console.log(b);
+let b = 20;
+
+let bhi hoist hota hai, but it stays in Temporal Dead Zone.
+Isliye ReferenceError aata hai.
+
+<!-- Function Hoisting -->
+<!-- 
+sayHello();
+
+function sayHello() {
+  console.log("Hello");
+} -->
+
+Function declaration fully hoist hoti hai, isliye ye work karta hai.
+
+<!-- 🔥 2️⃣ Execution Context -->
+<!-- 🔹 What is Execution Context? -->
+“Execution Context is an environment where JavaScript code is executed.”
+Hindi:-
+Execution Context ek environment hota hai jahan JavaScript code execute hota hai.
+
+-------------------------------------------------------------------------------------
+<!-- 🔄 2️⃣ Array Methods (MOST IMPORTANT) -->
+map()
+filter()
+reduce() 🔥🔥
+forEach()
+find(), includes(), sort()
+
+<!-- 1️⃣ map() 🔥🔥 (MOST IMPORTANT) -->
+Creates a new array by applying a function to each element of the array.
+Original array change nahi hota.
+
+Jaise factory machine 🏭
+Raw items → process → new items
+<!-- 
+let arr = [1, 2, 3, 4];
+let result = arr.map(num => num * 2);
+console.log(result)    //[1, 2, 6, 8]-->
+
+
+<!-- 2️⃣ filter() 🔥🔥 -->
+Check condition and return only matching elements.
+Hindi:-
+👉 Condition check karta hai
+👉 Sirf matching elements return karta hai.
+<!-- 
+let arr = [1, 2, 3, 4];
+let even = arr.filter(num % 2 === 0);
+console.log(even); //[2, 4] -->
+
+Example:-
+Jaise college entrance cutoff list 🎓
+Sirf eligible students pass
+<!-- 
+let ages = [12, 18, 22, 15];
+let adults = ages.filter(age => age >= 18);
+console.log(adults); // [18, 22] -->
+
+
+<!-- ✅ 3️⃣ reduce() 🔥🔥 (Most Important) -->
+Reduces an array to a single value by accumulating results.
+Example:-
+Jaise shopping cart bill 🛒
+Sab items ka total ek final amount
+<!-- 
+let arr = [100, 200, 300];
+let total = arr.reduce((acc, curr) => {
+    return acc + curr;
+}, 0);
+console.log(total)  //600 -->
+
+
+<!-- 
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10 -->
+
+Explanation:
+acc → accumulator
+curr → current value
+0 → initial value
+
+<!-- 4️⃣ forEach() -->
+forEach() executes a function on each element but does not return a new array.
+
+Example:-
+Jaise attendance check 📋
+Sirf dekhna hai, result store nahi karna
+<!-- 
+let arr = [1, 2, 3];
+
+arr.forEach(num => {
+  console.log(num);
+}); -->
+
+
+<!-- 5️⃣ find() -->
+Returns the first element that matches a condition.
+<!-- 
+let nums = [5, 12, 8, 130];
+
+let result = nums.find(n => n > 10);
+
+console.log(result); // 12 -->
+
+<!-- “Kya ye problem for loop ke bina solve ho sakti hai?” -->
+Yes we can solve it without a for loop by using  other looping techniques like while, map, reduce, etc., depending on the problem.
+
+<!-- Example 1: Sum of Array -->
+✅ Using for loop
+<!-- 
+let arr = [1, 2, 3, 4];
+let sum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+  sum += arr[i];
+} -->
+
+Without for loop (Using reduce)
+<!-- 
+let arr = [1, 2, 3, 4];
+
+let sum = arr.reduce((acc, curr) => acc + curr, 0);
+
+console.log(sum); -->
+
+👉 Same result, no for loop.
+
+<!-- Example 2: Print 1 to 5 -->
+Without for loop (Using while)
+<!-- 
+let i = 1;
+
+while (i <= 5) {
+  console.log(i);
+  i++;
+} -->
+----------------------------------------------------------------------------------------------------------------------ssssss
+🧩 3️⃣ Functions – Advance Level
+<!-- ✅ 1️⃣ Arrow Function -->
+Arrow function is a shorter way to write a function in JavaScript.
+It was introduced in ES6.
+It does not have its own this.
+<!-- 
+// Normal function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b; -->
+
+✅ 2️⃣ Callback Function:-
+A callback function is a function that is passed as an argument to another function and is executed after some operation is completed.
+<!-- 
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function sayBye() {
+  console.log("Bye!");
+}
+
+greet("Kajalti", sayBye); -->
+
+👉 sayBye is callback function.
+
+<!-- Why Callbacks Are Important? -->
+Used in:
+Event handling
+API calls
+setTimeout / setInterval
+Asynchronous programming
+
+<!-- ✅ 3️⃣ Higher Order Function (HOF) -->
+A higher order function is a function that takes another function as an argument or returns a function.
+Hindi:-
+Higher Order Function wo function hota hai jo ya to kisi dusre function ko argument me leta hai ya khud ek function return karta hai.
+<!-- 
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+console.log(calculate(5, 3, add)); -->
+
+👉 calculate is Higher Order Function.
+
+<!-- ⚡ Important: -->
+map(), filter(), reduce() are also higher order functions
+
+
+
+<!-- ✅ 4️⃣ Pure vs Impure Function --> IMP
+"A pure function is a function that always returns the same output for the same input and does not cause any side effects.
+
+<!-- Same input doge → hamesha same output dega -->
+<!-- 
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5 -->
+
+
+<!-- Why are pure functions preferred? -->
+👉 Because:
+Easy to test
+Predictable
+No side effects
+Better performance optimization
+
+Side Effects Kya Hote Hain?
+Side effect matlab:
+Global variable change karna
+DOM change karna
+API call karna
+Console log karna
+File write karna
+
+<!-- 🔹 2️⃣ Impure Function -->
+“An impure function is a function that does not always return the same output for the same input, or it produces side effects such Global Variable Change, the DOM change, or making API calls.”
+<!-- 
+let count = 0;
+
+function increase() {
+  count++;
+}
+
+increase();
+console.log(count); // 1
+ -->
+
+============================---------------------------------------------------
+
+⏳ 4️⃣ Asynchronous JavaScript (VERY IMPORTANT):-
+Frontend interview me ye skip nahi hota ❌
+Topics:
+* setTimeout
+* setInterval
+* Promise
+* async / await
+
+<!-- ❓ Difference between synchronous and asynchronous? -->IMP
+🔹 1️⃣ Synchronous:-
+Synchronous code executes line by line. Each task must complete before the next one starts.
+👉 Matlab ek kaam khatam hoga tabhi next kaam start hoga.
+<!-- 
+console.log("Start");
+console.log("Middle");
+console.log("End"); 
+
+Output:-
+Start
+Middle
+End
+-->
+Example:-
+Socho aap bank line me khade ho —
+jab tak pehle person ka kaam khatam nahi hota, aapka number nahi aata.
+
+🔹 2️⃣ Asynchronous:-
+Asynchronous code allows other tasks to run without waiting for a long task to finish.
+<!-- 
+console.log("start");
+
+setTimeout(() => {
+  console.log("Middle");
+  }, 2000);
+
+console.log("End")   
+Output:-
+Start
+End
+Middle
+-->
+Restaurant me order diya →
+Jab tak food ready ho, aap baaki kaam kar sakte ho.
+
+
