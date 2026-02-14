@@ -349,7 +349,7 @@ increase();
 console.log(count); // 1
  -->
 
-============================---------------------------------------------------
+==================================================================================================
 
 ⏳ 4️⃣ Asynchronous JavaScript (VERY IMPORTANT):-
 Frontend interview me ye skip nahi hota ❌
@@ -359,26 +359,40 @@ Topics:
 * Promise
 * async / await
 
-<!-- ❓ Difference between synchronous and asynchronous? -->IMP
+<!--Difference between synchronous and asynchronous?-->
 🔹 1️⃣ Synchronous:-
-Synchronous code executes line by line. Each task must complete before the next one starts.
+Synchronous JavaScript executes code line by line, and each task must complete before the next one starts.
 👉 Matlab ek kaam khatam hoga tabhi next kaam start hoga.
+
+Real-world Example:-
+Imagine you are standing in a bank queue. Until the person in front of you finishes their work, your turn will not come.
+Hindi:-
+Socho aap bank line me khade ho —
+jab tak pehle person ka kaam khatam nahi hota, aapka number nahi aata. in english.
+
+1. Example:-
 <!-- 
 console.log("Start");
 console.log("Middle");
 console.log("End"); 
 
-Output:-
-Start
-Middle
-End
+Output:-Start
+        Middle
+        End
 -->
-Example:-
-Socho aap bank line me khade ho —
-jab tak pehle person ka kaam khatam nahi hota, aapka number nahi aata.
+2. Example:-
+<!-- 
+console.log("A");
+console.log("B");
+console.log("C");
 
-🔹 2️⃣ Asynchronous:-
-Asynchronous code allows other tasks to run without waiting for a long task to finish.
+O/P:- A
+      B
+      C -->
+🔹 2️⃣ Asynchronous(Wait kare bina next chalega)
+
+Asynchronous JavaScript allows certain tasks (like API calls, timers, file operations) to run in the background without blocking the execution of the rest of the code.
+1. Example:-
 <!-- 
 console.log("start");
 
@@ -392,7 +406,85 @@ Start
 End
 Middle
 -->
+
+2. Example:-
+<!-- 
+console.log("A");
+setTimeout(() => {
+  console.log("B");
+}, 2000);
+
+console.log("C") 
+
+Output:-A
+        C
+        B -->
+
 Restaurant me order diya →
 Jab tak food ready ho, aap baaki kaam kar sakte ho.
+English:-
+When you order food at a restaurant, the preparation happens in the background, and you are free to do other activities while waiting.
+
+<!-- ❓1. Is JavaScript synchronous or asynchronous? -->
+JavaScript is single-threaded and synchronous by default,
+but it can handle asynchronous operations using:
+Callbacks
+Promises
+Async/Await
+Event Loop
+
+<!-- ❓2. What is Blocking and Non-Blocking code? -->
+Blocking: Stops execution until task finishes.
+Non-Blocking: Doesn’t stop execution.
+
+<!-- ❓4. What are different ways to handle async in JS? -->
+Callback
+Promise
+Async/Await
+
+imp:-
+<!-- 👉 “Why is JavaScript called single-threaded but still asynchronous?” -->
+JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread.
+
+<!-- 2️⃣ setTimeout() -->
+setTimeout executes a function after a specified delay asynchronously.
+<!-- 
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Hello after 2 seconds");
+}, 2000);
+
+console.log("End"); -->
+
+Start
+End
+Hello after 2 seconds
+
+<!-- 3️⃣ setInterval() -->
+setInterval runs a function repeatedly at fixed time intervals.
+<!-- 
+setInterval(() => {
+  console.log("Hello every 1 second");
+}, 1000); -->
+Yeh har 1 second me chalega
+
+
+Stop karne ke liye:
+<!-- 
+let id = setInterval(() => {
+  console.log("Hello");
+}, 1000);
+
+clearInterval(id); -->
+
+------------------------------------------------------------------------------------
+<!-- 4️⃣ Promise 🔥 (VERY VERY IMPORTANT) -->
+A Promise in JavaScript is an object that represents the eventual completion (success) or failure of an asynchronous operation and its resulting value.
+It has three states: 
+1️⃣pending, 
+2️⃣Resolved(fulfilled), and 
+3️⃣Rejected. 
+We use .then() for success and .catch() for error handling.”
 
 
