@@ -97,13 +97,14 @@ console.log(z); // ✅ 30 -->
 
 <!-- 🚀 Hoisting -->
 <!-- 🔹 What is Hoisting? -->
-Hoisting is JavaScript's behavior where variable and function declarations are moved to the top of their scope during the memory creation phase.
+Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the memory creation phase, before the code is executed.
 
-In case of var, it is initialized with undefined, but let and const stay in Temporal Dead Zone.
+Imagine your name is already written on the attendance list before the class starts.
 
-Jaise school me attendance register 📒
-Pehle naam likh liye jate hain
-Baad me present/absent mark hota hai
+Even if the teacher calls your name first,
+your name is already in the list.
+👉 That means your name was prepared earlier.
+
 
 <!-- var -->
 console.log(a);
@@ -170,7 +171,6 @@ let ages = [12, 18, 22, 15];
 let adults = ages.filter(age => age >= 18);
 console.log(adults); // [18, 22] -->
 
-
 <!-- ✅ 3️⃣ reduce() 🔥🔥 (Most Important) -->
 Reduces an array to a single value by accumulating results.
 Example:-
@@ -182,7 +182,6 @@ let total = arr.reduce((acc, curr) => {
     return acc + curr;
 }, 0);
 console.log(total)  //600 -->
-
 
 <!-- 
 let arr = [1, 2, 3, 4];
@@ -206,7 +205,6 @@ let arr = [1, 2, 3];
 arr.forEach(num => {
   console.log(num);
 }); -->
-
 
 <!-- 5️⃣ find() -->
 Returns the first element that matches a condition.
@@ -249,7 +247,7 @@ while (i <= 5) {
   console.log(i);
   i++;
 } -->
-----------------------------------------------------------------------------------------------------------------------ssssss
+----------------------------------------------------------------------------------------------------------------------
 🧩 3️⃣ Functions – Advance Level
 <!-- ✅ 1️⃣ Arrow Function -->
 Arrow function is a shorter way to write a function in JavaScript.

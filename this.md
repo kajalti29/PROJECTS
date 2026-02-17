@@ -1,6 +1,5 @@
 <!-- what is js ? -->
 JavaScript is a scripting language used to add interactivity and dynamic behavior to web pages.It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
-
 For example:
 When you click a button and a popup appears
 
@@ -536,61 +535,75 @@ true
 if ("hello") {
     console.log("Truthy value");
 } -->
-
-
 -------------------------------------------------------
 <!-- 🟠 Functions :- -->
+✔ What is a function
+✔ Function Declaration vs Expression
+✔ Arrow Function
+✔ Hoisting
+✔ Callback
+✔ Higher Order Function
+✔ Closure
+✔ this behavior
+✔ Default parameters
+✔ Return value (undefined)
 <!-- Functions -->
 A function is a block of code that performs a specific task and can be reused.It can accept parameters and return a value.”
-
 “For example, if I want to add two numbers multiple times, I can create a function.”
-
+<!-- 
 // function add(a, b) {
 //   return a + b;
 // }
-// console.log(add(2, 3));
+// console.log(add(2, 3)); -->
 
 “Here, ‘add’ is a function that takes two parameters and returns their sum. When I call add(2, 3), it returns 5.”
 
-
-* Functions Basics:-
-
+<!-- * Functions Basics:- -->
 Syntax
 <!--
  function functionName() {
   // code
 } 
 -->
--------------------------------------------------------------------------
+-----------------------------------------------------------
 * Why use functions?
-
 * Code reuse
 * Easy to read
 * Easy to maintain
+-----------------------------------------------------------
+------------------------------------------------------------
+<!-- 1️⃣ Function Declaration vs Function Expression -->
+Function Declaration:
+A function using the function keyword with a name. It is fully hoisted, meaning it can be called before it is defined in the code.
 
-<!-- Types of Function:- -->
-* Noraml function
-* Arrow function
-* Function with parameters
-* Function with return
-* Function Expression
--------------------------------------------------------------
-<!-- * Noraml function -->
-Function ko pahle declare kiya jata hai. Hosting support karta hai.
+Function Declaration = A public rule
+A government rule exists before you read it.
 
-// function greet() {
-//   console.log("Hello");
-// }
+(Function Declaration ek public rule ki tarah hoti hai.
+Jaise government ka rule pehle se bana hota hai,
+chahe aap use baad me padho.)
+<!-- 
+function add(a, b) {
+  return a + b;
+} -->
 
-// greet(); // function call
-
-
----------------------------------------------------------------------
+Function Expression:
+A function assigned to a variable. It is not fully hoisted, so it cannot be called before it is defined.
+Function Expression is like a job appointment letter.
+It becomes valid only after signing.
+<!-- 
+const add = function(a, b) {
+  return a + b;
+}; -->
+----------------------------------------------------------------------------------
 <!-- Arrow Functions -->
 An Arrow Function is a shorter and modern way to write a function in JavaScript using the => syntax. It is a type of function expression and does not have its own this.
 
-Hindi:-
-Arrow Function JavaScript me function likhne ka ek chhota aur modern tarika hota hai, jisme => (arrow) ka use hota hai. Ye ek function expression hota hai aur iska khud ka this nahi hota.
+<!-- Real-World Example -->
+A child using their parent’s ID.
+The child does not have their own identity card,
+so they use the parent’s ID.
+Similarly, an arrow function uses the parent’s this.
 
 Simple Example:-
 <!-- 
@@ -599,145 +612,44 @@ const greet = () => {
 }; -->
 
 📌 Arrow Function with Parameters:-
-
 <!--
  const add = (a, b) => {
     return a + b;
 }; -->
 
-Note:- “Arrow functions were introduced in ES6 to provide a shorter syntax and to solve the problem of ‘this’ keyword in regular functions.”
-// Normal Function:
-function add(a, b) {
-  return a + b;
-}
 
-// Arrow Function:
-const add = (a, b) => a + b;
-👉 Code chhota aur clean ho gaya.
-------------------------------------------------------------------------------------------------------------------------
-this:-
-this is a keyword that refers to the current object.
+<!-- 🔹 What is Hoisting? -->
+Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the memory creation phase, before the code is executed.
 
-const person = {
-  name: "Kajal",
-  greet: function() {
-    console.log(this.name);
-  }
-};
+Imagine your name is already written on the attendance list before the class starts.
 
-person.greet();
-👉 Yaha this = person object
-// Output: Kajal
--------------------------------------------------------------------------------------------------------------
-Easy Example (Normal Function)
+Even if the teacher calls your name first,
+your name is already in the list.
+👉 That means your name was prepared earlier.
 
-<!-- 
-const student = {
-    name: "Rahul",
-    showName: function() {
-        console.log(this.name);
-    }
-};
+<!-- var -->
+console.log(a);
+var a = 10;
 
-student.showName(); -->
+<!-- let -->
+console.log(b);
+let b = 20;
 
-🔍 Explanation
-student object ne showName() call kiya
-Isliye this = student
-Output:
-<!-- Rahul -->
+let bhi hoist hota hai, but it stays in Temporal Dead Zone.
+Isliye ReferenceError aata hai.
 
-------------------------------------------------------------------------------------------------------------------------------------
-
-Real Life Example (Samajhne ke liye)
-🏠 Function Declaration
-
-Jaise ghar pehle se bana ho
-
-Jab chaaho use kar sakte ho
-
-🏠 Function Expression
-
-Jaise ghar baad me ban raha ho
-
-Pehle use karoge to error
-
--------------------------------------------------------------------------------------------------
-<!-- Function Declaration  -->
-Function Declaration means defining a function using the function keyword with a name.
-✔ Hoisting supported (call before define)
-
-Example:- 1
-<!-- 
-function add(a, b) {
-    return a + b;
-}
-console.log(add(3, 4)); // 7
- -->
-
-Example:- 2
-<!-- 
-console.log(add(2, 3)); // 5
-
-function add(a, b) {
-    return a + b;
-} -->
---------------------------------------------------------------------------------------------------------------------------------------------
-
-<!--Function Expression -->
-Function Expression is a function stored in a variable and is not hoisted like function declarations.
-
-Hosting nhi hoti hai.45
-<!-- 
-console.log(add(2, 3)); // ❌ Error
-
-const add = function(a, b) {
-    return a + b;
-}; -->
-
-Example:-2
-const multiply = function(a, b) {
-  return a * b;
-};
-
-console.log(multiply(2, 4));
-
------------------------------------------------------------------------------------------------------------------------------------------------
-<!-- Parameters  -->
-A parameter is a variable used in a function definition to receive values.
-
-function add(a, b) {
-    return a + b;
-}
-
-
-<!-- Arguments -->
-An argument is the actual value passed to a function when it is called.
-
-add(3, 4);
-
-<!-- Return Statement -->
-The return statement is used to send a value back from a function and stop its execution.
-
-Hindi
-Return statement function se value wapas bhejne aur function ko stop karne ke liye use hota hai.
-<!-- 
-function add(a, b) {
-    return a + b;
-}
-
-let result = add(3, 4);
-console.log(result); // 7 -->
-
--------------------------------------------------------------
-------------------------------------------------------------------------------------------
+-----------------------------------------------------------
+-------------------------------
 <!-- Callback Functions -->
-A callback function is a function that is passed as an argument to another function and is executed later.
+A callback function is a function that is passed as an argument to another function and is executed after some operation is completed.
 
 Callback function ek aisa function hota hai jo kisi dusre function ko argument ke roop me pass kiya jata hai aur baad me call hota hai.
 
-// 🌍 Real-World Example: Online Order (Callback)
-Customer order karta hai → payment complete hota hai → confirmation message aata hai.
+<!-- Real-World Example: -->
+ Online Order (Callback)
+A customer places an order → the payment is completed → a confirmation message is sent.
+The confirmation message comes after the payment is successful.
+In the same way, a callback function runs after another function finishes its work
 <!-- 
 function greet(name) {
     console.log("Hello " + name);
@@ -745,7 +657,6 @@ function greet(name) {
 function processUser(callback) {
     callback("Rahul");
 }
-
 processUser(greet); -->
 
 Explanation
@@ -754,17 +665,123 @@ processUser → doosra function
 greet ko argument ki tarah pass kiya gaya
 processUser ne baad me callback() call kiya
 
------------------------------------------------------------------------------------------------------------------
+<!-- Why Callbacks Are Important? -->
+Used in:
+Event handling
+API calls
+setTimeout / setInterval
+Asynchronous programming
+
+<!-- ✅ 3️⃣ Higher Order Function (HOF) -->
+A Higher Order Function is a function that either:
+Takes another function as an argument, or
+Returns a function as its result.
+
+Hindi:-
+Higher Order Function wo function hota hai jo ya to kisi dusre function ko argument me leta hai ya khud ek function return karta hai.
+<!-- Example:- -->
+A washing machine:
+You choose different modes (Quick Wash, Heavy Wash).
+The machine’s behavior changes based on the selected mode (function).
+The machine like a higher-order function.
+Example:-1
+<!-- 
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+console.log(calculate(5, 3, add)); // 8 -->
+
+Example:-2
+<!-- 
+function sayHello() {
+  console.log("Hello!");
+}
+
+function callFunction(fn) {
+  fn();
+}
+
+callFunction(sayHello); -->
+
+
+<!-- 🔹 1️⃣ Closure -->
+A Closure is a function that remembers the variables of its outer function.
+<!-- 
+function outer() {
+  let count = 0;
+
+  function inner() {
+    count++;
+    console.log(count);
+  }
+
+  return inner;
+}
+
+let counter = outer();
+
+counter(); // 1
+counter(); // 2
+counter(); // 3
+ -->
+
+<!-- 🔹 Why do we use Closure? -->
+We use closure to remember and protect data inside a function.
+
+<!-- 🔹 2️⃣ this in JavaScript -->
+this refers to the object that is calling the function.
+<!-- 
+let user = {
+  name: "Kajal",
+  greet: function () {
+    console.log(this.name);
+  }
+};
+
+user.greet(); // Kajal -->
+
+this का मतलब है —
+जो object function को call कर रहा है।
+
+<!-- 🔹 1️⃣ Parameter -->
+A parameter is a variable written inside the function parentheses when we define a function.
+<!-- 
+function greet(name) {   // name is a parameter
+  console.log("Hello " + name);
+} -->
+
+<!-- 🔹 2️⃣ Argument -->
+An argument is the actual value passed to a function when calling it.
+
+<!-- greet("Kajal"); -->
+👉 Yaha "Kajal" argument hai.
+
+<!-- 🔹 3️⃣ Return Statement -->
+The return statement sends a value back from a function.
+<!-- 
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(2, 3);
+console.log(result);   // 5 -->
+
+---------------------------------------------------------------------------------------------------------------------
 <!-- IIFE (Immediately Invoked Function Expression) -->
 IIFE is a function expression that is executed immediately after it is defined.
 
 🔹 Basic Syntax
-✅ Normal IIFE
+<!-- ✅ Normal IIFE -->
 (function () {
   console.log("IIFE executed");
 })();
 
-✅ Arrow Function IIFE
+<!-- ✅ Arrow Function IIFE -->
 (() => {
   console.log("Arrow IIFE executed");
 })();
@@ -778,15 +795,15 @@ IIFE is a function expression that is executed immediately after it is defined.
 })();
 
 👉 Global scope bachane ke liye
-===================================================================================================================================================================================================
-// Why do we use functions in real applications?
+==============================================================================================================
+<!-- // Why do we use functions in real applications? -->
 Functions are used to organize code, avoid repetition, and make applications easier to maintain and reuse.
-
+<!-- 
 // function calculateTotal(price, tax) {
 //   return price + tax;
-// }
+// } -->
 
-// What is a callback function? Give a real example?
+<!-- // What is a callback function? Give a real example? -->
 A callback function is a function that passed as an argument to another function and is executed after a task is completed.
 
 
@@ -794,63 +811,29 @@ setTimeout(() => {
   console.log("Order confirmed");
 }, 2000);
 
-// Where are arrow functions used in real projects?
+<!-- // Where are arrow functions used in real projects? -->
 Arrow functions are commonly used in event handlers, array methods, and callbacks because of their short syntax and lexical this.
 
 // users.map(user => user.name);
 
-
-// Why not use arrow functions everywhere?
+<!-- // Why not use arrow functions everywhere? -->
 ✅ Answer:Arrow function chhota hota hai, lekin isme apna this, arguments aur constructor nahi hota. Isliye hum ise har jagah use nahi karte.
 
 Arrow function ko tab avoid karna chahiye jab hume this, arguments, constructor ya hoisting ki zarurat ho.
 
-// ✅ Arrow Function kab use karna best hota hai?
+<!-- // ✅ Arrow Function kab use karna best hota hai? -->
 ✔ Callback functions
 ✔ map, filter, reduce
 ✔ Short logic wale functions
 ✔ setTimeout, setInterval
 
-// How do functions help in frontend development?
+<!-- // How do functions help in frontend development? -->
 Functions help in handling user events, validating forms, and interacting with APIs.
-
+<!-- 
 🧠 Example:
 function validateForm() {
   if (email === "") alert("Email required");
-}
-
-// Difference between function declaration and expression?
-Function declarations are hoisted, while function expressions are not.
-
-sayHi(); // works
-function sayHi() {}
-
-sayHello(); // error
-const sayHello = function() {};
-
-// What is a higher-order function?
-A higher-order function is a function that takes another function as an argument or returns a function.
-
-setTimeout(() => {}, 1000);
-
-
-// ❓ Q: Higher-order function kya hota hai?
-👉 Jo function ko argument me le ya return kare
-
-// ❓ Q: Function me parameter ka use kyun?
-Different values ke saath same logic use karne ke liye.
-
-function add(a, b) {
-  return a + b;
-}
-add(2, 3);
-
-
-// Function expression kya hota hai?
-
-const multiply = function (a, b) {
-  return a * b;
-};
+} -->
 ==============================================================================================
 
 <!-- * Arrays:- -->
@@ -915,10 +898,12 @@ console.log(c);      //[1, 2, 3, 4] -->
 
 -------------------------------------------------------------------
 🔹 7.slice(start, end) = start se uthao, end se pehle tak
-
-let fruits = ["Apple", "Banana", "Mango", "Orange"];
-let result = fruits.slice(1, 3);
-console.log(result);
+slice() returns a new array without changing the original array.
+<!-- 
+let arr = [1, 2, 3, 4, 5];
+let result = arr.slice(1, 4);
+console.log(result); // [2, 3, 4]
+console.log(arr);    // [1, 2, 3, 4, 5] -->
 
 Index:   0       1        2        3
 Value: ["Apple","Banana","Mango","Orange"]
@@ -926,7 +911,8 @@ Value: ["Apple","Banana","Mango","Orange"]
 // output:- Banana, Mango.
 
 ---------------------------------------------------------------------
-🔹 8. splice() – Add / Remove / replace elements (changes original)
+🔹 8. splice() – 
+splice() changes the original array by adding, removing, or replacing elements.
 <!-- 
 let arr = [1, 2, 3, 4];
 arr.splice(1, 2);
@@ -944,191 +930,14 @@ console.log(arr.indexOf(20)); // 1
 <!-- 
 let arr = [1, 2, 3];
 console.log(arr.includes(2)); // true -->
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-🔹 11. forEach() – 
-forEach() is used to run a function on each item of an array.
-Hindi:
-forEach() array ke har element par ek function chalata hai.
-<!-- 
-array.forEach(function(element, index, array) {
-  // code
-});
-
- -->
-Parameters:
-
-element → current value
-index (optional) → position
-array (optional) → original array
-
-Example:- 1
-<!-- 
-let fruits = ["Apple", "Banana", "Mango"];
-
-fruits.forEach(function(items){
-    console.log(item);
-});
- -->
-
-Output:-Apple
-        Banana
-        Mango
-
-Example:- 2
-<!-- 
-let number = [10, 20, 30];
-
-number.forEach(function(value, index) {
-    console.log(index + " : " + value);
-}); -->
-
-
-Example:-3 Arrow function:-Arrow function ek short form hota hai function likhne ka.
-<!-- 
-let number =[10, 20, 30];
-
-number.forEach((value, index) => {
-    console.log(index + " : " +value);
-}); -->
-
-Output:
-0 : 10
-1 : 20
-2 : 30
--------------------------------------------------------------------------------------------------------------------------------------
-// ❓ Q: Difference between map() and forEach()?
-“map() returns a new array after transformation, while forEach() is used only for iteration and does not return anything.”
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🔹 12. map() – Create a new array
-🧠 Syntax:-
-<!-- 
-let newArray = array.map((value, index) => {
-    return newValue;
-}); -->
-
-Example:-1 
-<!-- 
-let arr = [1, 2, 3];
-
-let newArr = arr.map(num => num * 2);
-console.log(newArr);    //[2, 4, 6]
- -->
-
-2️⃣ map() kya karta hai?
-
-Array ke har element par function chalata hai
-Naya array banata hai
-
-3️⃣ num => num * 2 kya hai?
-Ye arrow function hai
-num → current value
-num * 2 → jo value return hogi
-
-👉 Iska matlab: har number ko 2 se multiply karo
-<!-- 
-Same code (normal function se)
-
-let newArr = arr.map(function(num) {
-    return num * 2;
-}); -->
-=======================================================================================================================
-🔹 13. filter() – Filter values
-English:
-filter() creates a new array with elements that pass a test (condition).
-
-Hindi:
-filter() condition ke according values ko filter karke naya array banata hai.
-
-<!-- 🧠 Syntax
-let newArray = array.filter((value, index) => {
-    return condition;   // true ya false
-});
-
- -->
-
-let numbers = [1, 2, 3, 4, 5, 6];
-
-let even = numbers.filter(num => num % 2 === 0);
+-----------------------------------------------------------------------------------------------------------------------
+11. map()
+12. filter()
+13. reduce() 🔥🔥
+14. forEach()
  
-console.log(even);  //[2, 4, 6]
 
-
-<!-- : Numbers Greater Than 10 -->
-let nums = [5, 12, 8, 20, 3];
-
-let result = nums.filter(n => n > 10);
-
-console.log(result);
-
-Output:
-[12, 20]
-
-🔹 14. reduce() – Reduce an array to a single value.
-reduce() array ki sab values ko mila kar ek hi value banata hai.
-<!-- 
-let result = array.reduce((accumulator, currentValue) => {
-    return updatedValue;
-}, initialValue);
-
- -->
-
-accumulator (acc) → ab tak ka result
-currentValue → current element
-initialValue → starting value (optional but recommended)
-
-Example:-1 Sum of Numbers
-<!-- 
-let number = [1, 2, 3, 4];
-
-let sum = num.reduce((acc, cur) => {
-    return acc + cur;
-}, 0);
-
-consolo.log(sum);  //10
- -->
- Step 1:                                     
-acc = 0   // startValue                  
-cur = 1
-acc + cur = 1
-
-Step 2:
-acc = 1
-cur = 2
-acc + cur = 3
-
-Step 3:
-acc = 3
-cur = 3
-acc + cur = 6
-
-Step 4:
-acc = 6
-cur = 4
-acc + cur = 10
-
-➡️ Final answer = 10
-
-
-Example :- 2
-
-Total price
-<!-- 
-let price = [100, 200, 50];
-
-let total = price.reduce((acc, cur) => {
-    return acc + cur;
-}, 0);    //350
- -->
-
-map / filter / reduce yaad rakhne ka trick
-
-map → change karo
-filter → choose karo
-reduce → jod kar ek banao
------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------
 🔹 15. sort() – Sort array
 sort() sorts the elements of an array.
 sort() array ke elements ko sahi order me set karta hai.
