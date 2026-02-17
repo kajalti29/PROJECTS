@@ -1,9 +1,8 @@
-// let num = 5;
-// if(num % 2 === 0){
-//     console.log("even");
-// }else{
-//     console.log("odd"); 
-// }
+function greet(name) {
+    console.log("Hello " + name);
+}
+function processUser(callback) {
+    callback("Rahul");
+}
 
-
-
+processUser(greet); 
