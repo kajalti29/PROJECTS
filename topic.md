@@ -415,14 +415,3 @@ to ye master kar lo:
 ✔ Frequency count
 
 👉 Ye clear ho gaye to 80% interviews cover ho jaate hain 💪🔥
-
----
-
-Agar chaho to main tumhe:
-
-* 💥 Top 10 Fresher Coding Set (Test format me)
-* 💥 Ek mini mock interview le lu
-* 💥 Only array practice kara du
-* 💥 Ya DSA level shuru karein
-
-Tum kya karna chahte ho? 😎🔥
