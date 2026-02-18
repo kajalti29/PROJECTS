@@ -336,7 +336,7 @@ console.log(reverse); // 4321
 
 ```js
 let original = 121;
-let num = original;
+let numb= original;
 let reverse = 0;
 
 while (num > 0) {
@@ -461,4 +461,78 @@ for (let char of str) {
 console.log(count);
 ===================================================================================================================
 
+## 🟢 Basic Logic (Must Know)
+
+1. ✔ Check Even or Odd
+2. ✔ Check Positive, Negative or Zero
+3. ✔ Swap Two Numbers
+4. ✔ Find Largest of Three Numbers
+5. ✔ Check Prime Number
+6. ✔ Factorial of a Number
+7. ✔ Fibonacci Series
+8. ✔ Reverse a Number
+9. ✔ Check Palindrome (Number & String)
+10. ✔ Sum of Digits
+
+---
+
+## 🟡 Loop Based Important
+
+11. ✔ Print Numbers 1–100
+12. ✔ FizzBuzz
+13. ✔ Multiplication Table
+14. ✔ Count Digits in Number
+15. ✔ Print Pattern (Star Pattern)
+16. ✔ Find Armstrong Number
+17. ✔ Sum of Natural Numbers
+
+---
+
+## 🔵 Array Important Questions
+
+18. ✔ Find Largest Number in Array
+19. ✔ Find Smallest Number
+20. ✔ Find Second Largest
+21. ✔ Reverse an Array
+22. ✔ Remove Duplicates
+23. ✔ Count Frequency of Element
+24. ✔ Find Even Numbers in Array
+25. ✔ Sort an Array
+26. ✔ Merge Two Arrays
+27. ✔ Find Missing Number
+
+---
+
+## 🟣 String Important Questions
+
+28. ✔ Count Vowels
+29. ✔ Reverse String
+30. ✔ Check Palindrome String
+31. ✔ Count Words
+32. ✔ Find Duplicate Characters
+33. ✔ Capitalize First Letter
+
+---
+
+## 🔴 Object Based (Interview Important)
+
+34. ✔ Count Object Keys
+35. ✔ Loop Through Object
+36. ✔ Merge Two Objects
+37. ✔ Find Highest Value in Object
+
+---
+
+## 🟠 Real-World Type Logic
+
+38. ✔ Login Validation
+39. ✔ Password Strength Checker
+40. ✔ Cart Total Price Calculation
+41. ✔ Filter Products by Price
+42. ✔ Count Active Users
+43. ✔ Find Highest Salary Employee
+
+---
+
+# 🎯 Agar tum ye 40+ questions practice kar logi:
 

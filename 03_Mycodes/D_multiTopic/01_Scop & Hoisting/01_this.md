@@ -133,7 +133,7 @@ Function declaration fully hoist hoti hai, isliye ye work karta hai.
 Hindi:-
 Execution Context ek environment hota hai jahan JavaScript code execute hota hai.
 
--------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 <!-- 🔄 2️⃣ Array Methods (MOST IMPORTANT) -->
 map()
 filter()
@@ -143,7 +143,7 @@ find(), includes(), sort()
 
 <!-- 1️⃣ map() 🔥🔥 (MOST IMPORTANT) -->
 Creates a new array by applying a function to each element of the array.
-Original array change nahi hota.
+does not change original array.
 
 Jaise factory machine 🏭
 Raw items → process → new items
@@ -237,7 +237,6 @@ let sum = arr.reduce((acc, curr) => acc + curr, 0);
 console.log(sum); -->
 
 👉 Same result, no for loop.
-
 <!-- Example 2: Print 1 to 5 -->
 Without for loop (Using while)
 <!-- 
@@ -247,6 +246,21 @@ while (i <= 5) {
   console.log(i);
   i++;
 } -->
+
+🔥 1️⃣ Shopping Cart Total Price:-
+<!-- 
+let cart = [
+  { name: "Shirt", price: 500, qty: 2 },
+  { name: "Shoes", price: 1000, qty: 1 },
+  { name: "Cap", price: 200, qty: 3 }
+];
+
+let total = cart.reduce((sum, item) => {
+  return sum + item.price * item.qty;
+}, 0);
+
+console.log("Total Bill:", total); -->
+
 ----------------------------------------------------------------------------------------------------------------------
 🧩 3️⃣ Functions – Advance Level
 <!-- ✅ 1️⃣ Arrow Function -->

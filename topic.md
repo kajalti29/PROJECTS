@@ -313,3 +313,116 @@ class Person {
 3. Difference between synchronous and asynchronous?
 4. What are ES6 features?
 
+--------------------------------------------------------------------------------------------------------------
+Bahut important question 👍🔥
+
+### 🎯 **Fresher se sabse jyada kaun-se coding questions pooche jaate hain?**
+
+Main tumhe **real interview pattern** ke according bata raha hoon 👇
+
+---
+
+# 🔥 ✅ 1️⃣ String Based Questions (Very Common)
+
+✔ Reverse a string
+✔ Check palindrome
+✔ Count vowels
+✔ Remove duplicates from string
+
+👉 Reason: Logic + loops + string methods test karte hain.
+
+---
+
+# 🔥 ✅ 2️⃣ Array Based Questions (MOST ASKED)
+
+✔ Find largest number
+✔ Find second largest
+✔ Remove duplicates
+✔ Count frequency
+✔ Move zeros to end
+✔ Find missing number
+
+👉 70% fresher interviews me array question aata hi aata hai.
+
+---
+
+# 🔥 ✅ 3️⃣ Number Based Questions
+
+✔ Prime number
+✔ Factorial
+✔ Fibonacci
+✔ Armstrong number
+
+👉 Ye logical thinking check karte hain.
+
+---
+
+# 🔥 ✅ 4️⃣ Basic Function Logic
+
+✔ Closure counter example
+✔ Callback example
+✔ Difference between arrow & normal function
+✔ Hoisting output question
+
+---
+
+# 🔥 ✅ 5️⃣ Output Based Questions (Tricky)
+
+Example:
+
+```js
+console.log(a);
+var a = 10;
+```
+
+Ya
+
+```js
+function test() {
+  console.log(this);
+}
+test();
+```
+
+👉 Ye JS understanding check karta hai.
+
+---
+
+# 📊 Real Interview Probability (Fresher)
+
+| Topic           | Chance          |
+| --------------- | --------------- |
+| Array Question  | ⭐⭐⭐⭐⭐ (Highest) |
+| String Question | ⭐⭐⭐⭐            |
+| Prime/Factorial | ⭐⭐⭐             |
+| Closure / this  | ⭐⭐              |
+| Advanced JS     | ⭐               |
+
+---
+
+# 🎯 Final Honest Answer
+
+Agar tum fresher ho,
+to ye master kar lo:
+
+✔ Reverse string
+✔ Palindrome
+✔ Largest in array
+✔ Remove duplicates
+✔ Prime number
+✔ Factorial
+✔ Missing number
+✔ Frequency count
+
+👉 Ye clear ho gaye to 80% interviews cover ho jaate hain 💪🔥
+
+---
+
+Agar chaho to main tumhe:
+
+* 💥 Top 10 Fresher Coding Set (Test format me)
+* 💥 Ek mini mock interview le lu
+* 💥 Only array practice kara du
+* 💥 Ya DSA level shuru karein
+
+Tum kya karna chahte ho? 😎🔥
