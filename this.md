@@ -1102,10 +1102,9 @@ console.log(a); // 10
 console.log(b); // 20
 console.log(c); // 30 -->
 
-==============================================================================================================================================================
-
+===========================================================================================================================================================
 🟣 1️⃣ Objects in JavaScript
-* Objects:- An object is a collection of key : value pairs.
+"Object is a collection of key-value pairs used to store structured data."
 <!-- 
 let student = {
   name: "Kajal",
@@ -1113,6 +1112,9 @@ let student = {
   city: "Indore"
 };
  -->
+Here:
+name, age, city → keys
+"Kajal", 21, "Bhopal" → values
 
 <!-- Accessing Object Properties -->
 JavaScript me object ki properties (values) ko access karne ke 2 simple tareeke hote hain 👇
@@ -1134,6 +1136,18 @@ console.log(student["name"]); // Rahul
 console.log(student["age"]);  // 20
  -->
 
+ <!-- 🎤 Difference? -->
+"Dot notation is used when key is fixed.
+Bracket notation is used when key is dynamic.
+
+<!-- 🔥 4️⃣ Loop Through Object -->
+✔ for...in loop
+<!-- 
+for (let key in person) {
+  console.log(key, person[key]);
+} -->
+
+
 <!-- * Object Methods -->
 When a function is inside an object, it is called a method.
 Object ke andar function ho to use method kehte hain.
@@ -1150,8 +1164,6 @@ console.log(user.greet()); -->
 🔹 4️⃣ this Keyword ⭐⭐⭐:-
 this refers to the current object.
 
-Hindi:
-this current object ko refer karta hai.
 <!-- 
 let person = {
   name: "Kajal",
@@ -1160,9 +1172,68 @@ let person = {
     console.log(this.name);
   }
 };
-
 person.show(); // Kajal -->
 
+
+🔥 6️⃣ Object.keys(), values(), entries():-
+<!-- 
+const person = {
+  name: "Kajal",
+  age: 23
+};
+
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person)); -->
+✅ Output
+["name", "age"]
+["Kajal", 23]
+[["name", "Kajal"], ["age", 23]]
+
+---------------------------------------------
+<!-- ❓ Difference between Shallow and Deep Copy? -->
+
+<!-- Shallow Copy -->
+A shallow copy copies only top-level properties and shares nested references.
+obj1.name → "Kajal"
+obj2.name → "Riya"
+Primitive values do NOT share reference.
+✅ String,✅ Number,✅ Boolean,✅ null,✅ undefined,✅ BigInt,✅ Symbol
+
+<!-- 
+const original = {
+  name: "Kajal",
+  address: { city: "Pune" }
+};
+const copy = { ...original };   // Shallow copy
+copy.address.city = "Mumbai";
+
+console.log(original.address.city); -->
+✅ Output:
+Mumbai
+note:- Because inner object was shared.
+
+<!-- Deep Copy:- -->
+A deep copy creates a completely independent clone.No shared references at any level.
+✅ Primitive values → separate
+✅ Objects → separate
+✅ Arrays → separate
+✅ Nested objects → separate
+
+<!-- 
+const original = {
+  name: "Kajal",
+  address: { city: "Pune" }
+};
+
+const deepCopy = structuredClone(original);   // Deep copy
+deepCopy.address.city = "Mumbai";
+
+console.log(original.address.city); -->
+✅ Output:
+Pune
+Because structuredClone() creates completely new nested object.
+---------------------------------------------
 🟣 5️⃣ Object Destructuring ⭐⭐⭐ :-
 Object ke andar ki values ko directly variables me nikalna.
 <!-- 
@@ -1179,11 +1250,9 @@ console.log(age);  // 23
  -->
 
 6️⃣ JSON (parse, stringify) :-
-
 🔹 What is JSON?
-JSON is a data format used to send and receive data.
-JSON ek data format hai jo server aur client ke beech data transfer karta hai.
-
+JSON = JavaScript Object Notation
+is a data format used to send and receive data.
 🔹 JSON.stringify() (Object → JSON):-
 <!-- 
 let obj = { name: "Kajal", age: 23 };
@@ -1198,51 +1267,60 @@ let data = '{"name":"Kajal","age":23}';
 let obj = JSON.parse(data);
 console.log(obj.name); -->
 
-QUENTIONS:-
-<!-- 1️⃣ What is an object in JavaScript? -->
-An object is a collection of key-value pairs.
-
-<!-- 2️⃣ How do you create an object? -->
-let user = { name: "Kajal", age: 23 };
-
 <!-- 3️⃣ How do you access object properties? -->
 user.name;        // Dot notation
 user["age"];     // Bracket notation
 
-<!-- 4️⃣ Difference between dot and bracket notation? -->
-| Dot           | Bracket        |
-| ------------- | -------------- |
-| Simple & fast | Dynamic keys   |
-| No spaces     | Spaces allowed |
-
 <!-- 5️⃣ What is an object method? -->
 English: Function inside an object
-
-<!-- 6️⃣ What is the this keyword? ⭐⭐ -->
-English: Refers to the current object
-let user = {
-  name: "Kajal",
-  show() {
-    console.log(this.name);
-  }
-};
 <!-- 7️⃣ What is object destructuring? -->
 Hindi: Object se direct values nikalna
 let { name, age } = user;
 
 <!-- 🔟 Difference between object and array? -->
-| Object    | Array       |
-| --------- | ----------- |
-| Key-value | Index-based |
-| Unordered | Ordered     |
-
 <!-- 1️⃣7️⃣ Is object mutable? -->
 ✅ Yes, objects are mutable.
-=================================================================================================================================================================
+---------------------------------------------
+✅ 1️⃣ Do you know objects convert to arrays?
+Yes. We can convert object to array using:
+Object.keys()
+Object.values()
+Object.entries()
+<!-- 
+let user = { name: "Kajal", age: 22 };
+console.log(Object.keys(user));    
+// ["name", "age"]
+console.log(Object.values(user));  
+// ["Kajal", 22]
+console.log(Object.entries(user)); 
+// [["name","Kajal"], ["age",22]] -->
+
+✅ 2️⃣ Do you understand destructuring?
+Yes. Destructuring allows extracting properties from objects into variables.
+<!-- 
+let user = { name: "Kajal", age: 22 };
+let { name, age } = user;
+console.log(name); // Kajal
+ -->
+✅ 3️⃣ Do you know arrays are objects?
+Yes. In JavaScript, arrays are special type of objects.
+<!-- 
+let arr = [10, 20, 30];
+console.log(typeof arr); // object -->
+
+Because:
+Arrays store indexed key-value pairs
+Keys are numbers (0,1,2…)
+Example internal structure:
+
+{
+  0: 10,
+  1: 20,
+  2: 30
+}
+=============================================================================================================================
 🟤 1️⃣ Strings in JavaScript
-
 ✔ Strings are immutable (original string does not change)
-
 <!-- ✅ What is a String? -->
 A string is a sequence of characters.
 <!-- 
@@ -1252,13 +1330,11 @@ console.log(name)
 -->
 
 <!-- 🟤 2️⃣ String Methods :- -->
-
 🔹 1. length :- Find length of string
 <!-- 
 let str = "Hello";
 console.log(str.length); // 5
  -->
-
 🔹 2. toUpperCase() :- 
 <!-- 
 let str = "hello";
