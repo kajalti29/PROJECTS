@@ -1,23 +1,23 @@
-<!-- what is js ? -->
+<!-- what is JavaScript(js) ? -->
 JavaScript is a scripting language used to add interactivity and dynamic behavior to web pages.It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
 For example:
 When you click a button and a popup appears
 
-<!-- why called js scripting language -->
+<!-- why called “JavaScript scripting language"  -->
 “JavaScript is called a scripting language because it runs directly in the browser and adds dynamic behavior like button clicks, form validation, and live updates.”
 
 <!-- Features -->
 1️⃣ Interpreted Language
 2️⃣ Dynamically Typed
-3️⃣ First-Class Functions
+9️⃣ Platform Independent
 5️⃣ Event-Driven
+3️⃣ First-Class Functions
 8️⃣ Object-Oriented
-9️⃣ Platform Independent 
 
 👉 HTML = structure
 👉 CSS = design
 👉 JS = logic / brain 
----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------
 <!-- What is variable ? -->
 A variable is a container used to store data(value) in a program.
 
@@ -74,12 +74,7 @@ console.log(arr); // [1, 2, 3]
 var y = 10;
 var y = 20;
 console.log(y); -->
-
-<!-- 8️⃣ What is scope in JavaScript? -->
-Scope defines where a variable can be accessed.
-var → function scope
-let, const → block scope
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------
 DATA TYPES IN JAVASCRIPT:-
 👉 A Data Type tells us what kind of value is stored in a variable.
 
@@ -87,7 +82,7 @@ JavaScript has two main categories of data types 👇
 🔹 1. Primitive Data Types (Simple values) ->Immutable
 🔹 2. Non-Primitive (Reference) Data Types -> Mutable
 
-<!-- Primitive data types store single immutable values, while non-primitive data types store collections of values by reference. -->
+<!-- Primitive data types store single immutable values directly in memory, while non-primitive data types store collections of values by reference. -->
 
 🔹 1.  Primitive Data Types (Simple values):-
 Primitive data types are simple values that are stored directly in memory and are immutable (cannot be changed).
@@ -107,24 +102,28 @@ let isStudent = true; // Boolean
 let x;                // Undefined
 let y = null;         // Null -->
 
-
 1.String:-
 A string represent sequence of characters(text value)
+<!-- 🌍 Real-world Example: -->
+User name in Instagram → "Kajal"
 <!-- 
 let name = "Kajal";
-let message = 'Hello World'; -->
-📌 Strings can be written using " " or ' '.
+console.log(typeof name); // string -->
 
 2. Number:-
-It is used to store numeric values.(integers and decimals).
+Represents numeric values (integer or decimal)
+<!-- 🌍 Example: -->
+Bank balance → 5000
 <!-- 
-let age = 20;
-let price = 99.5; -->
-📌 JavaScript does not have int or float.
-All numbers are of type Number.
+let balance = 5000;
+let price = 99.99;
+console.log(typeof balance); // number
+ -->
 
 3. Boolean:-
-Represents a logical entity and can have to values true or false.
+Represents true or false value.
+<!-- 🌍 Example: -->
+User logged in? → true
 <!-- 
 let isLoggedIn = true;
 let isAdult = false; -->
@@ -138,12 +137,10 @@ console.log(x); // undefined -->
 
 5️⃣ Null:-
 Represents an empty value (intentionally).
-
 <!-- let data = null; -->
 
 6️⃣ BigInt:-
 Used to store very large numbers.
-
 <!-- let bigNumber = 12345678901234567890n; -->
 📌 n at the end is required.
 
@@ -152,27 +149,11 @@ Used to create unique values (advanced use).
 
 <!-- let id = Symbol("id"); -->
 
-
-🔹 2. Non-Primitive (Reference) Data Types:-
-Non-primitive data types are stored by reference and can hold multiple values. They are mutable.
-
+<!-- Non-Primitive -->
 📦 Types
 Object
 Array
 Function
-<!-- 
-let person = {
-  name: "Kajal",
-  age: 22
-};
-
-let arr = [1, 2, 3];
-
-function greet() {
-  console.log("Hello");
-} -->
-
-
 8️⃣ Object:-
 A object is a collection of key-value pairs.
 <!-- 
@@ -194,16 +175,14 @@ A function is a block of code that parform the specific code and can be reused.
 function add(a, b) {
   return a + b;
 } -->
-
-
-----------------------------------------------------------------------------
+---------------------------------------------
+<!-- IMPORTANTE -->
 <!-- 1️⃣1️⃣ What is typeof operator? -->
 It is used to check the data type of a variable.
-
 typeof 10;      // "number"
 typeof "hi";    // "string
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-🔥 JavaScript Operators:-
+<!-- 🔥 JavaScript Operators:- -->
 operators are symbol used to peform operation on value & variable.
 Example: + , - , * , / , == , ===.
 
@@ -305,7 +284,6 @@ console.log(n); // 6
 console.log(typeof 10); // number
 console.log(typeof "Hi"); // string -->
 
-
 6️⃣ Ternary Operator:-
 Short form of if-else.
 
@@ -319,32 +297,82 @@ console.log(msg); -->
 🧠 Use kaha?
 UI show/hide, button enable/disable
 
-
+--------------------------------------------------------------------------------------------
 8️⃣ Type Conversion Operators
-useed to convert data type
-👉 Data type badalne ke liye
+used to convert data type(Data type badalne ke liye)
+<!-- Types:- -->
+🔹 Implicit Conversion (Type Coercion)
+🔹 Explicit Conversion
+
+<!--Implicit Conversion (Type Coercion) -->
+JavaScript automatically converts type.
+
+console.log("5" + 2);  // "52"
+console.log("5" - 2);  // 3
+
+<!-- 🔹 Explicit Conversion -->
+Manually converting type.
+
+Number("10")  // 10
+String(10)    // "10"
+Boolean(1)    // true
+
+<!-- 🌍 Real-world Example: -->
+User enters age in input field → always string
+We convert it into number before calculation.
+
+<!-- let age = Number(prompt("Enter age")); -->
+-------------------------------------------
+<!-- : What is difference between single, double, and backtick? -->
+A: Single & double are same. Backtick allows template literals and multi-line strings.
+<!-- Q: Is NaN a number? -->
+A: Yes. typeof NaN is "number".
+<!-- Difference b/w == and ===? -->
+== → checks value only
+=== → checks value + type
+<!-- What is typeof null? -->
+typeof null   // "object"
+<!-- What is NaN? -->
+NaN means "Not a Number".
+But its type is number.
+typeof NaN // number
+<!--  Is NaN === NaN? -->
+NaN === NaN // false
+No. NaN is not equal to itself.
+----------------------------------------------------------
+<!-- 🔹 Falsy Values (Important – Yaad Karlo 🔥) -->
+JavaScript me sirf ye 7 values falsy hoti hain:
+* false
+* 0
+* -0
+* 0n
+* ""   (empty string)
+* null
+* undefined
+* NaN
+👉 Agar condition me inme se koi value hogi, to result false mana jayega.
 <!-- 
-Number("10");   // 10
-String(10);     // "10"
-Boolean(1);     // true
-Boolean(0);     // false -->
+if (0) {
+    console.log("Hello");
+} else {
+    console.log("Falsy value");
+} -->
+Output: Falsy value
 
-9️⃣ Bitwise Operators (Advanced)
-👉 Binary level par kaam karta hai
-| Operator | Meaning |    |
-| -------- | ------- | -- |
-| `&`      | AND     |    |
-| `        | `       | OR |
-| `^`      | XOR     |    |
-
-IMP:_
-✅ Arithmetic
-✅ Assignment
-✅ Comparison (===)
-✅ Logical
-✅ Ternary
-✅ typeof
-----------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- 🔹 Truthy Values -->
+Falsy ke alawa sab values truthy hoti hain ✅
+"hello"
+1
+-5
+[]
+{}
+true
+"0"
+<!-- 
+if ("hello") {
+    console.log("Truthy value");
+} -->
+----------------------------------------------------------
 # 🔥 Conditions in JavaScript (Full)
 “A conditional statement is used to make decisions in a program. It executes code based on whether a condition is true or false.”
 
@@ -411,7 +439,18 @@ switch (day) {
     console.log("Invalid day");
 }
 -->
----------------------------------------------------------------------------------------------------------------------
+🌍 Real-World Example
+Menu selection:
+1 → Pizza
+2 → Burger
+3 → Pasta
+Q1: Why break is important in switch?
+
+<!-- Q1: Why break is important in switch? -->
+Without break, execution continues to next cases (fall-through behavior).
+<!-- Q2: When to prefer switch over if-else? -->
+When checking one variable against multiple fixed values.
+----------------------------------------------
 <!-- Loops in JavaScript:- -->
 <!-- // 🔹 What are loops? -->
 Loops are used to repeat a block of code multiple times until a condition is false.
@@ -443,99 +482,69 @@ while (condition) {
 // // Output: 1 2 3 4 5
 
 <!-- 🔹 3️⃣ do...while loop:- -->
+Runs at least once, even if condition is false.
+OR
 Similar to while, but executes the code at least once.
 
 do {
   // code to run
 } while (condition);
 
-
+<!-- 
 let i = 6;
 do {
   console.log(i);
   i++;
 } while (i <= 5);
-// Output: 6  (executes once even if condition false)
-
+// Output: 6  (executes once even if condition false) -->
 -------------------------------------------------------------
-for...in is used to iterate over object keys, while for...of is used to iterate over iterable values like arrays and strings.
-
-🔹 4️⃣ for...in loop:-
-Used to iterate over object keys.
-
-let person = {
-  name: "Kajal",
-  age: 22,
-  city: "Indore"
-};
-
-for (let key in person) {
-  console.log(key);          // name, age, city
-  console.log(person[key]);  // Kajal, 22, Indore
-}
-
-
-
-🔹 5️⃣ for...of loop:-
-for...of loop is used to iterate over the values of iterable objects like arrays, strings, maps, etc.
-
-
-let arr = [10, 20, 30];
-
-for (let value of arr) {
-  console.log(value); // 10, 20, 30
-}
---------------------------------------------------------------------------------------------------------------------------
 <!-- 🔹 6️⃣ Loop Control Statements:- -->
 break → exit loop immediately.
-
+<!-- 
 for (let i = 1; i <= 5; i++) {
   if (i === 3) break;
   console.log(i);
 }
-// Output: 1 2
+// Output: 1 2 -->
 
 continue → skip current iteration.
 
-for (let i = 1; i <= 5; i++) {
+<!-- for (let i = 1; i <= 5; i++) {
   if (i === 3) continue;
   console.log(i);
 }
-// Output: 1 2 4 5
----------------------------------------------------------------------------------------------
- <!-- 🔹 Falsy Values (Important – Yaad Karlo 🔥) -->
-JavaScript me sirf ye 7 values falsy hoti hain:
-false
-0
--0
-0n
-""   (empty string)
-null
-undefined
-NaN
-👉 Agar condition me inme se koi value hogi, to result false mana jayega.
-<!-- 
-if (0) {
-    console.log("Hello");
-} else {
-    console.log("Falsy value");
-} -->
-Output: Falsy value
+// Output: 1 2 4 5 -->
+---------------------------------------------
+for...in is used to iterate over object keys, while for...of is used to iterate over iterable values like arrays and strings.
 
-<!-- 🔹 Truthy Values -->
-Falsy ke alawa sab values truthy hoti hain ✅
-"hello"
-1
--5
-[]
-{}
-true
-"0"
+🔹 4️⃣ for...in loop:-
+Used to iterate over object keys.
 <!-- 
-if ("hello") {
-    console.log("Truthy value");
+let user = {
+  name: "Kajal",
+  age: 22
+};
+
+for (let key in user) {
+  console.log(key);
 } -->
--------------------------------------------------------
+
+<!-- Can we use for...in for arrays? -->
+Technically yes, but not recommended because it loops over keys (indexes).
+
+🔹 5️⃣ for...of loop:-
+Used to iterate over values of iterable objects (array, string).
+<!-- 
+let arr = [10, 20, 30];
+
+for (let value of arr) {
+  console.log(value);
+} -->
+O/P:-
+10
+20
+30 
+----------------------------------------------
 <!-- 🟠 Functions :- -->
 ✔ What is a function
 ✔ Function Declaration vs Expression

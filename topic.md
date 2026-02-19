@@ -415,3 +415,13 @@ to ye master kar lo:
 ✔ Frequency count
 
 👉 Ye clear ho gaye to 80% interviews cover ho jaate hain 💪🔥
+🔥 4️⃣ What is hoisting?
+
+Answer:
+JavaScript moves variable and function declarations to the top of their scope before execution.
+
+console.log(a);
+var a = 10;
+
+
+Output: undefined

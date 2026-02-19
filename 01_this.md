@@ -97,7 +97,8 @@ console.log(z); // ✅ 30 -->
 
 <!-- 🚀 Hoisting -->
 <!-- 🔹 What is Hoisting? -->
-Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the memory creation phase, before the code is executed.
+Hoisting is a JavaScript behavior where variable and function declarations are moves to the top of their scope before execution.
+Variables declared with var are initialized as undefined, while let and const remain in the temporal dead zone until initialized.
 
 Imagine your name is already written on the attendance list before the class starts.
 
@@ -126,6 +127,74 @@ function sayHello() {
 } -->
 
 Function declaration fully hoist hoti hai, isliye ye work karta hai.
+
+<!-- 🔥 What is TDZ? -->
+TDZ (Temporal Dead Zone) is the time between variable hoisting and its initialization.
+For let and const, variable exists in memory but cannot be accessed before declaration.
+
+<!-- 🌍 Real-world Example -->
+Think of let like:
+Room is reserved (memory allocated)
+But you cannot enter until official opening (initialization).
+
+<!-- Lexical Environment -->
+It is the environment where variables and functions are stored based on where the code is written (lexical scope).
+
+<!-- function outer() {
+  let city = "Mumbai";
+
+  function inner() {
+    console.log(city);
+  }
+
+  inner();
+}
+
+outer();
+-->
+
+🌍 Real-world Example
+Think of scope like rooms in a house:
+People inside room can access main hall
+But main hall cannot access inside private room
+
+<!-- 🔥 3️⃣ this Keyword (Global vs Object vs Arrow) -->
+
+<!-- 🔥 4️⃣ Prototype & Prototypal Inheritance -->
+JavaScript uses prototype-based inheritance, where objects inherit properties and methods from other objects.
+
+<!-- 🌍 Real-world Example -->
+Think of prototype like:
+All students share same syllabus.
+Instead of giving each student separate syllabus copy.
+
+<!-- 🔥 5️⃣ Event Loop, Call Stack & Microtasks vs Macrotasks -->
+<!-- 🔹 Event Loop -->
+Event Loop is the system in JavaScript that checks if the call stack is empty and then runs pending tasks from the queue.
+
+<!-- Call Stack -->
+Call stack is a data structure that keeps track of function call and execution them one by one LIFO order.
+
+<!-- 
+function one() {
+  two();
+}
+
+function two() {
+  console.log("Hello");
+}
+
+one();
+ -->
+
+Execution order:
+first → second → console.log
+
+<!-- 🌍 Real-world Example -->
+Stack of plates 🍽️
+Last plate placed → first removed.
+
+<!-- 🔹 Microtasks vs Macrotasks -->
 
 <!-- 🔥 2️⃣ Execution Context -->
 <!-- 🔹 What is Execution Context? -->
