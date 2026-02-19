@@ -620,21 +620,32 @@ Syntax
 ------------------------------------------------------------
 <!-- 1️⃣ Function Declaration vs Function Expression -->
 Function Declaration:
-A function using the function keyword with a name. It is fully hoisted, meaning it can be called before it is defined in the code.
+A function defined using the function keyword with a name.It is fully hoisted and can be called before definition
 
 Function Declaration = A public rule
 A government rule exists before you read it.
-
-(Function Declaration ek public rule ki tarah hoti hai.
-Jaise government ka rule pehle se bana hota hai,
-chahe aap use baad me padho.)
 <!-- 
-function add(a, b) {
-  return a + b;
-} -->
+function greet(name) {
+  return "Hello " + name;
+}
 
+console.log(greet("Kajal")); -->
+Logic
+function greet(name) → creates a function
+return sends value back
+We call it using greet("Kajal")
+
+Function declarations are hoisted.
+<!-- 
+greet("Kajal");
+
+function greet(name) {
+  console.log("Hello " + name);
+} -->
+Works fine ✅
+-----------------------------------------------------------------
 Function Expression:
-A function assigned to a variable. It is not fully hoisted, so it cannot be called before it is defined.
+A function stored inside a variable. It is not fully hoisted, so it cannot be called before it is defined.
 Function Expression is like a job appointment letter.
 It becomes valid only after signing.
 <!-- 
@@ -663,7 +674,6 @@ const greet = () => {
     return a + b;
 }; -->
 
-
 <!-- 🔹 What is Hoisting? -->
 Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the memory creation phase, before the code is executed.
 
@@ -683,9 +693,7 @@ let b = 20;
 
 let bhi hoist hota hai, but it stays in Temporal Dead Zone.
 Isliye ReferenceError aata hai.
-
------------------------------------------------------------
--------------------------------
+--------------------------------------------------
 <!-- Callback Functions -->
 A callback function is a function that is passed as an argument to another function and is executed after some operation is completed.
 
@@ -756,7 +764,13 @@ callFunction(sayHello); -->
 
 
 <!-- 🔹 1️⃣ Closure -->
-A Closure is a function that remembers the variables of its outer function.
+A Closure is a function that remembers the variables from its outer function.
+<!-- Real-world Use -->
+Used in:
+Data privacy
+Counters
+Event handlers
+React hooks
 <!-- 
 function outer() {
   let count = 0;
@@ -775,9 +789,15 @@ counter(); // 1
 counter(); // 2
 counter(); // 3
  -->
+<!-- Logic -->
+outer() runs
+count = 0
+inner function returned
+inner still remembers count
+Every time we call → count increases
 
 <!-- 🔹 Why do we use Closure? -->
-We use closure to remember and protect data inside a function.
+We use closure to remember and protect data inside a function.They are widely used in callbacks, event handlers, and functional programming.
 
 <!-- 🔹 2️⃣ this in JavaScript -->
 this refers to the object that is calling the function.
@@ -839,9 +859,22 @@ IIFE is a function expression that is executed immediately after it is defined.
 (function () {
   console.log("Runs immediately");
 })();
-
+<!-- WHY:-/ -->
 👉 Global scope bachane ke liye
+IIFE is used to create a private scope
+
+<!-- Rest parameter collects multiple values into one array. -->
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b);
+}
+
+<!-- Spread operator expands an array into individual values. -->
+let arr1 = [1, 2];
+let arr2 = [...arr1, 3];
+
 ==============================================================================================================
+<!-- Q: Difference between normal function and arrow function? -->
+?
 <!-- // Why do we use functions in real applications? -->
 Functions are used to organize code, avoid repetition, and make applications easier to maintain and reuse.
 <!-- 
@@ -880,8 +913,33 @@ Functions help in handling user events, validating forms, and interacting with A
 function validateForm() {
   if (email === "") alert("Email required");
 } -->
-==============================================================================================
 
+🔥 1️⃣ Difference Between Arrow Function and Normal Function.
+
+A normal function has its own this, arguments, and can be used as a constructor.
+An arrow function does not have its own this or arguments and cannot be used as a constructor.
+<!-- 
+const user = {
+  name: "Kajal",
+  greet: function() {
+    console.log(this.name);
+  }
+};
+
+user.greet();
+-->
+
+<!-- 
+const user = {
+  name: "Kajal",
+  greet: () => {
+    console.log(this.name);
+  }
+};
+
+user.greet(); -->
+
+============================================================================================ 
 <!-- * Arrays:- -->
 An array is a collection of multiple values stored in a single variable.
 
@@ -1161,6 +1219,11 @@ let student = {
 Here:
 name, age, city → keys
 "Kajal", 21, "Bhopal" → values
+
+<!-- Q: Difference between dot and bracket notation? -->
+Dot notation is simpler and used when property name is fixed.
+Bracket notation is used when property name is dynamic or stored in a variable.
+
 
 <!-- Accessing Object Properties -->
 JavaScript me object ki properties (values) ko access karne ke 2 simple tareeke hote hain 👇
