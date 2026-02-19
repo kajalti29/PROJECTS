@@ -1642,31 +1642,26 @@ first → second → console.log
 <!-- 🌍 Real-world Example -->
 Stack of plates 🍽️
 Last plate placed → first removed.
-==============================================
-
-🔴 DOM (Very Important):-
+=============================================================
+<!-- 🔥 6️⃣ DOM (Document Object Model) -->
 <!-- What is DOM -->
 DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
 
-Hindi:
-DOM JavaScript ko HTML page ke elements ko access aur change karne deta hai.
-
+<!-- 🌍 Real-world Example -->
+Think of DOM like:
+HTML page = house
+DOM = blueprint of house
+JavaScript = person modifying house
 HTML
+
 <!-- <p id="text">Hello</p> -->
 
 JavaScript
 <!-- document.getElementById("text").innerText = "Hi"; -->
-
 👉 Page par Hello → Hi ho jayega
-----------------------------------------------------------
+--------------------------------------------------------------
 <!-- Why DOM is used? -->
-👉 To make web pages dynamic and interactive.
-
-| HTML                 | DOM                     |
-| -------------------- | ----------------------- |
-| Static               | Dynamic                 |
-| Markup               | Programming interface   |
-| Cannot change itself | Can be changed using JS |
+👉 To make web pages dynamic and interactive. 
 
 <!-- What is document? -->
 👉 document is the root object of DOM.
@@ -1674,29 +1669,179 @@ JavaScript
 <!-- What is window? -->
 👉 window is the global object in browser.
 
-<!-- 8️⃣ What is DOM tree? -->
+<!--What is DOM tree? -->
 👉 Hierarchical structure of HTML elements (parent–child).
-------------------------------------------------
-<!-- Selecting Elements -->
+------------------------------------------------------------------------------------------------------------------------------
+<!-- 🔥 1️⃣ Selecting Elements -->
 JavaScript me HTML elements ko select karne ke liye methods use hote hain.
 
 🔹 getElementById():-
-👉 ID ke base par element select karta hai
+Selects element by id.
 HTML:-
-<!-- <p id="para">Hello</p> -->
+<!-- <p id="demo">Hello</p> -->
 JS:-
 <!-- 
-let p = document.getElementById("para");
-console.log(p); -->
+let element = document.getElementById("demo");
+console.log(element); -->
 
 🔹 querySelector():- 
-👉 CSS selector ki tarah kaam karta hai.
+Selects first matching elements.
 <!-- 
 document.querySelector("#para");   // id
 document.querySelector(".box");    // class
 document.querySelector("p");       // tag
  -->
+
+ 🔹 querySelectorAll():-
+ Selects all matching elements (returns NodeList).
+
+ <!-- let elements = document.querySelectorAll(".item"); -->
+
+<!--Q.Difference between querySelector and querySelectorAll? -->
+querySelector returns first matching element.
+querySelectorAll returns all matching elements.
 -----------------------------------------------------------
+<!-- 🔥 2️⃣ Manipulating DOM -->
+DOM manipulation allows dynamic changes to content, style, and structure of web pages using JavaScript.
+
+<!-- 🔹 innerHTML -->
+Changes HTML inside element.
+
+element.innerHTML = "<b>New Text</b>";
+
+<!-- 🔹 textContent -->
+Changes only text (safe).
+
+element.textContent = "New Text";
+
+<!-- 🔹 style -->
+element.style.color = "red";
+
+<!-- 🔹 classList -->
+
+element.classList.add("active");
+element.classList.remove("active");
+element.classList.toggle("active");
+
+---------------------------------------------------------------------------------------------------------------------------
+<!-- 🔥 3️⃣ Event Listeners -->
+
+🔹 addEventListener():-
+Used to attach event to element.
+<!-- 
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function() {
+  alert("Button Clicked");
+}); -->
+
+🔥 Event Delegation (Important 🔥)
+Event delegation means attaching event listener to parent element instead of multiple child elements.
+
+<!-- 🧠 Why? -->
+Events bubble up in DOM.
+<!-- 
+document.getElementById("list").addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    console.log("Item clicked:", e.target.textContent);
+  }
+});
+ -->
+------------------------------------------------------------------------------------------------------------------------------
+🔥 BOM (Browser Object Model)
+BOM allows JavaScript to interact with browser features outside the document.
+
+<!-- 🔹 window Object -->
+Global object in browser.
+
+<!-- console.log(window.innerWidth); -->
+
+<!-- 🔹 navigator -->
+Gives browser information.
+
+<!-- console.log(navigator.userAgent); -->
+
+<!-- 🔹 location -->
+Used to get or change URL.
+<!-- 
+console.log(location.href);
+location.reload(); -->
+-------------------------------------------------------------------------------------------------------------------------
+<!-- Difference between setTimeout and setInterval? -->
+setTimeout runs once after delay.
+setTimeout → show OTP after 5 seconds
+setInterval runs repeatedly at given interval.
+setInterval → countdown timer
+
+<!-- Q: What is event bubbling? -->
+Event bubbles from child to parent elements.
+
+<!-- 🔹 setTimeout() -->
+Executes code after delay.
+setTimeout → show OTP after 5 seconds
+<!-- 
+setTimeout(() => {
+  console.log("Hello");
+}, 2000);
+ -->
+
+<!-- 🔹 setInterval() -->
+Repeats code after interval.
+
+setInterval(() => {
+  console.log("Running...");
+}, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Changing HTML & CSS:- 
 EXAMPLE:_
 <div id="box"></div>
