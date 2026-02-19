@@ -456,7 +456,7 @@ When checking one variable against multiple fixed values.
 Loops are used to repeat a block of code multiple times until a condition is false.
 
 <!-- 🔹 1️⃣ for loop:- -->
-Used when you know the number of iterations.
+for loop is used when the number of iterations is known.
 
 for (initialization; condition; increment/decrement) {
   // code to rune
@@ -468,7 +468,7 @@ for (initialization; condition; increment/decrement) {
 // // Output: 1 2 3 4 5
 
 <!-- 🔹 2️⃣ while loop:- -->
-Used when number of iterations is not known.
+while loop is used when the number of iterations is unknown and depends on a condition.
 
 while (condition) {
   // code to run
@@ -482,7 +482,7 @@ while (condition) {
 // // Output: 1 2 3 4 5
 
 <!-- 🔹 3️⃣ do...while loop:- -->
-Runs at least once, even if condition is false.
+do-while loop executes at least once, even if the condition is false.
 OR
 Similar to while, but executes the code at least once.
 
@@ -544,7 +544,44 @@ O/P:-
 10
 20
 30 
-----------------------------------------------
+<!-- 1️⃣ Difference between for, while, do-while -->
+
+for loop is used when the number of iterations is known.
+while loop is used when the number of iterations is unknown and depends on a condition.
+do-while loop executes at least once, even if the condition is false.
+
+<!-- // for loop
+for (let i = 1; i <= 3; i++) {
+  console.log(i);
+}
+// while loop
+let i = 1;
+while (i <= 3) {
+  console.log(i);
+  i++;
+}
+// do-while loop
+let i = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 3); -->
+
+<!-- 🔥 2️⃣ What is fall-through in switch? -->
+The execution continues to the next case even if it does not match.
+
+<!-- let day = 1;
+switch (day) {
+  case 1:
+    console.log("Monday");
+  case 2:
+    console.log("Tuesday");
+}
+Output:
+Monday
+Tuesday
+Because break is missing. -->
+---------------------------------------------
 <!-- 🟠 Functions :- -->
 ✔ What is a function
 ✔ Function Declaration vs Expression
