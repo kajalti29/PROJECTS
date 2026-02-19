@@ -864,11 +864,13 @@ IIFE is a function expression that is executed immediately after it is defined.
 IIFE is used to create a private scope
 
 <!-- Rest parameter collects multiple values into one array. -->
+Rest → collect all chocolates into one box
 function sum(...numbers) {
   return numbers.reduce((a, b) => a + b);
 }
 
 <!-- Spread operator expands an array into individual values. -->
+Spread → open box and spread chocolates individually.
 let arr1 = [1, 2];
 let arr2 = [...arr1, 3];
 
@@ -938,7 +940,6 @@ const user = {
 };
 
 user.greet(); -->
-
 ============================================================================================ 
 <!-- * Arrays:- -->
 An array is a collection of multiple values stored in a single variable.
@@ -1082,7 +1083,13 @@ let arr = [10, 20, 30];
 console.log(arr.findIndex(num => num > 15)); // 1 -->
 
 🔹 20. some() – At least one true?
+Returns true if at least one element matches.
+<!-- numbers.some(num => num > 2); -->
+
 🔹 21. every() – All true?
+Returns true if all elements match.
+numbers.every(num => num > 0);
+
 
 ------------------------------------------------------------------------
 Array Methods (frontend ka heart ❤️)
@@ -1358,6 +1365,13 @@ console.log(name); // Kajal
 console.log(age);  // 23
  -->
 
+<!-- 🔥 5️⃣ What is Immutability? -->
+Immutability means not modifying the original data, but creating a new copy instead.
+<!-- 
+let arr = [1, 2];
+let newArr = [...arr, 3];
+ -->
+
 6️⃣ JSON (parse, stringify) :-
 🔹 What is JSON?
 JSON = JavaScript Object Notation
@@ -1515,7 +1529,7 @@ change → toUpperCase, toLowerCase, replace
 check → includes, indexOf
 cut → slice, substring
 convert → split
-===========================================================================================================================================================================
+========================================================================================
 🔢 NUMERICAL / CODE QUESTIONS:-
 
 ## 🔢 NUMERICAL / CODE QUESTIONS
@@ -1602,7 +1616,33 @@ let rev = str.split("").reverse().join("");
 
 console.log(str === rev); // true
 ```
-========================================================================================================================================================
+==============================================
+!-- 🔥 5️⃣ Event Loop, Call Stack & Microtasks vs Macrotasks -->
+<!-- 🔹 Event Loop -->
+Event Loop is the system in JavaScript that checks if the call stack is empty and then runs pending tasks from the queue.
+
+<!-- Call Stack -->
+Call stack is a data structure that keeps track of function call and execution them one by one LIFO order.
+
+<!-- 
+function one() {
+  two();
+}
+
+function two() {
+  console.log("Hello");
+}
+
+one();
+ -->
+
+Execution order:
+first → second → console.log
+
+<!-- 🌍 Real-world Example -->
+Stack of plates 🍽️
+Last plate placed → first removed.
+==============================================
 
 🔴 DOM (Very Important):-
 <!-- What is DOM -->
@@ -1764,534 +1804,3 @@ btn.addEventListener("click", () => {
   para.innerText = "Changed";
 });
 =====================================================================================================================================================
-
-🔶 ADVANCED JAVASCRIPT (INTERVIEW COMPLETE):-
-
-🟢 1️⃣ Scope (Global, Function(Local), Block)
-<!-- 🔹 Scope kya hota hai? -->
-Scope defines where a variable can be accessed in a program.
-Hindi:-Scope batata hai ki variable ko kaha access (use) kar sakte hain.
-
-Global → everywhere
-Local → inside function
-Block → inside { }
-
-<!-- 🔹 Global Scope:- -->
-👉 Variable poore program me access hota hai
-<!-- 
-let x = 10; // global
-
-function show() {
-  console.log(x);
-}
-show(); // 10
- -->
-
-🟡 Local (Function) Scope:-
-Variable function ke andar declare hota hai
-Sirf usi function ke andar use hota hai.
-<!-- 
-function test() {
-  let y = 5; // local
-  console.log(y);
-}
-test();
-// console.log(y); ❌ error
- -->
- NOTE:-
-y sirf function ke andar zinda hai
-Function ke bahar y exist hi nahi karta
-
-🟣 Block Scope:-
-{ } ke andar declare variable.
-<!-- 
-if (true) {
-  let z = 20;
-  console.log(z); // 20
-}
-// console.log(z); ❌ error -->
-
------------------------------------------------------------------------------------------------------------------------
-🟢 2️⃣ Hoisting (MOST ASKED 🔥):-
-Hoisting is JavaScript’s behavior where variable and function declarations are moved to the top of their scope before execution.
-
-HINDI:_Hoisting JavaScript ka behavior hai jisme declarations ko code run hone se pehle upar move kar diya jata hai.
-
-| Type                 | Hoisting      |
-| -------------------- | ------------- |
-| `var`                | ✅ (undefined) |
-| `let`                | ❌ (TDZ)       |
-| `const`              | ❌ (TDZ)       |
-
-
-🔹 Example 1: var Hoisting
-<!-- 
-console.log(a); // undefined
-var a = 10; -->
-
-👉 JavaScript ise aise samajhti hai:
-<!-- 
-var a;
-console.log(a);
-a = 10; -->
-
-🔹 Example 2: let & const
-<!-- 
-console.log(b); // ❌ Error
-let b = 20; -->
-
-👉 Reason:
-let aur const hoist to hote hain,
-lekin Temporal Dead Zone (TDZ) me hote hain
-isliye access nahi kar sakte.
-
-🔹 Example 3: Function Hoisting
-<!-- 
-hello();
-
-function hello() {
-  console.log("Hello");
-} -->
-
-👉 Output:
-Hello
-
-<!-- TDZ (Temporal Dead Zone):- -->
-Temporal Dead Zone is the time between variable hoisting and its initialization when the variable cannot be accessed.
-
-👉 Ye wo time/area hota hai
-jab let aur const variables declare hone se pehle
-use nahi kiye ja sakte.
-<!-- 
-console.log(a); // ❌ Error (TDZ)
-let a = 10; -->
-
-👉 a exist karta hai,
-lekin jab tak line let a = 10; run nahi hoti
-tab tak access karna mana hai.
--------------------------------------------------------------------------------------------------------------------------
-🟢 3️⃣ Closures (VERY IMPORTANT 🔥):-
-Closure tab banta hai jab inner function, outer function ke variables ko access karta hai, even after outer function has finished.
-
-HINDI:_
-👉 Function apne outer (bahar ke) variables ko yaad rakhta hai, chahe outer function execute ho chuka ho.
-
-<!-- Real Life Example 🧠 -->
-Socho:
-Tumhari diary (outer function)
-Uske andar secret page (inner function)
-Diary band ho gayi
-Par secret page ko secret yaad hai 😄
-
-Example:-
-<!-- 
-function outer() {
-    let count = 0;
-
-  function inner() {
-    count++;
-    console.log(count);
-  }
-
-  return inner;
-}
-
-let result = outer();
-result(); // 1
-result(); // 2
-result(); // 3
- -->
-
-1️⃣ Outer function
-2️⃣ Outer variable
-3️⃣ Inner function return
-Bas ✔️ itna yaad rakhna hai
-
------------------------------------------------------------------------------------------------------------------------------------------------
-🟢 4️⃣ Execution Context:-
-👉 JavaScript code run hone se pehle Execution Context banta hai.
-🔹 Types:
-
-✔ Global Execution Context
-✔ Function Execution Context
-
-<!-- 🟢 5️⃣ Call Stack:- -->
-Call Stack ek stack (LIFO) structure hai jo track karta hai
-ki kaunsa function abhi run ho raha hai aur kaunsa baad me run hoga.
-LIFO = Last In, First Out
-<!-- 
-function first() {
-  console.log("First");
-}
-
-function second() {
-  first();
-  console.log("Second");
-}
-
-second();
- -->
- o/p:-   First
-         Second
-
-🟢 6️⃣ Memory Heap:-
-Memory Heap mtlb Jahan objects & reference data store hote hain.
-
-let obj = { name: "JS" };
-
-<!-- 🟢 7️⃣ Event Loop (INTERVIEW FAVORITE 🔥🔥):- -->
-👉 Event Loop asynchronous code ko handle karta hai.
-(jaise setTimeout, promises, events)
-<!-- 
-console.log("start);
-
-setTimeout(() => {
-    console.log("Timeout");
-}, 0);
-
-console.log("End"); -->
-
-o/p:-Start
-     End
-     Timeout
-
-
-🟢 8️⃣ setTimeout:-
-👉 Function ko delay ke baad run karta hai.
-setTimeout runs a function once after a delay.
-<!-- 
-setTimeout(() => {
-  console.log("Hello");
-}, 2000); -->
-
-🟢 9️⃣ setInterval:- 
-👉 Function ko bar-bar run karta hai.
-setInterval runs a function repeatedly at fixed intervals.
-<!-- 
-setInterval(() => {
-  console.log("Hi");
-}, 2000);
-
- -->
- o/p:-
-Hi
-Hi
-Hi
-...
-
-Stop kaise kare?
-🔹 clearTimeout
-<!-- 
-let t = setTimeout(() => {
-  console.log("Hello");
-}, 2000);
-
-clearTimeout(t); -->
-
-🔹 clearInterval
-<!-- 
-let i = setInterval(() => {
-  console.log("Hi");
-}, 2000);
-
-clearInterval(i); -->
-
-=========================================================================================================================================================
-ASYNCHRONOUS JAVASCRIPT (INTERVIEW MUST)
-
-🟢 2️⃣ Synchronous vs Asynchronous
-
-🔹 Synchronous:-
-👉 Line-by-line code execution (blocking).
-<!-- 
-console.log("A");
-console.log("B");
-console.log("C"); -->
-
-0/p:- A B C
-
-🔹 Asynchronous:-
-Asynchronous means the code does not wait.
-execute the code without waiting.
-
-EXAMPLE:_ 1
-<!-- 
-console.log("A");
-
-setTimeout(() => {
-    console.log("B");
-}, 1000);
-
-console.log("c"); -->
-
-o/p:-
-A 
-C
-B
-
-EXAMPLE:_2
-
-<!-- console.log("Start");
-
-setTmeout(() => {
-    console.log("Async");
-}, 1000);
-
-console.log("End"); -->
-
-Output:
-Start
-End
-Async
-
----------------------------------------------------------------------------------------------------------------------------------------------------
-🔵 Callbacks:-
-A callback is a function passed as an argument to be executed after a task is completed.
-
-HINDI:-
-Callback ek function hota hai jo dusre function ke complete hone ke baad call hota hai.
-<!-- 
-function first(callback){
-    console.log("First function done");
-    callback();
-}
-
-function second(){
-    console.log("Second function called");
-}
-
-first(second); -->
-
---------------------------------------------------Agar dono callback hote to aisa hota 👇
-<!--
- function main(cb1, cb2) {
-  cb1();
-  cb2();
-}
-
-function one() {
-  console.log("One");
-}
-
-function two() {
-  console.log("Two");
-}
-
-main(one, two); -->
-
-✔️ Yahan 2 callback functions hain → one, two
--------------------------------------------------------------------
-🟢 4️⃣ Promises (VERY IMPORTANT 🔥):-
-A Promise is an object that represents future success or failure.
-A Promise is an object used to handle future results of an operation.
-Hindi:-
-Promise ek object hota hai jo future me
-success (resolve) ya failure (reject) batata hai.
-
-<!-- Promise States -->
-✔ Pending
-✔ Resolved
-✔ Rejected
-<!-- 
-let promise = new Promise(function (resolve, reject) {
-  let success = true;
-
-  if (success) {
-    resolve("Success");
-  } else {
-    reject("Failed");
-  }
-});
-
-promise
-  .then(function (result) {
-    console.log(result);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
- -->
-Why Promises?
-👉 To avoid callback hell
- ------------------------------------------------------------------------------------------------------------
-🟢 5️⃣ async / await (MOST ASKED 🔥🔥):-
-async → makes a function return a Promise
-
-async function hello() {
-  return "Hello";
-}
-
-
-await → waits for a Promise to resolve
-async function show() {
-  let result = await Promise.resolve("Done");
-  console.log(result);
-}
-show();
-
-
-<!-- Pizza Order Example -->
-<!-- 
-async function orderPizza() {
-  console.log("Order placed");
-
-  let pizza = await getPizza(); // wait
-  console.log("Pizza received");
-
-  console.log("Eating pizza");
-} -->
-
-
-📌 Matlab:
-
-Order diya
-Wait kiya pizza ke aane ka
-Pizza mila
-Khana shuru 😄
-
--------------------------------------------------------------------------------------------------------------------
-🟢 6️⃣ Fetch API:-
-👉 Server se data lane ke liye use hota hai.
-Fetch → get data from server
-<!-- 
-fetch("https://api.example.com/data")
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err)); -->
-
-🔹 Fetch using async/await
-<!-- 
-async function fetchData() {
-  let res = await fetch("https://api.example.com/data");
-  let data = await res.json();
-  console.log(data);
-} -->
-
-🟢 7️⃣ Error Handling (try-catch):-
-👉 Error ko handle karne ke liye
-<!-- 
-try {
-  let x = y + 10;
-} catch (err) {
-  console.log("Error occurred");
-} -->
-
-==========================================================================================================================================================================
-
-<!-- ES6+ Features -->
-ES6 (ECMAScript 2015) se JavaScript me new features aaye
-jo code ko short, clean aur powerful banate hain.
-
-1️⃣ Template Literals:- 
-👉 String ko easy aur clean tarike se likhne ke liye.
-<!-- 
-❌ Old way
-let name = "Rahul";
-console.log("Hello " + name); 
--->
-<!-- 
-✅ ES6 way
-let name = "Rahul";
-console.log(`Hello ${name}`);
- -->
-✔ Backtick ( ) use hota hai
-✔ ${ } ke andar variable
-🧠 Use: String + variable combine karna easy
-
-EXAMPLE:-
-
-<!-- let name = "Kajal";
-let age = 22;
-
-let msg = `My name is ${name} and my age is ${age}`;
-console.log(msg);
- -->
-
-
-Normal string:
-
-"Sum is " + (a + b)
-
-Template literal:
-
-`Sum is ${a + b}`
-----------------------------------------------------------------------------------------------------------
-
-🟢 2️⃣ Spread Operator (...):-
-
-
-| Spread                      | Rest                            |
-| --------------------------- | ------------------------------- |
-| Values ko **phailaata** hai | Values ko **collect** karta hai |
-| Use while calling           | Use while defining              |
-| `sum(...arr)`               | `function sum(...arr)`          |
-
-🟢 2️⃣ Spread Operator (...):-
-Array ya object ko expand karta hai.
-
-Example (Array)
-<!-- 
-let a = [1, 2, 3];
-let b = [...a, 4, 5];
-
-console.log(b); // [1,2,3,4,5] -->
-
-Example (Object)
-
-<!-- let obj1 = { name: "A" };
-let obj2 = { ...obj1, age: 20 };
- -->
-
-------------------------------------------------------------------------
-3️⃣ Rest Operator (...):-
-
-👉 Multiple values ko ek array me collect karna
-<!-- 
-function sum(...numbers) {
-  console.log(numbers);
-}
-
-sum(10, 20, 30); -->
-
-📌 Output:
-[10, 20, 30]
-
------------------------------------------------------------------------------------------------------------
-4️⃣ Modules (import, export):-
-👉 Code ko alag-alag files me todna.
-
-👉 export se cheez bahar bhejte hain
-👉 import se cheez andar le aate hain
-
-📁 math.js
-<!-- 
-export function add(a, b) {
-  return a + b;
-} -->
-
-📁 main.js
-<!-- 
-import { add } from "./math.js";
-console.log(add(2, 3)); -->
-
------------------------------------------------------------------------------------------------------------------
-🟢 5️⃣ Default Parameters:-
-Default Parameters ka matlab hota hai:
-👉 Function ke parameter ko pehle se hi ek value de dena,
-taaki agar user koi value pass na kare to function error na de aur default value use ho jaye.
-
-Default parameters allow function parameters to have predefined values if no argument is passed.
-<!-- 
-function greet(name = "User") {
-  console.log("Hello " + name);
-}
-
-greet();        // Hello User
-greet("Kajal"); // Hello Kajal -->
-
----------------------------------------------------------------------------------------------------
-Optional Chaining
-
-🟢 Optional Chaining (?.):-
-
