@@ -1652,8 +1652,8 @@ Think of DOM like:
 HTML page = house
 DOM = blueprint of house
 JavaScript = person modifying house
-HTML
 
+HTML
 <!-- <p id="text">Hello</p> -->
 
 JavaScript
@@ -1776,8 +1776,9 @@ setInterval → countdown timer
 <!-- Q: What is event bubbling? -->
 Event bubbles from child to parent elements.
 
+---------------------------------------------------------------
 <!-- 🔹 setTimeout() -->
-Executes code after delay.
+setTimeout Executes code after delay.
 setTimeout → show OTP after 5 seconds
 <!-- 
 setTimeout(() => {
@@ -1786,47 +1787,306 @@ setTimeout(() => {
  -->
 
 <!-- 🔹 setInterval() -->
-Repeats code after interval.
+setInterval Repeats code after interval.
 
 setInterval(() => {
   console.log("Running...");
 }, 1000);
 
+----------------------------------------------------------------------------------------------------------
+<!-- 🔥 15 MOST ASKED DOM INTERVIEW QUESTIONS -->
+<!-- 1️⃣ What is DOM? -->
+DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
+
+<!-- 🌍 Real-world Example -->
+Think of DOM like:
+HTML page = house
+DOM = blueprint of house
+JavaScript = person modifying house
+
+<!--2️⃣ Difference between getElementById and querySelector? -->
+getElementById selects by id only.
+querySelector selects using any CSS selector.
+
+<!-- 3️⃣ Difference between innerHTML and textContent? -->
+innerHTML parses HTML.
+textContent handles only text.
+
+<!-- 4️⃣ What is event bubbling? -->
+Event bubbles from child to parent.
+
+<!-- 5️⃣ What is event capturing? -->
+Event flows from parent to child.
+
+<!-- 6️⃣ What is event delegation? -->
+Attaching event listener to parent instead of multiple children.
+
+<!-- 7️⃣ Difference between addEventListener and onclick? -->
+addEventListener allows multiple handlers.
+onclick supports only one.
+
+<!-- 8️⃣ What is e.target? -->
+The element that triggered the event.
+
+<!-- 9️⃣ What is preventDefault()? -->
+Prevents default browser behavior.
+
+<!-- 🔟 What is stopPropagation()? -->
+Stops event from bubbling.
+
+<!-- 1️⃣1️⃣ Difference between NodeList and HTMLCollection? -->
+NodeList can be static.
+HTMLCollection is always live.
+------------------------------------------------------------------------------------------------------------------------------
+<!-- synchronous:- -->
+Synchronous JavaScript executes code line by line, and each task must complete before the next one starts.
+
+Real-world Example:-
+Imagine you are standing in a bank queue. Until the person in front of you finishes their work, your turn will not come.
+1. Example:-
+<!-- 
+console.log("Start");
+console.log("Middle");
+console.log("End"); 
+
+Output:-Start
+        Middle
+        End
+-->
+2. Example:-
+<!-- 
+console.log("A");
+console.log("B");
+console.log("C");
+
+O/P:- A
+      B
+      C -->
+🔹 2️⃣ Asynchronous(Wait kare bina next chalega)
+Asynchronous JavaScript allows certain tasks (like API calls, timers, file operations) to run in the background without blocking the execution of the rest of the code.
+1. Example:-
+<!-- 
+console.log("start");
+
+setTimeout(() => {
+  console.log("Middle");
+  }, 2000);
+
+console.log("End")   
+Output:-
+Start
+End
+Middle
+-->
+
+2. Example:-
+<!-- 
+console.log("A");
+setTimeout(() => {
+  console.log("B");
+}, 2000);
+
+console.log("C") 
+
+Output:-A
+        C
+        B -->
+
+Restaurant me order diya →
+Jab tak food ready ho, aap baaki kaam kar sakte ho.
+English:-
+When you order food at a restaurant, the preparation happens in the background, and you are free to do other activities while waiting.
+
+<!-- ❓1. Is JavaScript synchronous or asynchronous? -->
+JavaScript is single-threaded and synchronous by default,
+but it can handle asynchronous operations using:
+Callbacks
+Promises
+Async/Await
+Event Loop
+
+<!-- ❓2. What is Blocking and Non-Blocking code? -->
+Blocking: Stops execution until task finishes.
+Non-Blocking: Doesn’t stop execution.
+
+<!-- ❓4. What are different ways to handle async in JS? -->
+Callback
+Promise
+Async/Await
+
+imp:-
+<!-- 👉 “Why is JavaScript called single-threaded but still asynchronous?” -->
+JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main threa
+
+!-- 2️⃣ setTimeout() -->
+setTimeout executes a function after a specified delay asynchronously.
+<!-- 
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Hello after 2 seconds");
+}, 2000);
+
+console.log("End"); -->
+
+Start
+End
+Hello after 2 seconds
+
+<!-- 3️⃣ setInterval() -->
+setInterval runs a function repeatedly at fixed time intervals.
+<!-- 
+setInterval(() => {
+  console.log("Hello every 1 second");
+}, 1000); -->
+Yeh har 1 second me chalega
+
+
+Stop karne ke liye:
+<!-- 
+let id = setInterval(() => {
+  console.log("Hello");
+}, 1000);
+
+clearInterval(id); -->
+
+=========================================
+<!-- 🔥 3️⃣ Promises -->
+A Promise is an object that represents a future value — either resolved or rejected.
+It has three states: 
+1️⃣pending, 
+2️⃣Resolved(fulfilled), and 
+3️⃣Rejected. 
+We use .then() for success and .catch() for error handling.”
+<!-- 🌍 Real-world Example -->
+Online payment
+Success → then
+Failed → catch
+
+<!-- Promises handle asynchronous operations in a cleaner way than callbacks and avoid callback hell. -->
+
+
+<!-- 
+let promise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Operation successful");
+  } else {
+    reject("Operation failed");
+  }
+}); -->
+
+🔹 then()
+Runs when resolved.
+<!-- 
+promise.then(result => {
+  console.log(result);
+}); -->
+
+🔹 catch()
+Runs when rejected.
+<!-- 
+promise.catch(error => {
+  console.log(error);
+}); -->
+
+🔹 finally()
+Runs always.
+<!-- 
+promise.finally(() => {
+  console.log("Done");
+}); -->
+
+--------------------------------------------------------------
+🔥 4️⃣ Async / Await
+
+async/await simplifies promise handling and improves readability by avoiding chaining.
+
+🌍 Real-world Example
+You order food → wait (await) → eat when ready.
+
+?
+-----------------------------------------------0-------------
+🔥 5️⃣ Fetch API & AJAX
+
+<!-- 🔹 What is AJAX? -->
+AJAX allows sending and receiving data from server without refreshing page.
+
+
+<!-- 🔹 Fetch API -->
+Fetch API is a modern JavaScript method for making HTTP requests and works with promises.
+Modern way to make HTTP requests.(short)
+
+<!-- 
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
+ -->
+
+🔥 Using Async/Await:-
+<!-- 
+async function getPost() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getPost(); -->
+
+🧠 Flow
+fetch sends request
+Server responds
+Convert to JSON
+Use data
+-----------------------------------------------------------------------------------------------------------------------------
+🔥 9️⃣ Error Handling in JavaScript
 
 
 
+🔥 1️⃣ try, catch, finally:-
+try-catch allows handling runtime errors without stopping program execution. The finally block runs regardless of whether an error occurred or not.
+
+try...catch is used to handle runtime errors gracefully.
+
+Real-world Example
+Think like:
+
+try → Try opening file
+catch → If file not found → show error
+finally → Close file connection
+
+<!-- 
+try {
+  // code that may cause error
+} catch (error) {
+  // handle error
+} finally {
+  // always runs
+}
+ -->
 
 
+🧠 Logic
+try → execute risky code
+catch → handle error
+finally → always executes
 
 
+<!-- 🔥 2️⃣ throw (Custom Errors) -->
+throw is used to manually create and throw custom errors.
 
 
+<!-- Q4: Difference between throw and console.log? -->
+throw stops execution and sends error to catch block.
+console.log only prints message.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
