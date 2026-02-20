@@ -55,3 +55,23 @@
 //     console.log("Not Palindrom");
 // }
 
+
+// prime 5
+let num = 8;
+isPrime = true;
+
+if(num <= 1){
+    isPrime = false;
+}else{
+    for(let i = 2; i< num; i++){
+        if(num % i === 0){
+            isPrime = flase;
+            break;
+        }
+    }
+}
+if(isPrime){
+    console.log("prime");
+}else{
+    console.log("not prime");
+}
