@@ -314,114 +314,39 @@ class Person {
 4. What are ES6 features?
 
 --------------------------------------------------------------------------------------------------------------
-Bahut important question 👍🔥
+<!-- 🔥 1️⃣ What happens when you run JavaScript code in the browser? -->
+JavaScript is executed in a single-threaded environment using the call stack.
+Synchronous code runs first. Asynchronous operations are handled by Web APIs and placed into task queues. The event loop moves tasks into the call stack when it becomes empty.
 
-### 🎯 **Fresher se sabse jyada kaun-se coding questions pooche jaate hain?**
+<!-- 🔥 2️⃣ What is the difference between synchronous and asynchronous code -->
+Synchronous code executes line by line and blocks further execution.
+Asynchronous code allows non-blocking execution, meaning long tasks like API calls don’t freeze the application.
 
-Main tumhe **real interview pattern** ke according bata raha hoon 👇
+<!-- 🔥 3️⃣ Explain how this works in JavaScript. -->
+The value of this depends on how the function is called.
+In object methods, this refers to the object.
+In normal functions, it refers to the global object (or undefined in strict mode).
+Arrow functions inherit this from their lexical scope.
 
----
+<!-- 🔥 6️⃣ What is closure and where have you used it? -->
+A closure is a function that remembers variables from its lexical scope even after the outer function has executed.
+I use closures for data encapsulation, private variables, and maintaining state inside modules.
 
-# 🔥 ✅ 1️⃣ String Based Questions (Very Common)
+<!-- Why is async/await better than promises chaining? -->
+async/await improves readability and avoids deeply nested promise chains.
+It makes asynchronous code look synchronous and simplifies error handling using try-catch.
 
-✔ Reverse a string
-✔ Check palindrome
-✔ Count vowels
-✔ Remove duplicates from string
+<!-- 🔥 8️⃣ What is the difference between call, apply, and bind? -->
+call() invokes a function immediately with specified this and arguments.
+apply() is similar but takes arguments as an array.
+bind() returns a new function with bound this, which can be executed later.
 
-👉 Reason: Logic + loops + string methods test karte hain.
+<!--1️⃣ Difference between map, forEach, and reduce? -->
+map returns a new transformed array.
+forEach executes a function but does not return anything.
+reduce accumulates array values into a single result.
 
----
-
-# 🔥 ✅ 2️⃣ Array Based Questions (MOST ASKED)
-
-✔ Find largest number
-✔ Find second largest
-✔ Remove duplicates
-✔ Count frequency
-✔ Move zeros to end
-✔ Find missing number
-
-👉 70% fresher interviews me array question aata hi aata hai.
-
----
-
-# 🔥 ✅ 3️⃣ Number Based Questions
-
-✔ Prime number
-✔ Factorial
-✔ Fibonacci
-✔ Armstrong number
-
-👉 Ye logical thinking check karte hain.
-
----
-
-# 🔥 ✅ 4️⃣ Basic Function Logic
-
-✔ Closure counter example
-✔ Callback example
-✔ Difference between arrow & normal function
-✔ Hoisting output question
-
----
-
-# 🔥 ✅ 5️⃣ Output Based Questions (Tricky)
-
-Example:
-
-```js
-console.log(a);
-var a = 10;
-```
-
-Ya
-
-```js
-function test() {
-  console.log(this);
-}
-test();
-```
-
-👉 Ye JS understanding check karta hai.
-
----
-
-# 📊 Real Interview Probability (Fresher)
-
-| Topic           | Chance          |
-| --------------- | --------------- |
-| Array Question  | ⭐⭐⭐⭐⭐ (Highest) |
-| String Question | ⭐⭐⭐⭐            |
-| Prime/Factorial | ⭐⭐⭐             |
-| Closure / this  | ⭐⭐              |
-| Advanced JS     | ⭐               |
-
----
-
-# 🎯 Final Honest Answer
-
-Agar tum fresher ho,
-to ye master kar lo:
-
-✔ Reverse string
-✔ Palindrome
-✔ Largest in array
-✔ Remove duplicates
-✔ Prime number
-✔ Factorial
-✔ Missing number
-✔ Frequency count
-
-👉 Ye clear ho gaye to 80% interviews cover ho jaate hain 💪🔥
-🔥 4️⃣ What is hoisting?
-
-Answer:
-JavaScript moves variable and function declarations to the top of their scope before execution.
-
-console.log(a);
-var a = 10;
-
-
-Output: undefined
+<!-- 🔥 6️⃣ What is the difference between map(), filter(), and reduce()? -->
+map transforms elements and returns a new array.
+filter returns elements that satisfy a condition.
+reduce accumulates values into a single result.
