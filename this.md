@@ -581,7 +581,7 @@ Output:
 Monday
 Tuesday
 Because break is missing. -->
----------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 <!-- 🟠 Functions :- -->
 ✔ What is a function
 ✔ Function Declaration vs Expression
@@ -654,9 +654,9 @@ const add = function(a, b) {
 }; -->
 ----------------------------------------------------------------------------------
 <!-- Arrow Functions -->
-An Arrow Function is a shorter and modern way to write a function in JavaScript using the => syntax. It is a type of function expression and does not have its own this.
+An Arrow Function is a shorter and modern way to write a function in JavaScript using the => syntax and does not have its own this.
 
-<!-- Real-World Example -->
+<!-- Real-World Example --> 
 A child using their parent’s ID.
 The child does not have their own identity card,
 so they use the parent’s ID.
@@ -675,7 +675,8 @@ const greet = () => {
 }; -->
 
 <!-- 🔹 What is Hoisting? -->
-Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their scope during the memory creation phase, before the code is executed.
+Hoisting is a JavaScript behavior where variable and function declarations are moves to the top of their scope before execution.
+Variables declared with var are initialized as undefined, while let and const remain in the temporal dead zone until initialized.
 
 Imagine your name is already written on the attendance list before the class starts.
 
@@ -693,7 +694,17 @@ let b = 20;
 
 let bhi hoist hota hai, but it stays in Temporal Dead Zone.
 Isliye ReferenceError aata hai.
---------------------------------------------------
+
+<!-- 🔥 What is TDZ? -->
+TDZ (Temporal Dead Zone) is the time between variable hoisting and its initialization.
+For let and const, variable exists in memory but cannot be accessed before declaration.
+
+<!-- 🌍 Real-world Example -->
+Think of let like:
+Room is reserved (memory allocated)
+But you cannot enter until official opening (initialization).
+
+-----------------------------------------------------------------------------------------------------------------
 <!-- Callback Functions -->
 A callback function is a function that is passed as an argument to another function and is executed after some operation is completed.
 
@@ -960,6 +971,7 @@ Index starts from 0
 Hindi:
 Array ka index 0 se start hota hai.
 
+<!-- Mutable -->
 <!-- Array Methods -->
 
 🔹 1. push() – Add element at end
@@ -1041,8 +1053,72 @@ console.log(arr.includes(2)); // true -->
 13. reduce() 🔥🔥
 14. forEach()
  
+<!-- 1️⃣ map() 🔥🔥 (MOST IMPORTANT) -->
+Creates a new array by applying a function to each element of the array.
+does not change original array.
 
------------------------------------------------------------
+Jaise factory machine 🏭
+Raw items → process → new items
+<!-- 
+let arr = [1, 2, 3, 4];
+let result = arr.map(num => num * 2);
+console.log(result)    //[1, 2, 6, 8]-->
+
+
+<!-- 2️⃣ filter() 🔥🔥 -->
+Check condition and return only matching elements.
+Hindi:-
+👉 Condition check karta hai
+👉 Sirf matching elements return karta hai.
+<!-- 
+let arr = [1, 2, 3, 4];
+let even = arr.filter(num % 2 === 0);
+console.log(even); //[2, 4] -->
+
+Example:-
+Jaise college entrance cutoff list 🎓
+Sirf eligible students pass
+<!-- 
+let ages = [12, 18, 22, 15];
+let adults = ages.filter(age => age >= 18);
+console.log(adults); // [18, 22] -->
+
+<!-- ✅ 3️⃣ reduce() 🔥🔥 (Most Important) -->
+Reduces an array to a single value by accumulating results.
+Example:-
+Jaise shopping cart bill 🛒
+Sab items ka total ek final amount
+<!-- 
+let arr = [100, 200, 300];
+let total = arr.reduce((acc, curr) => {
+    return acc + curr;
+}, 0);
+console.log(total)  //600 -->
+
+<!-- 
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10 -->
+
+Explanation:
+acc → accumulator
+curr → current value
+0 → initial value
+
+<!-- 4️⃣ forEach() -->
+forEach() executes a function on each element but does not return a new array.
+
+Example:-
+Jaise attendance check 📋
+Sirf dekhna hai, result store nahi karna
+<!-- 
+let arr = [1, 2, 3];
+
+arr.forEach(num => {
+  console.log(num);
+}); -->
+----------------------------------------------------------------------------------------------------------------\
+
 🔹 15. sort() – Sort array
 sort() sorts the elements of an array.
 sort() array ke elements ko sahi order me set karta hai.
@@ -1088,9 +1164,7 @@ Returns true if at least one element matches.
 
 🔹 21. every() – All true?
 Returns true if all elements match.
-numbers.every(num => num > 0);
-
-
+<!-- numbers.every(num => num > 0); -->
 ------------------------------------------------------------------------
 Array Methods (frontend ka heart ❤️)
 
@@ -1390,17 +1464,8 @@ let data = '{"name":"Kajal","age":23}';
 let obj = JSON.parse(data);
 console.log(obj.name); -->
 
-<!-- 3️⃣ How do you access object properties? -->
-user.name;        // Dot notation
-user["age"];     // Bracket notation
-
 <!-- 5️⃣ What is an object method? -->
 English: Function inside an object
-<!-- 7️⃣ What is object destructuring? -->
-Hindi: Object se direct values nikalna
-let { name, age } = user;
-
-<!-- 🔟 Difference between object and array? -->
 <!-- 1️⃣7️⃣ Is object mutable? -->
 ✅ Yes, objects are mutable.
 ---------------------------------------------
@@ -1441,7 +1506,7 @@ Example internal structure:
   1: 20,
   2: 30
 }
-=============================================================================================================================
+========================================================================================================================
 🟤 1️⃣ Strings in JavaScript
 ✔ Strings are immutable (original string does not change)
 <!-- ✅ What is a String? -->
@@ -1530,12 +1595,8 @@ check → includes, indexOf
 cut → slice, substring
 convert → split
 ========================================================================================
-🔢 NUMERICAL / CODE QUESTIONS:-
-
 ## 🔢 NUMERICAL / CODE QUESTIONS
-
 ### 1️⃣ Reverse a String
-
 ```js
 let str = "hello";
 let rev = str.split("").reverse().join("");
@@ -1562,16 +1623,12 @@ let str = "hello";
 console.log(str.toUpperCase()); // HELLO
 ```
 ---
-
 ### 5️⃣ Remove spaces
-
 ```js
 let str = "  hi  ";
 console.log(str.trim()); // "hi"
 ```
-
 ---
-
 ### 6️⃣ Find index of word
 
 ```js
@@ -1594,9 +1651,7 @@ console.log(str.replace("tea", "coffee"));
 let str = "a,b,c";
 console.log(str.split(",")); // ["a","b","c"]
 ```
-
 ---
-
 ### 9️⃣ Print each character
 
 ```js
@@ -1605,7 +1660,6 @@ for (let ch of str) {
   console.log(ch);
 }
 ```
-
 ---
 
 ### 🔟 Check Palindrome
@@ -1616,7 +1670,7 @@ let rev = str.split("").reverse().join("");
 
 console.log(str === rev); // true
 ```
-==============================================
+=====================================================================================================================
 !-- 🔥 5️⃣ Event Loop, Call Stack & Microtasks vs Macrotasks -->
 <!-- 🔹 Event Loop -->
 Event Loop is the system in JavaScript that checks if the call stack is empty and then runs pending tasks from the queue.
@@ -1766,17 +1820,10 @@ Used to get or change URL.
 <!-- 
 console.log(location.href);
 location.reload(); -->
--------------------------------------------------------------------------------------------------------------------------
-<!-- Difference between setTimeout and setInterval? -->
-setTimeout runs once after delay.
-setTimeout → show OTP after 5 seconds
-setInterval runs repeatedly at given interval.
-setInterval → countdown timer
-
+-------------------------------------------------------------
 <!-- Q: What is event bubbling? -->
 Event bubbles from child to parent elements.
 
----------------------------------------------------------------
 <!-- 🔹 setTimeout() -->
 setTimeout Executes code after delay.
 setTimeout → show OTP after 5 seconds
@@ -1788,12 +1835,12 @@ setTimeout(() => {
 
 <!-- 🔹 setInterval() -->
 setInterval Repeats code after interval.
-
+setInterval → countdown timer
+<!-- 
 setInterval(() => {
   console.log("Running...");
-}, 1000);
-
-----------------------------------------------------------------------------------------------------------
+}, 1000); -->
+-------------------------------------------------------------
 <!-- 🔥 15 MOST ASKED DOM INTERVIEW QUESTIONS -->
 <!-- 1️⃣ What is DOM? -->
 DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
@@ -1818,9 +1865,6 @@ Event bubbles from child to parent.
 <!-- 5️⃣ What is event capturing? -->
 Event flows from parent to child.
 
-<!-- 6️⃣ What is event delegation? -->
-Attaching event listener to parent instead of multiple children.
-
 <!-- 7️⃣ Difference between addEventListener and onclick? -->
 addEventListener allows multiple handlers.
 onclick supports only one.
@@ -1837,7 +1881,7 @@ Stops event from bubbling.
 <!-- 1️⃣1️⃣ Difference between NodeList and HTMLCollection? -->
 NodeList can be static.
 HTMLCollection is always live.
-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------
 <!-- synchronous:- -->
 Synchronous JavaScript executes code line by line, and each task must complete before the next one starts.
 
@@ -1916,7 +1960,7 @@ Async/Await
 
 imp:-
 <!-- 👉 “Why is JavaScript called single-threaded but still asynchronous?” -->
-JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main threa
+JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread
 
 !-- 2️⃣ setTimeout() -->
 setTimeout executes a function after a specified delay asynchronously.
@@ -1950,7 +1994,7 @@ let id = setInterval(() => {
 
 clearInterval(id); -->
 
-=========================================
+=============================================================
 <!-- 🔥 3️⃣ Promises -->
 A Promise is an object that represents a future value — either resolved or rejected.
 It has three states: 
@@ -1998,9 +2042,8 @@ promise.finally(() => {
   console.log("Done");
 }); -->
 
---------------------------------------------------------------
+------------------------------------------------------------
 🔥 4️⃣ Async / Await
-
 async/await simplifies promise handling and improves readability by avoiding chaining.
 
 🌍 Real-world Example
@@ -2009,10 +2052,8 @@ You order food → wait (await) → eat when ready.
 ?
 -----------------------------------------------0-------------
 🔥 5️⃣ Fetch API & AJAX
-
 <!-- 🔹 What is AJAX? -->
 AJAX allows sending and receiving data from server without refreshing page.
-
 
 <!-- 🔹 Fetch API -->
 Fetch API is a modern JavaScript method for making HTTP requests and works with promises.
@@ -2044,11 +2085,8 @@ fetch sends request
 Server responds
 Convert to JSON
 Use data
------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------
 🔥 9️⃣ Error Handling in JavaScript
-
-
-
 🔥 1️⃣ try, catch, finally:-
 try-catch allows handling runtime errors without stopping program execution. The finally block runs regardless of whether an error occurred or not.
 
@@ -2071,7 +2109,6 @@ try {
 }
  -->
 
-
 🧠 Logic
 try → execute risky code
 catch → handle error
@@ -2087,6 +2124,28 @@ throw stops execution and sends error to catch block.
 console.log only prints message.
 
 ------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
