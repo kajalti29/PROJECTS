@@ -38,3 +38,20 @@
 // console.log(rev);
 
 
+// palindrom num
+// let original = 120;
+// let num = original; 
+// let rev = 0;
+
+// while(num>0){
+//     let lastDigit = num % 10;
+//     rev = rev * 10 + lastDigit;
+//     num = Math.floor(num / 10);
+// }
+
+// if(rev === original){
+//     console.log("palindrom");
+// }else{
+//     console.log("Not Palindrom");
+// }
+
