@@ -550,7 +550,6 @@ setInterval(() => {
 }, 1000); -->
 Yeh har 1 second me chalega
 
-
 Stop karne ke liye:
 <!-- 
 let id = setInterval(() => {
