@@ -97,8 +97,7 @@ console.log(z); // ✅ 30 -->
 
 <!-- 🚀 Hoisting -->
 <!-- 🔹 What is Hoisting? -->
-Hoisting is a JavaScript behavior where variable and function declarations are moves to the top of their scope before execution.
-Variables declared with var are initialized as undefined, while let and const remain in the temporal dead zone until initialized.
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
 
 Imagine your name is already written on the attendance list before the class starts.
 
@@ -223,10 +222,7 @@ console.log(result)    //[1, 2, 6, 8]-->
 
 
 <!-- 2️⃣ filter() 🔥🔥 -->
-Check condition and return only matching elements.
-Hindi:-
-👉 Condition check karta hai
-👉 Sirf matching elements return karta hai.
+“filter() creates a new array with elements that satisfy a given condition.”
 <!-- 
 let arr = [1, 2, 3, 4];
 let even = arr.filter(num % 2 === 0);
