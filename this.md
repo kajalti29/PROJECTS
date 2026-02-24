@@ -1,5 +1,7 @@
 <!-- what is JavaScript(js) ? -->
-JavaScript is a scripting language used to add interactivity and dynamic behavior to web pages.It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
+JavaScript is a high-level, interpreted programming language used to add interactivity and dynamic behavior to web pages.
+It run in the browser and on the server(node.js).
+It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
 For example:
 When you click a button and a popup appears
 
@@ -7,12 +9,14 @@ When you click a button and a popup appears
 “JavaScript is called a scripting language because it runs directly in the browser and adds dynamic behavior like button clicks, form validation, and live updates.”
 
 <!-- Features -->
-1️⃣ Interpreted Language
-2️⃣ Dynamically Typed
-9️⃣ Platform Independent
-5️⃣ Event-Driven
-3️⃣ First-Class Functions
-8️⃣ Object-Oriented
+* Interpreted Language
+* Dynamically Typed
+* Platform Independent
+* Event-Driven 
+* Client-side & server-side scripting
+* Runs in browser & Node.js
+* First-Class Functions
+* Object-Oriented
 
 👉 HTML = structure
 👉 CSS = design
@@ -175,7 +179,7 @@ A function is a block of code that parform the specific code and can be reused.
 function add(a, b) {
   return a + b;
 } -->
----------------------------------------------
+-----------------------------------------------------------------------
 <!-- IMPORTANTE -->
 <!-- 1️⃣1️⃣ What is typeof operator? -->
 It is used to check the data type of a variable.
@@ -450,7 +454,7 @@ Q1: Why break is important in switch?
 Without break, execution continues to next cases (fall-through behavior).
 <!-- Q2: When to prefer switch over if-else? -->
 When checking one variable against multiple fixed values.
-----------------------------------------------
+--------------------------------------------------------------------------------------------------
 <!-- Loops in JavaScript:- -->
 <!-- // 🔹 What are loops? -->
 Loops are used to repeat a block of code multiple times until a condition is false.
@@ -497,7 +501,7 @@ do {
   i++;
 } while (i <= 5);
 // Output: 6  (executes once even if condition false) -->
--------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 <!-- 🔹 6️⃣ Loop Control Statements:- -->
 break → exit loop immediately.
 <!-- 
