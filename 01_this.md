@@ -1,140 +1,6 @@
-<!-- 🔥 TOPIC 1: var, let, const (MOST IMPORTANT) -->
-
-<!-- ❓ Q1. What is a variable in JavaScript? -->
-A variable is used to store data values so they can be used and modified later in the program.
-
-<!-- let name = "Kajal"; -->
-
-<!-- ❓ Q2. Difference between var, let, and const? -->
-
-* let :-  A variable cannot be re-declared but can be update.
-It is block scope variable(work only inside {})
-<!-- 
-let y = 10;
-y = 20;   // allowed
-// let y = 30; ❌ error -->
-
-* const :- A variable cannot be re-declared and cannot be update.It is a block scope variable.
-
-<!-- 
-const z = 10;
-// z = 20; ❌ error -->
-Interview line:
-const me variable re-assign nahi ho sakta, lekin object/array modify ho sakta hai.
-
-* var :- A variable can be re-declared and can be update.
-It is a function scope.
-
-<!-- 
-var x = 10;
-var x = 20;   // allowed
-x = 30;       // allowed -->
-
-<!-- 🔹 What is Scope? -->
-Scope defines where a variable can be accessed in a program.
-
-<!-- Types of Scope -->
-1️⃣ Global Scope
-2️⃣ Function Scope
-3️⃣ Block Scope
-
-Global → everywhere
-Local → inside function
-Block → inside { }
-
-<!-- 1️⃣ Global Scope -->
-A variable declared outside all functions is called a global variable, and it can be accessed from anywhere in the program.
-Example:_
-Jaise sun (suraj) — sab jagah roshni deta hai, har jagah visible hota hai.
-<!-- 
-let x = 10;   // global variable
-
-function show() {
-  console.log(x);
-}
-
-show();      // 10
-console.log(x); // 10 -->
-
-<!--2️⃣Local Scope (Function Scope) -->
-A variable declared inside a function is accessible only within that function.
-Example:-
-1. “The ATM PIN is required only for ATM transactions.”
-ATM ka PIN → sirf ATM transaction ke time
-
-2. “Like your bedroom — it is used only inside your room, not outside.”
-<!-- 
-function test() {
-  var a = 5;
-  let b = 6;
-  const c = 7;
-  console.log(a, b, c);
-}
-
-test();
-
-console.log(a); // ❌ error
-console.log(b); // ❌ error
-console.log(c); // ❌ error -->
-
-<!-- 3️⃣ Block Scope -->
-A variable declared with let or const inside a block { } is accessible only within that block.
-Example:-
-“The exam hall question paper is used only inside the exam hall.”
-Exam hall ka question paper → sirf exam hall ke andar
-<!-- 
-if (true) {
-  let x = 10;
-  const y = 20;
-  var z = 30;
-}
-
-console.log(x); // ❌ error
-console.log(y); // ❌ error
-console.log(z); // ✅ 30 -->
-
-👉 var block scope follow nahi karta 😱
-
-<!-- 🚀 Hoisting -->
-<!-- 🔹 What is Hoisting? -->
-Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
-
-Imagine your name is already written on the attendance list before the class starts.
-
-Even if the teacher calls your name first,
-your name is already in the list.
-👉 That means your name was prepared earlier.
 
 
-<!-- var -->
-console.log(a);
-var a = 10;
 
-<!-- let -->
-console.log(b);
-let b = 20;
-
-let bhi hoist hota hai, but it stays in Temporal Dead Zone.
-Isliye ReferenceError aata hai.
-
-<!-- Function Hoisting -->
-<!-- 
-sayHello();
-
-function sayHello() {
-  console.log("Hello");
-} -->
-
-Function declaration fully hoist hoti hai, isliye ye work karta hai.
-
-<!-- 🔥 What is TDZ? -->
-TDZ (Temporal Dead Zone) is the time between variable hoisting and its initialization.
-For let and const, variable exists in memory but cannot be accessed before declaration.
-
-<!-- 🌍 Real-world Example -->
-Think of let like:
-Room is reserved (memory allocated)
-But you cannot enter until official opening (initialization).
 
 <!-- Lexical Environment -->
 It is the environment where variables and functions are stored based on where the code is written (lexical scope).
@@ -237,7 +103,8 @@ let adults = ages.filter(age => age >= 18);
 console.log(adults); // [18, 22] -->
 
 <!-- ✅ 3️⃣ reduce() 🔥🔥 (Most Important) -->
-Reduces an array to a single value by accumulating results.
+reduce() is an array method that reduces all elements of an array into a single value by applying a function on each element.
+
 Example:-
 Jaise shopping cart bill 🛒
 Sab items ka total ek final amount
@@ -325,6 +192,8 @@ let total = cart.reduce((sum, item) => {
 }, 0);
 
 console.log("Total Bill:", total); -->
+
+Interviewers usually ask about array methods like map, filter, reduce, sorting, removing duplicates, finding max/min, reversing arrays, and solving logic-based problems like two sum or frequency count.
 
 ----------------------------------------------------------------------------------------------------------------------
 🧩 3️⃣ Functions – Advance Level
