@@ -1393,59 +1393,108 @@ element.classList.toggle("active");
 NOTE:- Agar class hai → remove karega
        Agar class nahi hai → add karega
 
+Mini Projects:-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Mode</title>
 
+  <style>
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
 
+</head>
+<body>
 
+<button id="btn">Dark Mode</button>
 
-<!-- 🔥 5. What is the difference between == and === ? -->
-✅ == :- Compares value only (type conversion happens)
+<script>
+  let btn = document.getElementById("btn");
 
-✅ === :- Compares value + type (no conversion)
+  btn.addEventListener("click", function(){
+    document.body.classList.toggle("dark-mode");
+  });
+</script>
 
-5 == "5"   // true
-5 === "5"  // false
+</body>
+</html>
+IMP:-
+
+🔥 BOM (Browser Object Model)
+BOM allows JavaScript to interact with browser features outside the document.
+
+<!-- 🔹 window Object -->
+Global object in browser.
+
+<!-- console.log(window.innerWidth); -->
+
+<!-- 🔹 navigator -->
+Gives browser information.
+
+<!-- console.log(navigator.userAgent); -->
+
+<!-- 🔹 location -->
+Used to get or change URL.
+<!-- 
+console.log(location.href);
+location.reload(); -->
+=============================================================================================
+7️⃣ DOM (Frontend Interviews)
+Since tum frontend bana rahi ho:
+DOM selection methods
+Event bubbling
+Event delegation
+addEventListener
+Debouncing / Throttling
+
+1️⃣ Event Bubbling:-
+Event Bubbling means the event starts from the target element and bubbles up to its parent elements.
+Event bubbles from child to parent.
+
+Simple language me:
+👉 Event pehle child pe chalega
+👉 Fir parent
+👉 Fir grandparent
+👉 Upar ki taraf move karega
 
 <!-- 🔥 6. What is Event Delegation? -->
-Event delegation is a technique where a parent element handles events for its child elements using event bubbling.
+Event Delegation is attaching a single event listener to a parent element to handle events of its children.
+
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
 <!-- 
 document.getElementById("parent").addEventListener("click", function(e){
   if(e.target.tagName === "BUTTON"){
     console.log("Button clicked");
   }
 }); -->
+👉Ye delegation hai
+👉 Dynamic elements ke liye best method
 
+<!-- 3️⃣ addEventListener -->
+addEventListener is used to attach an event handler to an element.
+<!-- 
+element.addEventListener("click", function() {
+  console.log("Clicked");
+}); -->
 
-
-<!-- 🔥 10. What is the DOM? -->
-DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
-
-<!-- 🌍 Real-Life Example 2: House Example -->
-Imagine your house is an HTML page.
-Rooms = Elements
-Furniture = Content
-You = JavaScript
-
-You can:
-Replace the sofa
-Add a new table
-Remove a chair
-👉 This is similar to DOM manipulation.
-
-<h1 id="title">Hello</h1>
-<button onclick="changeText()">Click Me</button>
-
-<!-- function changeText() {
-  document.getElementById("title").innerText = "Welcome!";
-} -->
-
-
-<!-- 🔥 11. What is Event Bubbling? -->
-Event bubbles from child to parent.
 
 <!-- 🔥 12. What is Debouncing? -->
 Debouncing is a technique that delays the execution of a function until a certain time has passed since the last event trigger.
 Hindi:-
 Debouncing ek technique hai jisme function tab execute hota hai jab event trigger hona band ho jata hai ek fixed delay ke baad.
+
+Simple language me:
+
+👉 User typing kar raha hai
+👉 Har keypress par API call nahi karenge
+👉 Thoda rukne ke baad hi call karenge
 
 🔥 Used in search input.
 <!-- 
@@ -1478,12 +1527,8 @@ only one car is allowed to pass within each fixed time interval.
 
 This is exactly how throttling works.
 
-<!-- 🔥 14. What is the difference between null and undefined? -->
-* Intentional empty value
-* Variable declared but not assigned a value.
-
 <!-- 🔥 15. What is localStorage? -->
-localStorage is a Web Storage API provided by the browser that allows developers to store key-value pairs in the user's browser with no expiration time.
+Local Storage is a client-side web storage mechanism that stores data in key-value pairs in the browser with no expiration time.
 
 <!-- Real-Life Example -->
 Imagine a website that saves:
@@ -1504,90 +1549,7 @@ console.log(user);
 
 // Remove data
 localStorage.removeItem("username"); -->
--------------------------------------------------------------------------------
-<!-- 🔥 16. Explain Event Loop -->
-JavaScript is single-threaded. The event loop allows it to handle asynchronous operations using the call stack, callback queue, and microtask queue.
 
-Event loop checks:
-Is call stack empty?
-If yes → move callback from queue to stack.
-
-🔥 Structure:
-Call Stack
-Web APIs
-Callback Queue
-Microtask Queue
-Event Loop
-<!-- 
-console.log("Start");
-
-setTimeout(() => {
-  console.log("Timeout");
-}, 0);
-
-console.log("End"); -->
-Output:-
-Start
-End
-Timeout
-----------------------------------
-
-
-_----------------------------------------------------------------------
-<!-- 🔥 18. What is Prototypal Inheritance? -->
-JavaScript uses prototype-based inheritance. Objects inherit properties from another object.
-<!-- 
-const person = {
-  greet(){
-    console.log("Hello");
-  }
-};
-
-const student = object.create(person);
-student.greet(); //Hello -->
-
-
-<!-- 🔥 19. Shallow vs Deep Copy -->
-?
-
-<!-- 🔥 20. map, filter, reduce -->
-* map():-
-“map() creates a new array by applying a function to each element of the original array.”
-👉 It transforms data.
-<!-- Real-Life Example -->
-Add GST to every product price
-💻 Example
-<!-- 
-const number = [1, 2, 4];
-
-const doubled = number.map(num => num * 2);
-
-console.log(doubled);
-// [2, 4, 6] -->
-
-* filter():-
-“filter() creates a new array with elements that satisfy a given condition.”
-<!-- 
-const numbers = [1, 2, 3, 4, 5];
-
-const even = numbers.filter(num => num % 2 === 0);
-
-console.log(even);
-// [2, 4] -->
-
-* reduce():-
-“reduce() reduces an array to a single value by applying a function to each element.”
-👉 It combines data.
-<!-- 🌍 Real-Life Example -->
-Calculate total bill amount
-<!-- 
-const number = [1, 2, 3, 4];
-
-const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-
-console.log(sum); //10 -->
-
-------------------------------------
 <!-- 🔥 21. How JavaScript Works Internally? -->
 JavaScript engine (like V8) has:
 Memory Heap (stores variables)
@@ -1605,45 +1567,6 @@ let obj = JSON.parse(data);
 
 console.log(obj.name); // Kajal -->
 
-
-<!-- 🔥 22. What is Lexical Scope? -->
-Lexical scope means a function can access variables from its parent scope.
-<!-- 
-function outer(){
-  let name = "Kajalti";
-  function inner(){
-    console.log(name);
-  }
-  inner();
-} -->
-
-<!-- 23 Callback Functions -->
-A callback function is a function that is passed as an argument to another function and is executed after a specific task is completed.”
-
-<!-- Real-Life Example -->
-Imagine you order food online.
-You place the order 🍕
-After delivery, the delivery boy calls you 📞
-That call is like a callback —
-it happens after the task (delivery) is completed.
-
-<!-- 
-function greet(name, callback) {
-  console.log("Hello " + name);
-  callback();
-}
-
-function sayBye() {
-  console.log("Goodbye!");
-}
-
-greet("Kajal", sayBye); -->
-Hello Kajal
-Goodbye!
-
-👉 Here, sayBye is the callback function.
-👉 It runs after greet() finishes its task.
-
 <!-- 🔥 24. What is Callback Hell? -->
 “Callback Hell is a situation in JavaScript where multiple asynchronous callbacks are nested inside each other, making the code difficult to read, debug, and maintain.”
 <!-- 
@@ -1658,9 +1581,6 @@ getData(function(){
 Promises
 async/await
 ============================================================================================
-<!-- 🔥 9. What is CORS? -->CORS (Cross-Origin Resource Sharing) is a security mechanism that restricts requests from different domains.
-?
-
 <!-- ✅ 4️⃣ ES6 Features (Spread, Destructuring, Rest) -->
 
 ✅ Spread Operator (...):-
@@ -1766,7 +1686,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
   .then(data => console.log(data))
   .catch(error => console.log("Error:", error)); -->
 
- ==================================================================================================================!
+ ============================================================================================
  🎯 Level 2 – Strong Frontend Developer Level(job)
 
  <!-- ✅ 1. Execution Context:- -->
@@ -1795,13 +1715,6 @@ Functions are stored completely
 2️⃣ Execution Phase
 Code runs line by line
 
-<!-- ✅ 2. Temporal Dead Zone (TDZ) -->
-DZ is the time between variable declaration and initialization where let/const cannot be accessed.
-<!-- 
-console.log(a); // ❌ Error
-let a = 5; -->
-
-
 <!-- ✅ 3. Prototype Chain (Deep): -->
 The prototype chain is the mechanism by which JavaScript objects inherit properties from other objects.
 
@@ -1827,3 +1740,4 @@ let interval = setInterval(() => {
 }, 1000);
 
 clearInterval(interval); -->
+==============================================================================================

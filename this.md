@@ -549,44 +549,11 @@ document.getElementById("list").addEventListener("click", function(e) {
 });
  -->
 ------------------------------------------------------------------------------------------------------------------------------
-🔥 BOM (Browser Object Model)
-BOM allows JavaScript to interact with browser features outside the document.
-
-<!-- 🔹 window Object -->
-Global object in browser.
-
-<!-- console.log(window.innerWidth); -->
-
-<!-- 🔹 navigator -->
-Gives browser information.
-
-<!-- console.log(navigator.userAgent); -->
-
-<!-- 🔹 location -->
-Used to get or change URL.
-<!-- 
-console.log(location.href);
-location.reload(); -->
 -------------------------------------------------------------
 <!-- Q: What is event bubbling? -->
 Event bubbles from child to parent elements.
 
-<!-- 🔹 setTimeout() -->
-setTimeout Executes code after delay.
-setTimeout → show OTP after 5 seconds
-<!-- 
-setTimeout(() => {
-  console.log("Hello");
-}, 2000);
- -->
 
-<!-- 🔹 setInterval() -->
-setInterval Repeats code after interval.
-setInterval → countdown timer
-<!-- 
-setInterval(() => {
-  console.log("Running...");
-}, 1000); -->
 -------------------------------------------------------------
 <!-- 🔥 15 MOST ASKED DOM INTERVIEW QUESTIONS -->
 <!-- 1️⃣ What is DOM? -->
