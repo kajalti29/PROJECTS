@@ -682,31 +682,368 @@ let numbers = [1, 2, 3];
 
 console.log(numbers.every(num => num > 0));
 // true -->
+
+### 1️⃣9️⃣ What is array destructuring?
+Array destructuring ka matlab hai array ke values ko directly variables me nikal lena, bina index use kiye.
+<!-- 
+let arr = [10, 20, 30];
+
+let [a, b, c] = arr;
+
+console.log(a); // 10
+console.log(b); // 20
+console.log(c); // 30 -->
+
 ====================================================
 =========================================
-
-
-
-
-
-
-<!-- 🔥 5. What is the difference between == and === ? -->
-✅ == :- Compares value only (type conversion happens)
-
-✅ === :- Compares value + type (no conversion)
-
-5 == "5"   // true
-5 === "5"  // false
-
-<!-- 🔥 6. What is Event Delegation? -->
-Event delegation is a technique where a parent element handles events for its child elements using event bubbling.
+🟣 1️⃣ Objects in JavaScript
+"Object is a collection of key-value pairs used to store structured data."
 <!-- 
-document.getElementById("parent").addEventListener("click", function(e){
-  if(e.target.tagName === "BUTTON"){
-    console.log("Button clicked");
-  }
-}); -->
+let student = {
+  name: "Kajal",
+  age: 23,
+  city: "Indore"
+};
+ -->
+Here:
+name, age, city → keys
+"Kajal", 21, "Bhopal" → values
 
+<!-- 🔥 2️⃣ Object Destructuring (Very Common) -->
+Object ke andar ki values ko directly variables me nikalna.
+<!-- 
+let student = {
+  name: "Kajal",
+  age: 23,
+  city: "Indore"
+};
+
+let { name, age } = student;
+
+console.log(name); // Kajal
+console.log(age);  // 23
+ -->
+
+<!-- Accessing Object Properties -->
+JavaScript me object ki properties (values) ko access karne ke 2 simple tareeke hote hain 👇
+<!-- 
+let student = {
+    name: "Rahul",
+    age: 20,
+    city: "Indore"
+}; -->
+
+1️⃣ Dot Notation (Most Common)
+<!-- 
+console.log(student.name);   // Rahul
+console.log(student.age);    // 20 -->
+
+2️⃣ Bracket Notation
+<!-- 
+console.log(student["name"]); // Rahul
+console.log(student["age"]);  // 20
+ -->
+
+<!-- Q: Difference between dot and bracket notation? -->
+Dot notation is used when key is fixed.
+Bracket notation is used when key is dynamic.
+
+
+<!-- 🔥 4️⃣ Loop Through Object -->
+✔ for...in loop
+<!-- 
+for (let key in person) {
+  console.log(key, person[key]);
+} -->
+
+<!-- * Object Methods -->
+When a function is inside an object, it is called a method.
+Object ke andar function ho to use method kehte hain.
+<!-- 
+let user = {
+  name: "Kajal",
+  greet: function () {
+    return "Hello " + this.name;
+  }
+};
+
+console.log(user.greet()); -->
+
+🔥 5️⃣ Object Iteration (Important)
+
+<!-- 
+const person = {
+  name: "Kajal",
+  age: 23
+};
+
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person)); -->
+✅ Output
+["name", "age"]
+["Kajal", 23]
+[["name", "Kajal"], ["age", 23]]
+
+
+<!-- ❓ Difference between Shallow and Deep Copy? -->
+A shallow copy copies only the first level of an object.
+and shares nested references.
+
+let obj1 = {
+  name : "kajalti",
+  age : 22,
+  address:{
+    city: "Delh"
+  }
+};
+
+let obj2 = {...obj1};
+
+obj2.address.city = "Mumbai";
+console.log(obj1.address.city); 
+// Mumbai 😱
+
+
+A deep copy copies all levels of the object, including nested objects.
+It creates completely independent copies.
+
+
+let obj1 = {
+  name: "Kajalti",
+  address: {
+    city: "Delhi"
+  }
+};
+
+let obj2 = JSON.parse(JSON.stringify(obj1));
+
+obj2.address.city = "Mumbai";
+
+console.log(obj1.address.city);
+// Delhi ✅
+
+
+
+6️⃣ JSON (parse, stringify) :-
+🔹 What is JSON?
+JSON = JavaScript Object Notation
+is a data format used to send and receive data.
+🔹 JSON.stringify() (Object → JSON):-
+<!-- 
+let obj = { name: "Kajal", age: 23 };
+
+let jsonData = JSON.stringify(obj);
+console.log(jsonData); -->
+
+🔹 JSON.parse() (JSON → Object):-
+<!-- 
+let data = '{"name":"Kajal","age":23}';
+
+let obj = JSON.parse(data);
+console.log(obj.name); -->
+
+<!-- 5️⃣ What is an object method? -->
+English: Function inside an object
+<!-- 1️⃣7️⃣ Is object mutable? -->
+✅ Yes, objects are mutable.
+
+✅ 1️⃣ Do you know objects convert to arrays?
+Yes. We can convert object to array using:
+Object.keys()
+Object.values()
+Object.entries()
+<!-- 
+let user = { name: "Kajal", age: 22 };
+console.log(Object.keys(user));    
+// ["name", "age"]
+console.log(Object.values(user));  
+// ["Kajal", 22]
+console.log(Object.entries(user)); 
+// [["name","Kajal"], ["age",22]] -->
+
+✅ 2️⃣ Do you understand destructuring?
+Yes. Destructuring allows extracting properties from objects into variables.
+<!-- 
+let user = { name: "Kajal", age: 22 };
+let { name, age } = user;
+console.log(name); // Kajal
+ -->
+✅ 3️⃣ Do you know arrays are objects?
+Yes. In JavaScript, arrays are special type of objects.
+<!-- 
+let arr = [10, 20, 30];
+console.log(typeof arr); // object -->
+
+Because:
+Arrays store indexed key-value pairs
+Keys are numbers (0,1,2…)
+Example internal structure:
+
+{
+  0: 10,
+  1: 20,
+  2: 30
+}
+
+================================================================================================================
+✅ What is a String?
+A string is a sequence of characters used to represent text.
+Strings are immutable
+
+<!-- let name = "Kajalti"; -->
+
+<!-- 🟤 2️⃣ String Methods :- -->
+🔹 1. length :- Find length of string
+<!-- 
+let str = "Hello";
+console.log(str.length); // 5
+ -->
+🔹 2. toUpperCase() :- 
+<!-- 
+let str = "hello";
+console.log(str.toUpperCase()); // HELLO -->
+
+🔹 3. toLowerCase():-
+<!-- 
+let str = "HELLO";
+console.log(str.toLowerCase()); // hello -->
+
+🔹 4. trim():- 
+<!-- 
+let str = "  hi  ";
+console.log(str.trim()); // "hi" -->
+
+🔹 5. includes():-
+<!-- 
+let str = "I love JS";
+console.log(str.includes("JS")); // true -->
+
+🔹 6. slice():-
+👉 String ka part nikalta hai
+<!-- 
+let str = "JavaScript";
+console.log(str.slice(0, 4)); // Java -->
+
+🔹 7. substring():-
+👉 slice() jaisa hi hota hai
+<!-- 
+let str = "HelloWorld";
+console.log(str.substring(0, 5)); // Hello -->
+
+🔹 8. replace():-
+👉 Word ko change karta hai
+<!-- 
+let str = "I like tea";
+console.log(str.replace("tea", "coffee"));
+// I like coffee
+ -->
+
+🔹 9. split():- 
+👉 String ko array me tod deta hai
+<!-- 
+let str = "a,b,c";
+console.log(str.split(",")); // ["a","b","c"] -->
+
+🔹 10. charAt():- 
+👉 Given index ka character deta hai
+
+<!-- 
+let str = "Hello";
+console.log(str.charAt(1)); // e -->
+
+🔹 11. indexOf():- 
+👉 Word ka index batata hai
+<!-- 
+let str = "Hello JS";
+console.log(str.indexOf("JS")); // 6 -->
+
+🔹 12. concat():-
+👉 Strings ko jodta hai
+<!-- 
+let a = "Hello";
+let b = "World";
+console.log(a.concat(" ", b)); // Hello World -->
+
+### 1️⃣ Reverse a String
+```js
+let str = "hello";
+let rev = str.split("").reverse().join("");
+console.log(rev); // olleh
+
+
+🔟 Check Palindrome
+js
+let str = "madam";
+let rev = str.split("").reverse().join("");
+
+console.log(str === rev); // true
+```
+================================================================================================================
+2️⃣ this Keyword 🔥 (Very Important)
+
+<!-- 🔥 3️⃣ this Inside Object -->
+const student = {
+  name: "Kajal",
+  age: 21,
+  info() {
+    console.log(this.name);
+  }
+};
+
+student.info();
+
+<!-- 🔥 17. Difference Between call, apply, bind -->
+Ye teen methods this ko control karte hain.
+✅ 1️⃣ call():-
+call() calls the function immediately and passes arguments one by one.
+
+<!-- “An argument is the actual value that is passed to a function when it is called.” -->
+
+<!-- Real-life example -->
+You borrow your friend’s ID card and enter the office immediately.
+
+👉 Borrowed identity
+👉 Used right away
+
+That is like call()
+<!-- 
+function greet(city) {
+  console.log(this.name + " from " + city);
+}
+
+greet.call({name: "Kajalti"}, "Delhi"); -->
+
+✅ apply():-
+apply() calls the function immediately but passes arguments as an array.
+(Arguments array me deta hai).
+
+<!-- Real-life example -->
+You borrow your friend’s ID card and enter the office immediately.
+but you carry all your documents together in one file (like an array).
+
+That is like apply().
+
+<!-- greet.apply({name: "Kajalti"}, ["Delhi"]); -->
+
+✅ bind():- 
+bind() does not call the function immediately. It returns a new function with a fixed this value that can be called later.
+
+You borrow your friend’s ID card,
+but you don’t enter immediately.
+You keep it and use it later.
+
+👉 Identity is fixed
+👉 Used later
+
+That is like bind()
+
+<!-- 
+const newFunc = greet.bind({name: "Kajalti"}, "Delhi");
+newFunc(); -->
+================================================================================================================
+4️⃣ Asynchronous JavaScript 🔥🔥🔥
+Very important for frontend jobs:
 
 <!-- 🔥 7. What is the difference between synchronous and asynchronous? -->
 ✅ Synchronous Javascript:-
@@ -741,7 +1078,47 @@ console.log("End"); -->
 Sync → ek ke baad ek
 Async → wait kiye bina next line chalti hai.
 
-<!-- 🔥 8. What is a Promise? -->A Promise is an object that represents a future value — either resolved or rejected.
+
+<!-- 👉 What is difference between setTimeout and setInterval? -->
+<!-- setTimeout -->
+setTimeout executes a function once after a specified delay,
+<!-- 
+setTimeout(() => {
+  console.log("Hello Kajalti");
+}, 2000); -->
+
+
+<!-- setInterval -->
+setInterval executes a function repeatedly at fixed intervals
+until it is cleared.
+<!-- 
+setInterval(() => {
+  console.log("Running every 2 seconds");
+}, 2000); -->
+
+<!-- 🛑 Stop Karne Ka Tarika -->
+Dono ko clearTimeout() aur clearInterval() se stop karte hain.
+1. 
+const timer = setTimeout(() => {
+  console.log("Will not run");
+}, 3000);
+
+clearTimeout(timer);
+
+
+2. 
+const interval = setInterval(() => {
+  console.log("Running...");
+}, 1000);
+
+setTimeout(() => {
+  clearInterval(interval);
+}, 5000);
+
+
+
+<!-- 🔥 8. What is a Promise? -->
+A Promise is an object that represents a future value — either resolved or rejected.
 It has three states: 
 1️⃣pending, 
 2️⃣Resolved(fulfilled), and 
@@ -750,17 +1127,39 @@ We use .then() for success and .catch() for error handling.”
 
 <!-- Real-life Example -->
 Imagine you take an exam.
-
 If you pass → You will receive a certificate (resolve).
-
 If you fail → You will not receive a certificate (reject).
-
 The result will come in the future — not immediately
+
+✅ Promise Syntax
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Operation Successful");
+  } else {
+    reject("Operation Failed");
+  }
+<!-- 
+🎯 .then() and .catch()
+myPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  }); -->
+
+👉 .then() → success handle karta hai
+👉 .catch() → error handle karta hai
+
+
 <!-- 
 fetch(url)
 .then(rev => rev.json())
 .then(data => console.log(data))
 .catch(err => console.log(err)) -->
+
 
 <!-- 🔥 9. async/await kya hai? -->
 async/await is a cleaner way to handle promises.
@@ -774,6 +1173,247 @@ async function getData(){
     console.log(err);
   }
 } -->
+
+<!-- ❓1. Is JavaScript synchronous or asynchronous? -->
+JavaScript is single-threaded and synchronous by default,
+but it can handle asynchronous operations using:
+Callbacks
+Promises
+Async/Await
+Event Loop
+
+<!-- ❓2. What is Blocking and Non-Blocking code? -->
+Blocking: Stops execution until task finishes.
+Non-Blocking: Doesn’t stop execution.
+
+<!-- ❓4. What are different ways to handle async in JS? -->
+Callback
+Promise
+Async/Await
+
+imp:-
+<!-- 👉 “Why is JavaScript called single-threaded but still asynchronous?” -->
+JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread
+
+
+========================================================
+=======================================================
+📌 1️⃣ Lexical Scope
+It is the environment where variables and functions are stored based on where the code is written (lexical scope).
+
+<!-- function outer() {
+  let city = "Mumbai";
+
+  function inner() {
+    console.log(city);
+  }
+
+  inner();
+}
+
+outer();
+-->
+
+🌍 Real-world Example
+Think of scope like rooms in a house:
+People inside room can access main hall
+But main hall cannot access inside private room
+
+<!-- 🔥 2️⃣ Execution Context -->
+<!-- 🔹 What is Execution Context? -->
+“Execution Context is an environment where JavaScript code is executed.”
+Hindi:-
+Execution Context ek environment hota hai jahan JavaScript code execute hota hai.
+
+
+<!-- 🔥 5️⃣ Event Loop, Call Stack & Microtasks vs Macrotasks -->
+<!-- 🔹 Event Loop -->
+Event Loop is a mechanism in JavaScript that handles asynchronous operations and decides when to execute callback functions.
+
+<!-- Call Stack -->
+Call stack is a data structure that keeps track of function call and execution them one by one LIFO order.
+
+<!-- 
+function one() {
+  two();
+}
+
+function two() {
+  console.log("Hello");
+}
+
+one();
+ -->
+Execution order:
+first → second → console.log
+
+
+<!-- 🔥 4️⃣ Prototype & Prototypal Inheritance -->
+JavaScript uses prototype-based inheritance, where objects inherit properties and methods from other objects.
+
+<!-- 🌍 Real-world Example -->
+Think of prototype like:
+All students share same syllabus.
+Instead of giving each student separate syllabus copy.
+
+
+
+<!-- ✅ 4️⃣ Pure vs Impure Function --> IMP
+"A pure function is a function that always returns the same output for the same input and does not cause any side effects.
+
+<!-- Same input doge → hamesha same output dega -->
+<!-- 
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5 -->
+
+<!-- Why are pure functions preferred? -->
+👉 Because:
+Easy to test
+No side effects
+Better performance optimization
+Global variable change karna
+DOM change karna
+API call karna
+Console log karna
+File write karna
+
+<!-- 🔹 2️⃣ Impure Function -->
+“An impure function is a function that does not always return the same output for the same input, or it produces side effects such Global Variable Change, the DOM change, or making API calls.”
+<!-- 
+let count = 0;
+
+function increase() {
+  count++;
+}
+
+increase();
+console.log(count); // 1
+ -->
+
+<!-- 📦 1️⃣Rest Operator (...) -->
+ Rest parameter collects multiple values into one array.
+Rest → collect all chocolates into one box.
+<!-- 
+function sum(...numbers) {
+  console.log(numbers);
+}
+
+sum(1, 2, 3, 4); -->
+[1, 2, 3, 4]
+
+<!--2️⃣ Spread Operator (...) -->
+Spread operator expands an array into individual values.
+Spread → open box and spread chocolates individually.
+<!-- 
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+
+console.log(arr2); -->
+[1, 2, 3, 4, 5]
+================================================================================================================
+7️⃣ DOM (Frontend Interviews):-
+Since tum frontend bana rahi ho:
+DOM selection methods
+Event bubbling
+Event delegation
+addEventListener
+Debouncing / Throttling
+
+<!--🔥 6️⃣ DOM (Document Object Model) -->
+<!-- What is DOM -->
+DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
+
+<!-- 🌍 Real-world Example -->
+Think of DOM like:
+HTML page = house
+DOM = blueprint of house
+JavaScript = person modifying house
+
+HTML
+<!-- <p id="text">Hello</p> -->
+
+JavaScript
+<!-- document.getElementById("text").innerText = "Hi"; -->
+
+<!-- 🔥 1️⃣ Selecting Elements -->
+JavaScript me HTML elements ko select karne ke liye methods use hote hain.
+
+🔹 getElementById():-
+Selects element by id.
+HTML:-
+<!-- <p id="demo">Hello</p> -->
+JS:-
+<!-- 
+let element = document.getElementById("demo");
+console.log(element); -->
+
+🔹 querySelector():- 
+Selects first matching elements.
+<!-- 
+document.querySelector("#para");   // id
+document.querySelector(".box");    // class
+document.querySelector("p");       // tag
+ -->
+
+ 🔹 querySelectorAll():-
+ Selects all matching elements (returns NodeList).
+
+ <!-- let elements = document.querySelectorAll(".item"); -->
+
+<!--Q.Difference between querySelector and querySelectorAll? -->
+querySelector returns first matching element.
+querySelectorAll returns all matching elements.
+
+
+<!-- 🔥 2️⃣ Manipulating DOM -->
+DOM manipulation allows dynamic changes to content, style, and structure of web pages using JavaScript.
+
+<!-- 🔹 innerHTML -->
+Changes HTML inside element.
+
+element.innerHTML = "<b>New Text</b>";
+
+<!-- 🔹 textContent -->
+Changes only text (safe).
+
+element.textContent = "New Text";
+
+<!-- 🔹 style -->
+element.style.color = "red";
+
+<!-- 🔹 classList -->
+
+element.classList.add("active");
+element.classList.remove("active");
+element.classList.toggle("active");
+
+NOTE:- Agar class hai → remove karega
+       Agar class nahi hai → add karega
+
+
+
+
+
+<!-- 🔥 5. What is the difference between == and === ? -->
+✅ == :- Compares value only (type conversion happens)
+
+✅ === :- Compares value + type (no conversion)
+
+5 == "5"   // true
+5 === "5"  // false
+
+<!-- 🔥 6. What is Event Delegation? -->
+Event delegation is a technique where a parent element handles events for its child elements using event bubbling.
+<!-- 
+document.getElementById("parent").addEventListener("click", function(e){
+  if(e.target.tagName === "BUTTON"){
+    console.log("Button clicked");
+  }
+}); -->
+
 
 
 <!-- 🔥 10. What is the DOM? -->
@@ -891,56 +1531,9 @@ Start
 End
 Timeout
 ----------------------------------
-<!-- 🔥 17. Difference Between call, apply, bind -->
-Ye teen methods this ko control karte hain.
-✅ 1️⃣ call():-
-call() calls the function immediately and passes arguments one by one.
 
-<!-- “An argument is the actual value that is passed to a function when it is called.” -->
 
-<!-- Real-life example -->
-You borrow your friend’s ID card and enter the office immediately.
-
-👉 Borrowed identity
-👉 Used right away
-
-That is like call()
-<!-- 
-function greet(city) {
-  console.log(this.name + " from " + city);
-}
-
-greet.call({name: "Kajalti"}, "Delhi"); -->
-
-✅ apply():-
-apply() calls the function immediately but passes arguments as an array.
-(Arguments array me deta hai).
-
-<!-- Real-life example -->
-You borrow your friend’s ID card and enter the office immediately.
-but you carry all your documents together in one file (like an array).
-
-That is like apply().
-
-<!-- greet.apply({name: "Kajalti"}, ["Delhi"]); -->
-
-✅ bind():- 
-bind() does not call the function immediately. It returns a new function with a fixed this value that can be called later.
-
-You borrow your friend’s ID card,
-but you don’t enter immediately.
-You keep it and use it later.
-
-👉 Identity is fixed
-👉 Used later
-
-That is like bind()
-
-<!-- 
-const newFunc = greet.bind({name: "Kajalti"}, "Delhi");
-newFunc(); -->
-
-_--------------------------------------------
+_----------------------------------------------------------------------
 <!-- 🔥 18. What is Prototypal Inheritance? -->
 JavaScript uses prototype-based inheritance. Objects inherit properties from another object.
 <!-- 
