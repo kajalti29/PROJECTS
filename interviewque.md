@@ -47,7 +47,7 @@ naming rules:-
  Var:- 
  var is a function-scoped variable declaration keyword introduced in ES5. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined, which may lead to unexpected behavior.”
 
-🌍 Real-Life Example:
+🌍 Real-Life Example:sd
 Think of var like a company notice board.
 
 If someone changes the notice, everyone in the company sees the updated message.
@@ -268,7 +268,6 @@ your name is already in the list.
 <!-- 
 console.log(a);
 var a = 5; -->
-
 Output: undefined
 
 <!-- 🔥 What is TDZ? -->
