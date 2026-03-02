@@ -1114,8 +1114,6 @@ setTimeout(() => {
   clearInterval(interval);
 }, 5000);
 
-
-
 <!-- 🔥 8. What is a Promise? -->
 A Promise is an object that represents a future value — either resolved or rejected.
 It has three states: 
@@ -1195,22 +1193,21 @@ imp:-
 JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread
 
 
-========================================================
-=======================================================
-📌 1️⃣ Lexical Scope
-It is the environment where variables and functions are stored based on where the code is written (lexical scope).
-
-<!-- function outer() {
-  let city = "Mumbai";
+=================================================
+<!-- What is Lexical Scope -->
+Lexical scope means a function can use variables from the place where it was created (written in the code).
+<!-- 
+function outer() {
+  let count = 10;
 
   function inner() {
-    console.log(city);
+    console.log(count);
   }
 
-  inner();
+  return inner;
 }
 
-outer();
+const fn = outer();
 -->
 
 🌍 Real-world Example
@@ -1227,7 +1224,7 @@ Execution Context ek environment hota hai jahan JavaScript code execute hota hai
 
 <!-- 🔥 5️⃣ Event Loop, Call Stack & Microtasks vs Macrotasks -->
 <!-- 🔹 Event Loop -->
-Event Loop is a mechanism in JavaScript that handles asynchronous operations and decides when to execute callback functions.
+The Event Loop is a mechanism in JavaScript that allows asynchronous operations to run without blocking the single-threaded call stack.
 
 <!-- Call Stack -->
 Call stack is a data structure that keeps track of function call and execution them one by one LIFO order.
