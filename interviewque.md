@@ -31,6 +31,35 @@ HTML → CSS → JavaScript Engine → Output show
 * First-Class Functions
 * Object-Oriented
 
+<!-- 2. Is JavaScript single-threaded? -->
+Yes, JavaScript is single-threaded because it has only one call stack and can execute one task at a time.
+
+console.log("Task 1");
+console.log("Task 2");
+console.log("Task 3");
+
+Task 1
+Task 2 
+Task 3
+<!-- What is Call Stack in JavaScript? -->
+The Call Stack is a data structure that keeps track of function execution in JavaScript using a Last In, First Out (LIFO) principle.
+<!-- 
+function first() {
+  second();
+}
+
+function second() {
+  console.log("Hello");
+}
+
+first(); -->
+1️⃣ first() call hua → Call Stack me push hua
+2️⃣ first() ke andar second() call hua → Stack me push hua
+3️⃣ second() ke andar console.log("Hello") execute hua
+4️⃣ "Hello" print ho gaya
+5️⃣ second() complete → stack se pop
+6️⃣ first() complete → stack se pop
+------------------------------------------------------------------------
 <!-- What is variable ? -->
 A variable is a container used to store data(value) in a program.
 
@@ -49,7 +78,6 @@ naming rules:-
 
 🌍 Real-Life Example:sd
 Think of var like a company notice board.
-
 If someone changes the notice, everyone in the company sees the updated message.
 <!-- 
 var message = "Meeting at 10 AM";
@@ -65,7 +93,6 @@ Let:-
 
 <!-- Real-Life Example: -->
 Think of let like a classroom whiteboard.
-
 Changes inside one classroom do not affect others.
 <!-- 
 let topic = "Math";
@@ -158,6 +185,29 @@ console.log(z); // ✅ 30 -->
 * DataTypes
 * Conditon Statements
 * Loops 
+------------------------------------------------------------------------
+17. What is typeof?
+Operator used to check data type.
+
+18. What is isNaN()?
+Checks if value is NaN.
+
+19. What is parseInt()?
+Converts string to integer.
+
+20. What is parseFloat()?
+Converts string to decimal number.
+
+21. What is Boolean()?
+Converts value into boolean.
+
+24. What is the difference between alert, prompt, confirm?
+alert → show message
+prompt → input
+confirm → yes/no
+
+25. What is console.log()?
+Prints output in browser console.
 ------------------------------------------------------------------------------------
 <!-- 🟠 Functions :- -->
 ✔ What is a function
@@ -234,7 +284,25 @@ const greet = function() {
 };
 
 greet(); -->
+--------------------------------------------------
+IMP:-
+<!-- 🔥 1️⃣ Difference Between normal Function and Arrow Function. -->
+A normal function has its own this and arguments object, and it can be used as a constructor with the new keyword.
 
+✅ Normal Function
+<!-- 
+function greet(name) {
+  return "Hello " + name;
+} -->
+
+An arrow function does not have its own this and arguments object and cannot be used as a constructor.
+✅ Arrow Function
+<!-- 
+const greet = (name) => {
+  return "Hello " + name;
+}; -->
+
+-----------------------------------------------------------------------
 <!-- Arrow Functions -->
 An Arrow Function is a shorter and modern way to write a function in JavaScript using the => syntax and does not have its own this.
 
@@ -270,18 +338,17 @@ console.log(a);
 var a = 5; -->
 Output: undefined
 
+
+
 <!-- 🔥 What is TDZ? -->
 Temporal Dead Zone is the time between entering a block and the variable declaration where a let or const variable cannot be accessed.
 
 <!-- 🌍 Real-world Example -->
-Imagine you opened a bank account.
+"TDZ is like a booked movie seat — it exists, but you can't use it until the movie starts."
+<!-- 
+console.log(a); // ❌ ReferenceError
+let a = 10; -->
 
-The account has been created ✅
-But until you deposit money into it,
-you cannot withdraw any money ❌
-
-👉 The account exists
-👉 But you cannot use it yet
 
 <!-- Callback Functions -->
 A callback function is a function that is passed as an argument to another function and is executed after some task is completed.
@@ -307,12 +374,11 @@ greet ko argument ki tarah pass kiya gaya
 processUser ne baad me callback() call kiya
 
 <!-- Why Callbacks Are Important? -->
-Callbacks are important because JavaScript is single-threaded and asynchronous. Callbacks allow us to execute code after an operation like API calls, timers, or user events is completed.
-
 Event handling
 API calls
 setTimeout / setInterval
 Asynchronous programming
+
 
 <!-- ✅ 3️⃣ Higher Order Function (HOF) -->
 A Higher Order Function is a function that either:
@@ -421,7 +487,6 @@ let result = sum(2, 3);
 console.log(result);   // 5 -->
 
 
-
 <!-- IIFE (Immediately Invoked Function Expression) -->
 👉 IIFE is a function that runs immediately after it is defined.
 
@@ -443,23 +508,29 @@ console.log(result);   // 5 -->
 👉 Global scope bachane ke liye
 IIFE is used to create a private scope
 
-IMP:-
-<!-- 🔥 1️⃣ Difference Between normal Function and Arrow Function. -->
+<!-- 33. What is recursion? -->
+Function calling itself.
 
-A normal function has its own this and arguments object, and it can be used as a constructor with the new keyword.
-
-✅ Normal Function
+<!-- 42. What is currying? -->
+Transforming a function with multiple arguments into multiple nested functions.
 <!-- 
-function greet(name) {
-  return "Hello " + name;
+function add(a) {
+  return function(b) {
+    return a + b;
+  }
 } -->
 
-An arrow function does not have its own this and arguments object and cannot be used as a constructor.
-✅ Arrow Function
+<!-- 41. What is pure function? -->
+A pure function is a function that always returns the same output for the same input and does not modify external variables.
 <!-- 
-const greet = (name) => {
-  return "Hello " + name;
-}; -->
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5
+console.log(add(2, 3)); // 5 -->
+✔ Same input → same output
+
 
 <!-- Why do we use functions in real applications? -->
 Functions are used to organize code, avoid repetition, and make applications easier to maintain and reuse.
@@ -594,6 +665,7 @@ console.log(adults); // [18, 22] -->
 
 <!-- ✅ 3️⃣ reduce() 🔥🔥 (Most Important) -->
 reduce() is an array method that reduces all elements of an array into a single value by applying a function on each element.
+Reduces array to single value.
 Example:-
 Jaise shopping cart bill 🛒
 Sab items ka total ek final amount
@@ -789,58 +861,71 @@ console.log(Object.entries(person)); -->
 A shallow copy copies only the first level of an object.
 and shares nested references.
 
-let obj1 = {
-  name : "kajalti",
-  age : 22,
-  address:{
-    city: "Delh"
-  }
-};
-
-let obj2 = {...obj1};
-
-obj2.address.city = "Mumbai";
-console.log(obj1.address.city); 
-// Mumbai 😱
-
-
-A deep copy copies all levels of the object, including nested objects.
-It creates completely independent copies.
-
-
-let obj1 = {
-  name: "Kajalti",
+<!-- const obj1 = {
+  name: "Kajal",
   address: {
     city: "Delhi"
   }
 };
 
-let obj2 = JSON.parse(JSON.stringify(obj1));
+const obj2 = { ...obj1 }; // Shallow copy
 
 obj2.address.city = "Mumbai";
 
-console.log(obj1.address.city);
-// Delhi ✅
+console.log(obj1.address.city); // Mumbai ❗ -->
 
 
+A deep copy copies all levels of the object, including nested objects.
+It creates completely independent copies.
+<!-- 
+const obj1 = {
+  name: "Kajal",
+  address: {
+    city: "Delhi"
+  }
+};
 
+const obj2 = JSON.parse(JSON.stringify(obj1)); // Deep copy
+
+obj2.address.city = "Mumbai";
+
+console.log(obj1.address.city); // Delhi ✅
+// Delhi ✅ -->y
+-------------------------------------------------------------------
 6️⃣ JSON (parse, stringify) :-
 🔹 What is JSON?
 JSON = JavaScript Object Notation
 is a data format used to send and receive data.
-🔹 JSON.stringify() (Object → JSON):-
+
+JSON.stringify() converts a JavaScript object into a JSON string, while JSON.parse() converts a JSON string back into a JavaScript object.
+
+🔹 JSON.stringify():-
+👉 Converts a JavaScript object → JSON string
+stringify → object ko string me convert karta hai
+
 <!-- 
-let obj = { name: "Kajal", age: 23 };
+const user = {
+  name: "Kajal",
+  age: 22
+};
 
-let jsonData = JSON.stringify(obj);
-console.log(jsonData); -->
+const jsonData = JSON.stringify(user);
 
-🔹 JSON.parse() (JSON → Object):-
+console.log(jsonData);
+// {"name":"Kajal","age":22} -->
+
+
+🔹 JSON.parse():-
+👉 Converts a JSON string → JavaScript object
+parse → string ko object me convert karta hai
+
 <!-- 
-let data = '{"name":"Kajal","age":23}';
+const jsonData = '{"name":"Kajal","age":22}';
 
-let obj = JSON.parse(data);
-console.log(obj.name); -->
+const user = JSON.parse(jsonData);
+
+console.log(user.name); // Kajal -->
+
 
 <!-- 5️⃣ What is an object method? -->
 English: Function inside an object
@@ -1171,14 +1256,6 @@ async function getData(){
   }
 } -->
 
-<!-- ❓1. Is JavaScript synchronous or asynchronous? -->
-JavaScript is single-threaded and synchronous by default,
-but it can handle asynchronous operations using:
-Callbacks
-Promises
-Async/Await
-Event Loop
-
 <!-- ❓2. What is Blocking and Non-Blocking code? -->
 Blocking: Stops execution until task finishes.
 Non-Blocking: Doesn’t stop execution.
@@ -1252,8 +1329,6 @@ Think of prototype like:
 All students share same syllabus.
 Instead of giving each student separate syllabus copy.
 
-
-
 <!-- ✅ 4️⃣ Pure vs Impure Function --> IMP
 "A pure function is a function that always returns the same output for the same input and does not cause any side effects.
 
@@ -1277,7 +1352,7 @@ Console log karna
 File write karna
 
 <!-- 🔹 2️⃣ Impure Function -->
-“An impure function is a function that does not always return the same output for the same input, or it produces side effects such Global Variable Change, the DOM change, or making API calls.”
+“An impure function is a function that does not always return the same output for the same input
 <!-- 
 let count = 0;
 
