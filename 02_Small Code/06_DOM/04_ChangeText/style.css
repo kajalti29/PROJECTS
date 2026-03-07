@@ -11,7 +11,8 @@ body {
     justify-content: center;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: lightseagreen;
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
 p{
@@ -20,8 +21,11 @@ p{
 }
 
 button{
-    padding: 20px 40px;
+    padding: 18px 18px;
     font-size: 16px;
     border-radius: 10px;
     border: none;
+    font-weight: bold;
+    background-color: rgb(13, 174, 67);
+    color: white;
 }

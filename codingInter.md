@@ -421,3 +421,12 @@ Logic
 Select element
 Change text using JS
 
+<p id="text">Hello</p>
+<button onclick="changeText()">Change</button>
+
+<script>
+function changeText(){
+  document.getElementById("text").textContent = "Welcome";
+}
+</script>
+--------------------------------------------------------------

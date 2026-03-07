@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+div{
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.5);
+    padding: 40px 40px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#count{
+    align-items: center;
+    font-weight:bold ;
+    font-size: 16px;
+}
