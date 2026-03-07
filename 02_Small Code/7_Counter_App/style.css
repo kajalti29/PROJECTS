@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page center karne ke liye */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container{
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Counter number */
+#count{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button{
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button colors */
+#inc{
+    background-color: green;
+    color: white;
+}
+
+#dec{
+    background-color: red;
+    color: white;
+}
+
+#reset{
+    background-color: gray;
+    color: white;
+}
+
+/* Hover effect */
+button:hover{
+    opacity: 0.8;
+}
