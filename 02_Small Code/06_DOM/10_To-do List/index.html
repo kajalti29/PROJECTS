@@ -1,17 +1,26 @@
+<!-- 
+ Input se task lo
+Button click hone par
+Ek new li create karo
+Usme task text add karo
+ul list me add kar do -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>To-Do List</h2>
-        <input type="text" id="taskInput">
-        <button id="addTask">Add</button>
-        <ul id="taskList"></ul>
+        <input id="task" placeholder="Enter task">
+        <button onclick="addTask()">Add</button>
+
+        <ul id="list"></ul>
     </div>
 
     <script src="script.js"></script>
