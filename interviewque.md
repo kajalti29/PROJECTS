@@ -4,6 +4,10 @@ It run in the browser and on the server(node.js).
 It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
 <!-- For example: -->
 When you click a button and a popup appears.
+<!-- 
+button.addEventListener("click", function() {
+  alert("Button Clicked");
+}); -->
 
 <!-- 🌍 Uses of JavaScript -->
 ✅ Web Development (Frontend)
@@ -1063,7 +1067,7 @@ let rev = str.split("").reverse().join("");
 
 console.log(str === rev); // true
 ```
-================================================================================================================
+=======================================================================================================
 2️⃣ this Keyword 🔥 (Very Important)
 
 <!-- 🔥 3️⃣ this Inside Object -->
@@ -1141,12 +1145,20 @@ console.log("End"); -->
 Output:-
 Start
 Middle
-End
+End 
 
 ✅ Asynchronous Javascript:-
  Asynchronous Javascript Code runs without blocking the next line.
 <!-- Real-Life Example -->
- A real-life example is ordering food in a restaurant — you place the order and continue doing other things while waiting.”
+You download a movie 🎬
+
+The download happens in the background,
+and meanwhile you can watch YouTube or do other tasks.
+
+You don't have to sit and wait for the download to finish.
+
+👉 This is similar to asynchronous JavaScript, where a task runs in the background while the program continues doing other work.
+
 <!-- 
 setTimeout(() => {
   console.log("Hello");
@@ -1521,7 +1533,8 @@ Event delegation
 addEventListener
 Debouncing / Throttling
 
-1️⃣ Event Bubbling:-
+<!-- 1️⃣ Event Bubbling:-
+ -->
 Event Bubbling means the event starts from the target element and bubbles up to its parent elements.
 Event bubbles from child to parent.
 
