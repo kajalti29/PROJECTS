@@ -352,5 +352,51 @@ function firstNonRepeating(str) {
 console.log(firstNonRepeating("aabbcde"));
 // "c"
 ```
+==================================================================================================================================================================================
+<!-- 1️⃣ Button Click Counter -->
+Logic
+Create a variable count
+When button clicked → increase count
+Update the text in DOM
 
---
+<div class="btn"> 
+    <p id="count">0</p>
+    <button id="btn">Click</button>
+</div>
+
+<!-- 
+let count = 0;
+
+const btn = document.getElementById("btn");
+const display = document.getElementById("count");
+
+btn.addEventListener("click", function () {
+  count++;
+  display.innerText = count;
+}); -->
+----------------------------------------------------------
+2️⃣ Toggle Dark Mode
+Add/remove class on button click
+CSS controls dark mode
+
+<button id="toggle">Dark Mode</button>
+
+<!-- 
+const btn = document.getElementById("toggle");
+
+btn.addEventListener('click', function(){
+    document.body.classList.toggle('dark')
+});   -->
+
+
+body{
+  background: white;
+  color: black;
+}
+
+.dark{
+  background: black;
+  color: white;
+}
+
+-----------------------------------------------------------

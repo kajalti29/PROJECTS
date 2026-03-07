@@ -1,5 +1,4 @@
-const btn = document.getElementById('btn');
-btn.addEventListener('click', function(){
-    alert("Button clicked");
+function showName(){
+    let value = document.getElementById("name").value;
+    document.getElementById("result").textContent = value;
 }
-)
