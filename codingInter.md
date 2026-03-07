@@ -400,3 +400,24 @@ body{
 }
 
 -----------------------------------------------------------
+<!-- 3️⃣ Show Input Value -->
+Get value from input
+Show it inside paragraph
+
+<input id="name">
+<button onclick="showName()">Submit</button>
+<p id="result"></p>
+
+<script>
+function showName(){
+  let value = document.getElementById("name").value;
+  document.getElementById("result").textContent = value;
+}
+</script>
+
+-----------------------------------------------------------
+<!-- 4️⃣ Change Text on Button Click -->
+Logic
+Select element
+Change text using JS
+
