@@ -1563,6 +1563,15 @@ document.querySelector("p");       // tag
 <!--Q.Difference between querySelector and querySelectorAll? -->
 querySelector returns first matching element.
 querySelectorAll returns all matching elements.
+
+<!-- 3. Difference between innerHTML and textContent? -->
+innerHTML → Reads and writes HTML content including tags
+textContent → Reads and writes only text
+
+element.innerHTML = "<b>Hello</b>"
+element.textContent = "Hello"
+
+
 ---------------------------------------------------------------------------------
 <!-- 🔥 2️⃣ Manipulating DOM -->
 <!-- How do you change HTML content using JavaScript? -->
@@ -1657,6 +1666,31 @@ btn.addEventListener("click", function(){
 
 Real World Example
 Click Add to Cart button.
+
+<!-- 7. How do you create a new element in the DOM? -->
+let div = document.createElements("div")
+div.textContent = "Hello"
+document.body.appendChild(div)
+
+<!-- 8. How do you remove an element from the DOM? -->
+element.remove()
+<!-- 9. What is classList? -->
+classList is used to add, remove, or toggle CSS classes.
+element.classList.add("active")
+element.classList.remove("active")
+element.classList.toggle("active")
+
+<!-- 10. What is an Event Listener? -->
+An event listener is used to handle user actions like click, hover, or keypress.
+<!-- 
+button.addEventListener("click", function(){
+  alert("Button Clicked")
+}) -->
+
+11. What does setAttribute() do?
+It is used to set an HTML attribute.
+element.setAttribute("href", "https://google.com")
+
 -----------------------------------------------------------------------
 
 🔥 BOM (Browser Object Model)
