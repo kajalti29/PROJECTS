@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click -> Text Change</title>
+</head>
+<body>
+    <p id="text">Kajalti</p>
+    <button id="btn">Click</button>
+
+
+    <script>
+      let btn = document.getElementById("btn");
+      let text = document.getElementById("text");
+
+      btn.addEventListener("click", function(){
+        text.textContent = "Sirame";
+      })
+    </script>
+</body>
+</html>

@@ -1571,7 +1571,12 @@ textContent → Reads and writes only text
 element.innerHTML = "<b>Hello</b>"
 element.textContent = "Hello"
 
-
+<!-- Difference between getElementById() and querySelector() -->
+getElementById() → id name only
+querySelector() → CSS selector (#, ., tag) 
+Example:-  
+let a = document.getElementById("text");
+let b = document.querySelector("#text"); 
 ---------------------------------------------------------------------------------
 <!-- 🔥 2️⃣ Manipulating DOM -->
 <!-- How do you change HTML content using JavaScript? -->
