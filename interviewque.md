@@ -1067,69 +1067,8 @@ let rev = str.split("").reverse().join("");
 
 console.log(str === rev); // true
 ```
-=======================================================================================================
-2️⃣ this Keyword 🔥 (Very Important)
-
-<!-- 🔥 3️⃣ this Inside Object -->
-const student = {
-  name: "Kajal",
-  age: 21,
-  info() {
-    console.log(this.name);
-  }
-};
-
-student.info();
-
-<!-- 🔥 17. Difference Between call, apply, bind -->
-Ye teen methods this ko control karte hain.
-✅ 1️⃣ call():-
-call() calls the function immediately and passes arguments one by one.
-
-<!-- “An argument is the actual value that is passed to a function when it is called.” -->
-
-<!-- Real-life example -->
-You borrow your friend’s ID card and enter the office immediately.
-
-👉 Borrowed identity
-👉 Used right away
-
-That is like call()
-<!-- 
-function greet(city) {
-  console.log(this.name + " from " + city);
-}
-
-greet.call({name: "Kajalti"}, "Delhi"); -->
-
-✅ apply():-
-apply() calls the function immediately but passes arguments as an array.
-(Arguments array me deta hai).
-
-<!-- Real-life example -->
-You borrow your friend’s ID card and enter the office immediately.
-but you carry all your documents together in one file (like an array).
-
-That is like apply().
-
-<!-- greet.apply({name: "Kajalti"}, ["Delhi"]); -->
-
-✅ bind():- 
-bind() does not call the function immediately. It returns a new function with a fixed this value that can be called later.
-
-You borrow your friend’s ID card,
-but you don’t enter immediately.
-You keep it and use it later.
-
-👉 Identity is fixed
-👉 Used later
-
-That is like bind()
-
-<!-- 
-const newFunc = greet.bind({name: "Kajalti"}, "Delhi");
-newFunc(); -->
-================================================================================================================
+=================================================================================
+=================================================================================
 4️⃣ Asynchronous JavaScript 🔥🔥🔥
 Very important for frontend jobs:
 
@@ -1154,7 +1093,6 @@ You download a movie 🎬
 
 The download happens in the background,
 and meanwhile you can watch YouTube or do other tasks.
-
 You don't have to sit and wait for the download to finish.
 
 👉 This is similar to asynchronous JavaScript, where a task runs in the background while the program continues doing other work.
@@ -1177,47 +1115,122 @@ Async → wait kiye bina next line chalti hai.
 
 <!-- 👉 What is difference between setTimeout and setInterval? -->
 <!-- setTimeout -->
-setTimeout executes a function once after a specified delay,
+setTimeout run a function only once after a specified time delay.
+Syntax:-
+setTimeout(function, delay)
+delay is in milliseconds
+1000 ms = 1 second
 <!-- 
 setTimeout(() => {
-  console.log("Hello Kajalti");
-}, 2000); -->
+  console.log("Hello after 3 seconds")
+}, 3000)
+-->
+Output after 3 seconds
+Hello after 3 seconds
 
+<!-- Real-Life Example 2: Popup Message  -->
+A website shows welcome popup after 5 seconds.
 
+setTimeout(() => {
+  alert("Welcome to our website!")
+}, 5000)
+
+--------------------------------------------------------------------------------
 <!-- setInterval -->
-setInterval executes a function repeatedly at fixed intervals
+setInterval run a function repeatedly at fixed intervals
 until it is cleared.
 <!-- 
 setInterval(() => {
   console.log("Running every 2 seconds");
 }, 2000); -->
 
+<!-- Real-Life Example 2: Live Notifications -->
+Example: Instagram / WhatsApp
+Checking new messages every 5 seconds.
+
+setInterval(() => {
+  console.log("Checking new notifications...")
+}, 5000)
+
+In real apps this calls an API.
+----------------------------------------------------------------------
+<!-- How do you stop setInterval()? -->
+
 <!-- 🛑 Stop Karne Ka Tarika -->
 Dono ko clearTimeout() aur clearInterval() se stop karte hain.
 1. 
+<!-- 
 const timer = setTimeout(() => {
   console.log("Will not run");
 }, 3000);
 
-clearTimeout(timer);
-
+clearTimeout(timer); -->
 
 2. 
-const interval = setInterval(() => {
+<!--
+ const interval = setInterval(() => {
   console.log("Running...");
 }, 1000);
 
 setTimeout(() => {
   clearInterval(interval);
-}, 5000);
+}, 5000); -->
 
+
+Create a countdown timer from 10 to 0.
+<!-- 
+let time = 10
+
+let timer = setInterval(() => {
+
+  console.log(time)
+
+  time--
+
+  if(time < 0){
+    clearInterval(timer)
+    console.log("Time up")
+  }
+
+},1000) -->
+Real-world use:
+Exam timer
+Quiz timer
+Offer countdown
+
+1️⃣ Question: Output Prediction (Event Loop)
+<!-- 
+console.log("Start")
+
+setTimeout(() => {
+  console.log("Inside Timeout")
+}, 0)
+
+console.log("End") -->
+
+What will be the output?
+<!-- Output -->
+Start
+End
+Inside Timeout
+
+1️⃣ Call Stack
+2️⃣ Web APIs
+3️⃣ Callback Queue
+4️⃣ Event Loop
+
+1️⃣ console.log("Start") → runs immediately
+Start
+2️⃣ setTimeout() goes to Web APIs
+3️⃣ console.log("End") runs
+End
+4️⃣ Now event loop moves callback to stack
+Inside Timeout
+-----------------------------------------------------------------------------
 <!-- 🔥 8. What is a Promise? -->
 A Promise is an object that represents a future value — either resolved or rejected.
-It has three states: 
-1️⃣pending, 
-2️⃣Resolved(fulfilled), and 
-3️⃣Rejected. 
-We use .then() for success and .catch() for error handling.”
+It has three states: pending, fulfilled, and rejected.
+We handle promises using .then(), .catch(), and .finally().
 
 <!-- Real-life Example -->
 Imagine you take an exam.
@@ -1226,6 +1239,7 @@ If you fail → You will not receive a certificate (reject).
 The result will come in the future — not immediately
 
 ✅ Promise Syntax
+<!-- 
 const myPromise = new Promise((resolve, reject) => {
   let success = true;
 
@@ -1233,7 +1247,8 @@ const myPromise = new Promise((resolve, reject) => {
     resolve("Operation Successful");
   } else {
     reject("Operation Failed");
-  }
+  } -->
+
 <!-- 
 🎯 .then() and .catch()
 myPromise
@@ -1254,20 +1269,56 @@ fetch(url)
 .then(data => console.log(data))
 .catch(err => console.log(err)) -->
 
+🔥 2️⃣ What is Promise Chaining?
+Promise chaining is executing multiple asynchronous operations sequentially using multiple .then() methods.
+<!-- 
+Promise.resolve(10)
+  .then(num => num * 2)
+  .then(num => num + 5)
+  .then(result => console.log(result)); -->
+👉 Output: 25
+
+🔥 3️⃣ What is Promise.all()?
+Promise.all() runs multiple promises in parallel and returns a single promise.
+<!-- 
+const p1 = Promise.resolve("First");
+const p2 = Promise.resolve("Second");
+
+Promise.all([p1, p2])
+  .then(results => console.log(results)); -->
+
+👉 Output: ["First", "Second"]
+--------------------------------------------------------d
 
 <!-- 🔥 9. async/await kya hai? -->
-async/await is a cleaner way to handle promises.
+async/await is a syntax used to handle asynchronous operations (Promises) in a cleaner way.
+
+async → makes a function return a Promise
+await → pauses the function until the Promise resolves
 <!-- 
-async function getData(){
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
-  } catch(err){
-    console.log(err);
+async function getUsers(){
+
+  let response = await fetch("https://jsonplaceholder.typicode.com/users")
+
+  let data = await response.json()
+
+  console.log(data)
+
+}
+
+getUsers() -->
+
+
+
+<!-- 1️⃣4️⃣ What is Currying? -->
+Transforming a function with multiple arguments into multiple nested functions.
+<!-- 
+function add(a) {
+  return function(b) {
+    return a + b;
   }
 } -->
-
+---------------------------------------------------------
 <!-- ❓2. What is Blocking and Non-Blocking code? -->
 Blocking: Stops execution until task finishes.
 Non-Blocking: Doesn’t stop execution.
@@ -1280,36 +1331,90 @@ Async/Await
 imp:-
 <!-- 👉 “Why is JavaScript called single-threaded but still asynchronous?” -->
 JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread
+-------------------------------------------------------
+<!--this Keyword 🔥 (Very Important) -->
+this refers to the object that is currently executing the function.
 
-
-=================================================
-<!-- What is Lexical Scope -->
-Lexical scope means a function can use variables from the place where it was created (written in the code).
-<!-- 
-function outer() {
-  let count = 10;
-
-  function inner() {
-    console.log(count);
+<!-- 🔥 3️⃣ this Inside Object -->
+const student = {
+  name: "Kajal",
+  age: 21,
+  info() {
+    console.log(this.name);
   }
+};
 
-  return inner;
+student.info();
+
+<!-- 🔥 17. Difference Between call, apply, bind -->
+Ye teen methods this ko control karte hain.
+✅ 1️⃣ call():-
+call() calls the function immediately and passes arguments one by one.
+<!-- Real-life example -->
+You borrow your friend’s ID card and enter the office immediately.
+👉 Borrowed identity
+👉 Used right away
+That is like call()
+<!-- 
+function greet(city) {
+  console.log(this.name + " from " + city);
 }
 
-const fn = outer();
--->
+greet.call({name: "Kajalti"}, "Delhi"); -->
 
-🌍 Real-world Example
-Think of scope like rooms in a house:
-People inside room can access main hall
-But main hall cannot access inside private room
+✅ apply():-
+apply() calls the function immediately but passes arguments as an array.
+(Arguments array me deta hai).
+
+<!-- Real-life example -->
+You borrow your friend’s ID card and enter the office immediately.
+but you carry all your documents together in one file (like an array).
+That is like apply().
+
+<!-- greet.apply({name: "Kajalti"}, ["Delhi"]); -->
+
+✅ bind():- 
+bind() does not call the function immediately. It returns a new function with a fixed this value that can be called later.
+
+You borrow your friend’s ID card,
+but you don’t enter immediately.
+You keep it and use it later.
+
+👉 Identity is fixed
+👉 Used later
+
+That is like bind()
+
+<!-- 
+const newFunc = greet.bind({name: "Kajalti"}, "Delhi");
+newFunc(); -->
+=================================================================================
+<!-- What is Lexical Scope -->
+Lexical scope means a function can use variables from the place where it was created (written in the code).
+
+<!-- 1️⃣ Example: User Login System -->
+Imagine a login system where username is stored in a parent function.
+<!-- 
+function login(){
+  let username = "Kajalti"
+  function showUser(){
+    console.log("Welcome " + username)
+  }
+  showUser()
+}
+login()
+-->
+Welcome Kajalti
+
+<!-- Why this works -->
+showUser() can access username because of lexical scope.
+
 
 <!-- 🔥 2️⃣ Execution Context -->
 <!-- 🔹 What is Execution Context? -->
 “Execution Context is an environment where JavaScript code is executed.”
 Hindi:-
 Execution Context ek environment hota hai jahan JavaScript code execute hota hai.
-
 
 <!-- 🔥 5️⃣ Event Loop, Call Stack & Microtasks vs Macrotasks -->
 <!-- 🔹 Event Loop -->
@@ -1332,14 +1437,25 @@ one();
 Execution order:
 first → second → console.log
 
+<!-- 17. What is prototype? -->
+A prototype is an object from which other objects inherit properties and methods.
 
-<!-- 🔥 4️⃣ Prototype & Prototypal Inheritance -->
-JavaScript uses prototype-based inheritance, where objects inherit properties and methods from other objects.
+<!-- 18. What is prototypal inheritance? -->
+Prototypal inheritance is a mechanism in JavaScript where one object inherits properties and methods from another object using the prototype chain.
+<!-- 
+let human = {
+  walk: true
+}
 
-<!-- 🌍 Real-world Example -->
-Think of prototype like:
-All students share same syllabus.
-Instead of giving each student separate syllabus copy.
+let student = {
+  study: true
+}
+
+student.__proto__ = human
+
+console.log(student.walk)-->true
+Because student human से property ले रहा है।
+
 
 <!-- ✅ 4️⃣ Pure vs Impure Function --> IMP
 "A pure function is a function that always returns the same output for the same input and does not cause any side effects.
@@ -1398,22 +1514,11 @@ console.log(arr2); -->
 [1, 2, 3, 4, 5]
 ================================================================================================================
 7️⃣ DOM (Frontend Interviews):-
-Since tum frontend bana rahi ho:
-DOM selection methods
-Event bubbling
-Event delegation
-addEventListener
-Debouncing / Throttling
-
-<!--🔥 6️⃣ DOM (Document Object Model) -->
 <!-- What is DOM -->
 DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
 
 <!-- 🌍 Real-world Example -->
-Think of DOM like:
-HTML page = house
-DOM = blueprint of house
-JavaScript = person modifying house
+When you click Like button on Instagram, JavaScript updates the DOM to change the icon color.
 
 HTML
 <!-- <p id="text">Hello</p> -->
@@ -1421,8 +1526,17 @@ HTML
 JavaScript
 <!-- document.getElementById("text").innerText = "Hi"; -->
 
-<!-- 🔥 1️⃣ Selecting Elements -->
+<!-- 🔥2️⃣ DOM Selectors Elements -->
 JavaScript me HTML elements ko select karne ke liye methods use hote hain.
+
+| Method                 | Example                           |
+| ---------------------- | --------------------------------- |
+| getElementById         | document.getElementById()         |
+| getElementsByClassName | document.getElementsByClassName() |
+| getElementsByTagName   | document.getElementsByTagName()   |
+| querySelector          | document.querySelector()          |
+| querySelectorAll       | document.querySelectorAll()       |
+
 
 🔹 getElementById():-
 Selects element by id.
@@ -1449,9 +1563,9 @@ document.querySelector("p");       // tag
 <!--Q.Difference between querySelector and querySelectorAll? -->
 querySelector returns first matching element.
 querySelectorAll returns all matching elements.
-
-
+---------------------------------------------------------------------------------
 <!-- 🔥 2️⃣ Manipulating DOM -->
+<!-- How do you change HTML content using JavaScript? -->
 DOM manipulation allows dynamic changes to content, style, and structure of web pages using JavaScript.
 
 <!-- 🔹 innerHTML -->
@@ -1505,6 +1619,45 @@ Mini Projects:-
 </body>
 </html>
 IMP:-
+--------------------------------------------------------------------------------
+<!-- 4️⃣ Create and Add Elements -->
+<!-- How do you create elements dynamically in JavaScript? -->
+Methods:
+createElement()
+appendChild()
+prepend()
+remove()
+
+<!-- 
+const li = document.createElement("li")
+li.innerText = "New Task"
+
+document.querySelector("ul").appendChild(li) -->
+
+Example:-
+Todo List App
+User adds task → JS creates new <li>.
+
+
+<!-- 5️⃣ Event Handling -->
+Events are user interactions.
+
+Examples:
+click
+input
+change
+submit
+mouseover
+<!-- 
+const btn = document.querySelector("#btn")
+
+btn.addEventListener("click", function(){
+    alert("Button clicked")
+}) -->
+
+Real World Example
+Click Add to Cart button.
+-----------------------------------------------------------------------
 
 🔥 BOM (Browser Object Model)
 BOM allows JavaScript to interact with browser features outside the document.
@@ -1524,63 +1677,87 @@ Used to get or change URL.
 <!-- 
 console.log(location.href);
 location.reload(); -->
-=============================================================================================
-7️⃣ DOM (Frontend Interviews)
-Since tum frontend bana rahi ho:
-DOM selection methods
-Event bubbling
-Event delegation
-addEventListener
-Debouncing / Throttling
+-----------------------------------------------------------------------------------------------
+<!-- 6️⃣Very Important Interview Question -->
 
-<!-- 1️⃣ Event Bubbling:-
- -->
+<!-- 5️⃣ What is Event Loop in JavaScript? -->
+The Event Loop is a mechanism in JavaScript that allows asynchronous operations to run without blocking the single-threaded call stack.
+The Event Loop allows async operations by:
+Call Stack 
+Web APIs
+Callback Queue / Microtask Queue
+Event Loop moves tasks when stack is empty
+<!-- 
+console.log("Start");
+setTimeout(() => {
+  console.log("Inside setTimeout");
+}, 0);
+console.log("End"); -->
+
+
+<!-- 1️⃣ Event Bubbling:--->
 Event Bubbling means the event starts from the target element and bubbles up to its parent elements.
 Event bubbles from child to parent.
 
-Simple language me:
-👉 Event pehle child pe chalega
-👉 Fir parent
-👉 Fir grandparent
-👉 Upar ki taraf move karega
+<!-- Real-World -->
+Imagine there is a fire alarm in a building.
+The alarm starts in one room (child element).
+Then the signal spreads throughout the entire building (parent elements).
+The same concept applies in event bubbling.
+
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Parent Clicked");
+});
+
+document.getElementById("child").addEventListener("click", function() {
+  console.log("Child Clicked");
+});
+<!-- O/P -->
+Child Clicked
+Parent Clicked
+<!-- event.stopPropagation() se rok sakte hain. -->
+
+
+<!-- Q16: Event bubbling vs capturing? -->
+Event Bubbling: Event goes from child to parent.
+Event Capturing: Event goes from parent to child.
+
 
 <!-- 🔥 6. What is Event Delegation? -->
-Event Delegation is attaching a single event listener to a parent element to handle events of its children.
+Event Delegation means attaching a single event listener to a parent element to handle events of its children.
+This improves performance because we avoid attaching multiple event listeners to individual child elements
+<!-- Real World Example -->
+Clicking items in product list of Amazon.
 
 <ul id="list">
   <li>Item 1</li>
   <li>Item 2</li>
+  <li>Item 3</li>
 </ul>
 
-<!-- 
-document.getElementById("parent").addEventListener("click", function(e){
-  if(e.target.tagName === "BUTTON"){
-    console.log("Button clicked");
+let list = document.getElementById("list");
+
+list.addEventListener("click", function(event) {
+  if (event.target.tagName === "LI") {
+    console.log("Clicked:", event.target.textContent);
   }
-}); -->
-👉Ye delegation hai
-👉 Dynamic elements ke liye best method
+});
 
-<!-- 3️⃣ addEventListener -->
-addEventListener is used to attach an event handler to an element.
-<!-- 
-element.addEventListener("click", function() {
-  console.log("Clicked");
-}); -->
+Here I attached a single event listener to the parent <ul> element.When a child <li> is clicked, the event bubbles up to the parent and using event.target, we identify which child was clicked.
+<!-- Use event.stopPropagation() to stop it. -->
 
-
+-------------------------------------------------------
 <!-- 🔥 12. What is Debouncing? -->
-Debouncing is a technique that delays the execution of a function until a certain time has passed since the last event trigger.
-Hindi:-
-Debouncing ek technique hai jisme function tab execute hota hai jab event trigger hona band ho jata hai ek fixed delay ke baad.
-
-Simple language me:
-
-👉 User typing kar raha hai
-👉 Har keypress par API call nahi karenge
-👉 Thoda rukne ke baad hi call karenge
-
-🔥 Used in search input.
+Debouncing is a technique that delays the execution of a function until a specified time has passed after the last event trigger.
+<!-- Debouncing me function tab run hota hai jab user action stop kare. -->
+🎯 Real-Life Example
+A real-life example of debouncing is a search bar.
+When a user types continuously, the search function does not run on every keystroke.
+Instead, it runs only after the user stops typing for a short delay.
 <!-- 
 function debounce(fn, delay){
   let timer;
@@ -1589,40 +1766,40 @@ function debounce(fn, delay){
     timer = setTimeout(() => fn(), delay);
   }
 } -->
-Bar-bar call hone se function ko rokta hai.
-
+Real World Example
+Google Search suggestions.
 
 <!-- 🔥 13. What is Throttling? -->
 Throttling is a technique that limits a function to run only once within a specified time interval.
-
-Hindi:
-Throttling ek technique hai jo ensure karti hai ki function ek fixed time interval me sirf ek baar hi chale.
-
-Har time interval me ek hi baar run karega.
 
 <!-- 🌍 Real-Life Example -->
 🚗 Toll Plaza Example
 Imagine there is a toll gate.
 100 cars arrive at the same time 🚗🚗🚗
 But the gate allows only 1 car to pass every 5 seconds
-
 👉 No matter how many cars arrive,
 only one car is allowed to pass within each fixed time interval.
-
 This is exactly how throttling works.
 
+<!-- 3️⃣ addEventListener -->
+addEventListener is used to attach an event handler to an element.
+<!-- 
+element.addEventListener("click", function() {
+  console.log("Clicked");
+}); -->
+-------------------------------------------------------
 <!-- 🔥 15. What is localStorage? -->
 Local Storage is a client-side web storage mechanism that stores data in key-value pairs in the browser with no expiration time.
 
 <!-- Real-Life Example -->
 Imagine a website that saves:
 🌙 Dark mode preference
-🛒 Cart items
+🛒 Cart items 
 🔐 Login status
-
 Even if you close the browser and open it again,
 your settings are still saved.
 👉 That is localStorage.
+
 <!-- 
 // Store data
 localStorage.setItem("username", "Kajal");
@@ -1651,6 +1828,7 @@ let obj = JSON.parse(data);
 
 console.log(obj.name); // Kajal -->
 
+
 <!-- 🔥 24. What is Callback Hell? -->
 “Callback Hell is a situation in JavaScript where multiple asynchronous callbacks are nested inside each other, making the code difficult to read, debug, and maintain.”
 <!-- 
@@ -1664,81 +1842,29 @@ getData(function(){
 ✅ Solution:
 Promises
 async/await
-============================================================================================
-<!-- ✅ 4️⃣ ES6 Features (Spread, Destructuring, Rest) -->
 
-✅ Spread Operator (...):-
-
-Spread operator (...) expands elements of an array or object.
-
-Hindi:
-Array ya object ko copy ya merge karne ke liye use hota hai.
+<!-- 8️⃣ Fetch API -->
+Fetch API is used to call backend APIs and get data from servers.
 <!-- 
-const arr1 = [1, 2];
-const arr2 = [...arr1, 3, 4];
-console.log(arr2); -->
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(response => response.json())
+.then(data => console.log(data))
+ -->
 
-✅ Destructuring:-
-Extracts values from arrays or objects into variables.
-
-Hindi:
-Array ya object se direct values nikalne ka easy tareeka
+🔥 9. API Integration (Real Project Level):-
+API integration is the process of fetching and sending data between frontend and backend using HTTP requests.
 <!-- 
-const user = { name: "Kajalti", age: 22 };
-const { name, age } = user;
-console.log(name, age); -->
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log("Error:", error)); -->
 
-✅ Rest Operator (...):-
-Rest operator (...) collects multiple elements into a single array.
-<!-- 
-function sum(...numbers) {
-  return numbers.reduce((a, b) => a + b);
-}
-
-console.log(sum(1, 2, 3, 4)); -->
--------------------------------------------------------------------------------
-🔥 5. Modules:-
-Modules allow splitting code into separate reusable files using export and import.
-
-📁 math.js
-<!-- 
-export function add(a, b) {
-  return a + b;
-} -->
-
-📁 main.js
-<!-- 
-import { add } from "./math.js";
-
-console.log(add(2, 3)); -->
-
-🔥 6. Memory Leaks (Basics):-
-A memory leak when unused memory is not released, causing performance issues.
-
-Wrong (Event listener remove nahi kiya):
-<!-- 
-function addListener() {
-  document.getElementById("btn").addEventListener("click", function () {
-    console.log("Clicked");
-  });
-} -->
-
-✅ Correct (Cleanup):
-<!-- 
-function handleClick() {
-  console.log("Clicked");
-}
-
-const btn = document.getElementById("btn");
-btn.addEventListener("click", handleClick);
-
-// Cleanup
-btn.removeEventListener("click", handleClick); -->
 
 🔥 7. Performance Optimization:-
 Performance optimization means improving the speed and efficiency of a web application.
 
 <img src="image.jpg" loading="lazy" alt="example">
+
 
 🔥 8. Error Handling:-
 Error handling is the process of managing runtime errors using try, catch, and finally blocks.
@@ -1762,66 +1888,96 @@ try {
   console.log("Execution completed");
 } -->
 
-🔥 9. API Integration (Real Project Level):-
-API integration is the process of fetching and sending data between frontend and backend using HTTP requests.
-<!-- 
-fetch("https://jsonplaceholder.typicode.com/posts/1")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log("Error:", error)); -->
-
  ============================================================================================
- 🎯 Level 2 – Strong Frontend Developer Level(job)
+QUN ans
+<!-- 2. Difference between HTML DOM and Browser DOM? -->
+| HTML DOM                            | Browser DOM                      |
+| ----------------------------------- | -------------------------------- |
+| Represents HTML document            | Represents browser window        |
+| Used to manipulate webpage elements | Used to control browser features |
+Example:-
+document.getElementById() vs window.alert()
 
- <!-- ✅ 1. Execution Context:- -->
- Execution context is the environment where JavaScript code runs.
-<!-- 
-var x = 10;
+<!-- 3. How does JavaScript interact with the DOM? -->
+JavaScript interacts with the DOM using the document object to select, modify, add, or remove HTML elements.
 
-function test() {
-  var y = 20;
-  console.log(x + y);
-}
-test(); -->
+<!-- 4. What is a DOM tree? -->
+A DOM tree is a hierarchical structure of HTML elements where each element is represented as a node.
 
+<!-- 5. What are DOM nodes? -->
+Every element, attribute, or text in the HTML document is called a node.
 
- <!-- What happens during execution context creation phase? -->
-You can say:
-Execution context is created in two phases:
-1. Memory Creation Phase
-2. Execution Phase
+Types:
+Element Node
+Text Node
+Attribute Node
 
-1️⃣ Creation Phase
-Memory is allocated for variables and functions
-Variables are initialized as undefined
-Functions are stored completely
+<!-- 6. Difference between document and window -->
+| window                    | document                 |
+| ------------------------- | ------------------------ |
+| Represents browser window | Represents HTML document |
+| Global object             | Child of window          |
 
-2️⃣ Execution Phase
-Code runs line by line
+<!-- 7. What is document.body? -->
+document.body returns the body element of the webpage.
 
-<!-- ✅ 3. Prototype Chain (Deep): -->
-The prototype chain is the mechanism by which JavaScript objects inherit properties from other objects.
+<!-- 8. What is document.head? -->
+document.head returns the head element of the HTML document.
 
-If a property is not found in an object, JS looks up the prototype chain.
-<!-- 
-const obj = {};
-console.log(obj.toString()); // from Object prototype -->
+<!-- 9. What is innerHTML? -->
+innerHTML gets or sets the HTML content inside an element.
+Example
+element.innerHTML = "<h1>Hello</h1>"
 
-<!-- ✅ 4. Garbage Collection:- -->
-JavaScript automatically removes unused memory (mark and sweep algorithm).
+<!-- 10. Difference between innerHTML and innerText -->
+| innerHTML            | innerText              |
+| -------------------- | ---------------------- |
+| Returns HTML content | Returns only text      |
+| HTML tags are parsed | Tags are shown as text |
 
+<!-- 🔹 DOM Selectors -->
+<!-- 11. What is getElementById()? -->
+It selects an element by its unique id.
 
-<!-- ✅ 5. Memory Optimization -->
-Memory optimization means writing code that avoids unnecessary memory usage.
+document.getElementById("title")
 
-Avoid global variables
-Remove unused event listeners
-Clear intervals
-Use weak references
-<!-- 
-let interval = setInterval(() => {
-  console.log("Running");
-}, 1000);
+<!-- 14. Difference between HTMLCollection and NodeList -->
+| HTMLCollection          | NodeList                     |
+| ----------------------- | ---------------------------- |
+| Live collection         | Static collection            |
+| Returned by getElements | Returned by querySelectorAll
 
-clearInterval(interval); -->
-==============================================================================================
+15. How do you select elements using CSS selectors in JS?**
+Using `querySelector()`.
+document.querySelector(".box")
+`
+<!-- 16. How do you select multiple elements in DOM?** -->
+Using `querySelectorAll()`.
+
+<!-- **17. What is `getElementsByTagName()`?** -->
+It selects all elements with a **specific HTML tag**.
+document.getElementsByTagName("p")
+<!-- **18. How do you convert NodeList to Array?** -->
+Array.from(nodeList)
+
+<!-- # 🔹 DOM Manipulation -->
+<!-- **19. How do you change text content of an element?** -->
+element.textContent = "Hello"
+**20. Difference between `textContent`, `innerText`, and `innerHTML`**
+
+| Property    | Description          |
+| ----------- | -------------------- |
+| textContent | Returns all text     |
+| innerText   | Returns visible text |
+| innerHTML   | Returns HTML content |
+<!-- **21. How do you change CSS using JavaScript?** -->
+element.style.color = "red"
+<!-- **22. How do you add a class to an element?** -->
+element.classList.add("active")
+<!-- **23. How do you remove a class?** -->
+element.classList.remove("active")
+<!-- **24. What is `classList`?** -->
+`classList` is a property used to **add, remove, or toggle CSS classes**.
+<!-- **25. How do you toggle classes?** -->
+element.classList.toggle("active")
+=========================================================================

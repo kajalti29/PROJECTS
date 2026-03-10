@@ -1,0 +1,53 @@
+<!-- ✅ 1️⃣ What is Git -->
+Git is a distributed version control system used to track changes in source code and manage collaboration between developers.
+
+<!-- 🔥 2️⃣ What is Version Control? -->
+Version control is a system that tracks changes to files over time so we can recall specific versions later.
+
+<!-- What is GitHub? -->
+GitHub is a cloud-based platform where developers can store and manage Git repositories. It allows teams to collaborate on projects, review code, manage issues, and track changes.
+
+
+<!-- 🔥 3️⃣ Difference Between Git and GitHub? -->
+Git is a version control system, while GitHub is a cloud platform that hosts Git repositories.
+
+
+<!-- What is a repository in GitHub -->
+A repository is a storage location for a project that contains all project files, code, and version history.
+
+<!-- 🔥 5️⃣ Explain Git Workflow -->
+First we initialize the repository using git init, then add files using git add ., commit changes using git commit, and finally push the code to GitHub using git push.
+
+<!-- 🔥 6️⃣ What is a Branch in Git? -->
+
+
+<!-- 9. Common Git Commands -->
+What Git commands do you use?
+
+git init
+git add .
+git commit -m "message"
+git push
+git pull
+git clone
+
+Explanation:
+
+git init → create new repository
+git add → add files to staging area
+git commit → save changes
+git push → upload code to GitHub
+git pull → download latest code 
+
+<!-- 🔥 4️⃣ What is Staging Area? -->
+The staging area is a temporary area where changes are prepared before committing.
+
+
+<!-- What does git clone do -->
+Git clone is used to download an existing repository from GitHub to the local system.
+
+git clone https://github.com/projectname
+
+<!-- What is git merge? -->
+Git merge combines changes from one branch into another branch, usually merging a feature branch into the main branch.
+
