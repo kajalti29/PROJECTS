@@ -136,7 +136,8 @@ Block → inside { }
 <!-- 1️⃣ Global Scope -->
 A variable declared outside all functions is called a global variable, and it can be accessed from anywhere in the program.
 Example:_
-Jaise sun (suraj) — sab jagah roshni deta hai, har jagah visible hota hai.
+"Like the sun — it spreads light everywhere and is visible in all places." ☀️
+
 <!-- 
 let x = 10;   // global variable
 
@@ -150,9 +151,6 @@ console.log(x); // 10 -->
 <!--2️⃣Local Scope (Function Scope) -->
 A variable declared inside a function is accessible only within that function.
 Example:-
-1. “The ATM PIN is required only for ATM transactions.”
-ATM ka PIN → sirf ATM transaction ke time
-
 2. “Like your bedroom — it is used only inside your room, not outside.”
 <!-- 
 function test() {
@@ -161,9 +159,7 @@ function test() {
   const c = 7;
   console.log(a, b, c);
 }
-
 test();
-
 console.log(a); // ❌ error
 console.log(b); // ❌ error
 console.log(c); // ❌ error -->
@@ -172,46 +168,107 @@ console.log(c); // ❌ error -->
 A variable declared with let or const inside a block { } is accessible only within that block.
 Example:-
 “The exam hall question paper is used only inside the exam hall.”
-Exam hall ka question paper → sirf exam hall ke andar
 <!-- 
 if (true) {
   let x = 10;
   const y = 20;
   var z = 30;
 }
-
 console.log(x); // ❌ error
 console.log(y); // ❌ error
 console.log(z); // ✅ 30 -->
-
-👉 var block scope follow nahi karta 😱
 -------------------------------------------------------------
 * DataTypes
 * Conditon Statements
 * Loops 
 ------------------------------------------------------------------------
 17. What is typeof?
-Operator used to check data type.
+typeof is an operator used to check the data type of a variable or value.
+<!-- 
+let a = 10;
+console.log(typeof a);   // number
+
+let name = "John";
+console.log(typeof name); // string
+
+let isTrue = true;
+console.log(typeof isTrue); // boolean -->
 
 18. What is isNaN()?
-Checks if value is NaN.
+Checks if value is Not a Number (NaN).
+<!-- 
+console.log(isNaN("Hello")); // true
+console.log(isNaN(100));     // false
+console.log(isNaN("123"));   // false -->
+"Hello" cannot convert to number → NaN
 
 19. What is parseInt()?
-Converts string to integer.
+parseInt() is used to convert a string into an integer (whole number).
+<!-- 
+let num = "25";
+let result = parseInt(num);
+
+console.log(result); // 25
+console.log(typeof result); // number -->
 
 20. What is parseFloat()?
 Converts string to decimal number.
+<!-- 
+let price = "10.75";
+
+let result = parseFloat(price);
+
+console.log(result); // 10.75 -->
 
 21. What is Boolean()?
 Converts value into boolean.
+<!-- 
+console.log(Boolean(1));    // true
+console.log(Boolean(0));    // false
+console.log(Boolean(""));   // false
+console.log(Boolean("Hi")); // true -->
 
 24. What is the difference between alert, prompt, confirm?
 alert → show message
 prompt → input
 confirm → yes/no
+<!-- 
+alert("Welcome");
+let name = prompt("Enter your name");
+let result = confirm("Are you sure?"); -->
 
 25. What is console.log()?
 Prints output in browser console.
+<!-- 
+let name = "Rahul";
+
+console.log(name);
+console.log("Hello World");
+console.log(10 + 20); -->
+
+12. What is type coercion?
+Type coercion is JavaScript’s automatic or explicit conversion of values from one data type to another.
+
+13. What are primitive types?
+Primitive types are immutable data types that store single values directly in memory.
+string, number, boolean, null, undefined, symbol, bigint
+
+15. null vs undefined?
+undefined → declared but not assigned a value.
+<!-- 
+let a;
+console.log(a); // undefined
+-->
+
+null → intentional empty value
+<!--
+let b = null;
+console.log(b); // null -->
+
+16. What is strict mode?
+Strict mode is a way to write safer JavaScript by enabling error free javaScript code.
+
+<!-- x = 10; // allowed (bad practice) -->
 ------------------------------------------------------------------------------------
 <!-- 🟠 Functions :- -->
 ✔ What is a function
@@ -341,8 +398,6 @@ your name is already in the list.
 console.log(a);
 var a = 5; -->
 Output: undefined
-
-
 
 <!-- 🔥 What is TDZ? -->
 Temporal Dead Zone is the time between entering a block and the variable declaration where a let or const variable cannot be accessed.
