@@ -67,6 +67,15 @@ first(); -->
 <!-- What is variable ? -->
 A variable is a container used to store data(value) in a program.
 
+<!-- Real-life example -->
+Like a container or box where we store things.
+<!-- 
+let name = "Rahul";
+const age = 22;
+var city = "Mumbai";
+
+console.log(name, age, city); -->
+
 naming rules:-
 1] A variable name can start only with - a letter, underscore_ and dollar($).
 2] No number at start.
@@ -179,6 +188,7 @@ console.log(y); // ❌ error
 console.log(z); // ✅ 30 -->
 -------------------------------------------------------------
 * DataTypes
+Just like different types of files in computer.
 * Conditon Statements
 * Loops 
 ------------------------------------------------------------------------
@@ -284,6 +294,10 @@ Strict mode is a way to write safer JavaScript by enabling error free javaScript
 
 <!-- Functions -->
 A function is a block of code that performs a specific task and can be reused.It can accept parameters and return a value.”
+Like a machine that takes input and produces output.
+<!-- Logic -->
+Input → process → return result
+
 “For example, if I want to add two numbers multiple times, I can create a function.”
 <!-- 
 // function add(a, b) {
@@ -293,19 +307,34 @@ A function is a block of code that performs a specific task and can be reused.It
 
 “Here, ‘add’ is a function that takes two parameters and returns their sum. When I call add(2, 3), it returns 5.”
 
-<!-- * Functions Basics:- -->
-Syntax
-<!--
- function functionName() {
-  // code
-} 
--->
-
 <!-- "Why do we use functions in JavaScript?" -->
-Functions are used to make code reusable, organized, and modular.
-They help avoid repetition, improve readability, and make debugging easier.
-Functions also allow us to break large programs into smaller manageable pieces.
+Functions are used to reuse code and perform specific tasks. They make the code easier to read and avoid repeating the same code again and remove errors.
 
+<!-- 🔹 1️⃣ Parameter -->
+Parameters are inputs passed to function.
+<!-- function add(a,b) -->
+
+<!-- 🔹 2️⃣ Argument -->
+An argument is the actual value passed to a function when calling it.
+<!-- greet("Kajal"); -->
+👉 Yaha "Kajal" argument hai.
+
+<!-- 🔹 3️⃣ Return Statement -->
+return Statement sends the result back from function.
+<!-- 
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(2, 3);
+console.log(result);   // 5 -->
+
+<!-- 21. What is anonymous function? -->
+Function without name.
+
+<!-- 22. What is recursion? -->
+Function calling itself.
+-------------------------------------------------------------------------------------------------------
 <!-- 1️⃣ Function Declaration vs Function Expression -->
 Function Declaration:
 A function defined using the function keyword with a name.It is fully hoisted and can be called before definition
@@ -321,7 +350,7 @@ function greet() {
 }
  -->
 Logic
-function greet(name) → creates a function
+function greet(name) → creates a function 
 return sends value back
 We call it using greet("Kajal")
 
@@ -345,9 +374,7 @@ const greet = function() {
 };
 
 greet(); -->
---------------------------------------------------
-IMP:-
-<!-- 🔥 1️⃣ Difference Between normal Function and Arrow Function. -->
+----------------------------------------------------- 🔥 1️⃣ Difference Between normal Function and Arrow Function. -->
 A normal function has its own this and arguments object, and it can be used as a constructor with the new keyword.
 
 ✅ Normal Function
@@ -384,8 +411,7 @@ const greet = () => {
  const add = (a, b) => {
     return a + b;
 }; -->
-
-
+----------------------------------------------------
 <!-- 🔥 3. What is Hoisting? -->
 Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
 
@@ -407,8 +433,7 @@ Temporal Dead Zone is the time between entering a block and the variable declara
 <!-- 
 console.log(a); // ❌ ReferenceError
 let a = 10; -->
-
-
+-------------------------------------------------
 <!-- Callback Functions -->
 A callback function is a function that is passed as an argument to another function and is executed after some task is completed.
 
@@ -437,8 +462,7 @@ Event handling
 API calls
 setTimeout / setInterval
 Asynchronous programming
-
-
+----------------------------------------------------
 <!-- ✅ 3️⃣ Higher Order Function (HOF) -->
 A Higher Order Function is a function that either:
 Takes another function as an argument, or
@@ -449,14 +473,6 @@ A washing machine:
 You choose different modes (Quick Wash, Heavy Wash).
 The machine’s behavior changes based on the selected mode (function).
 The machine like a higher-order function.
-
-
-"Main tumhe ek task dunga, aur tum us task ko complete karne ka method choose kar sakti ho."
-Yaha:
-Teacher = Higher Order Function
-
-Method (Math solve karna, Diagram banana, etc.) = Callback Function
-Example:-1
 <!-- 
 function calculate(a, b, operation) {
   return operation(a, b);
@@ -479,73 +495,40 @@ function callFunction(fn) {
 }
 
 callFunction(sayHello); -->
+---------------------------------------------------
+<!-- 🔥 4️⃣ What is Closure? -->
+A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.It is used for data hiding and private variables.
 
+<!-- Real-life example -->
+Like a backpack that carries items from previous place.
 
-<!-- 🔥 4. What is Closure? -->
-A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.
-Hindi:-
-Closure matlab inner function ko outer function ki variables yaad rehti hain.
-
-🔥 Real use: Private variables, counters, data hiding.
-<!-- 
-function outer(){
-    let count =  0;
-    return function inner(){
-        count++;
-        console.log(count);
-    };
-} -->
-<!-- Real-world Use -->
-Used in:
-Data privacy
-Counters
+Real use:
+Data hidding
+Private variables, 
+counters,
+callback
 Event handlers
-React hooks
+<!-- 
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  }
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2 -->
+outer() returns the inner() function.
+inner() remembers the variable count because of closure.
+So each time counter() is called, count increases instead of resetting.
+(Isliye har baar counter() call karne par count increase hota hai, reset nahi hota. 😎)
 
 <!-- 🔹 Why do we use Closure? -->
 We use closure protect data inside a function.They are widely used in callbacks, event handlers, and functional programming.
-
-
-<!-- 🔥 What is this in JavaScript? -->
-👉 this refers to the object that is calling the function.
-
-<!-- 
-let user = {
-  name: "Kajal",
-  greet: function () {
-    console.log(this.name);
-  }
-};
-
-user.greet(); // Kajal -->
-
-console.log(this);
-
-
-<!-- 🔹 1️⃣ Parameter -->
-A parameter is a variable written inside the function parentheses when we define a function.
-<!-- 
-function greet(name) {   // name is a parameter
-  console.log("Hello " + name);
-} -->
-
-<!-- 🔹 2️⃣ Argument -->
-An argument is the actual value passed to a function when calling it.
-
-<!-- greet("Kajal"); -->
-👉 Yaha "Kajal" argument hai.
-
-<!-- 🔹 3️⃣ Return Statement -->
-The return statement sends a value back from a function.
-<!-- 
-function sum(a, b) {
-  return a + b;
-}
-
-let result = sum(2, 3);
-console.log(result);   // 5 -->
-
-
+--------------------------------------------------
 <!-- IIFE (Immediately Invoked Function Expression) -->
 👉 IIFE is a function that runs immediately after it is defined.
 
@@ -557,7 +540,7 @@ console.log(result);   // 5 -->
 })(); -->
 
 (function(){}) → Function expression
-() → Immediately call
+() → Immediately call s
 
 <!-- ✅ Arrow Function IIFE -->
 (() => {
@@ -566,10 +549,7 @@ console.log(result);   // 5 -->
 
 👉 Global scope bachane ke liye
 IIFE is used to create a private scope
-
-<!-- 33. What is recursion? -->
-Function calling itself.
-
+----------------------------------------------------
 <!-- 42. What is currying? -->
 Transforming a function with multiple arguments into multiple nested functions.
 <!-- 
@@ -579,31 +559,40 @@ function add(a) {
   }
 } -->
 
-<!-- 41. What is pure function? -->
-A pure function is a function that always returns the same output for the same input and does not modify external variables.
+<!-- ✅ 4️⃣ Pure vs Impure Function --> IMP
+"A pure function is a function that always returns the same output for the same input and does not cause any side effects.
+
+<!-- Same input doge → hamesha same output dega -->
 <!-- 
 function add(a, b) {
   return a + b;
 }
 
-console.log(add(2, 3)); // 5
 console.log(add(2, 3)); // 5 -->
-✔ Same input → same output
 
+<!-- Why are pure functions preferred? -->
+👉 Because:
+Easy to test
+No side effects
+Better performance optimization
+Global variable change karna
+DOM change karna
+API call karna
+Console log karna
+File write karna
 
-<!-- Why do we use functions in real applications? -->
-Functions are used to organize code, avoid repetition, and make applications easier to maintain and reuse.
+<!-- 🔹 2️⃣ Impure Function -->
+“An impure function is a function that does not always return the same output for the same input
+<!-- 
+let count = 0;
 
-<!--Why not use arrow functions everywhere? -->
+function increase() {
+  count++;
+}
 
-<!--✅ Arrow Function kab use karna best hota hai? -->
-✔ Callback functions
-✔ map, filter, reduce
-✔ Short logic wale functions
-✔ setTimeout, setInterval
-
-<!-- // How do functions help in frontend development? -->
-Functions help in handling user events, validating forms, and interacting with APIs.
+increase();
+console.log(count); // 1
+ -->
 =================================================================================
 <!-- * Arrays:- -->
 An array is a collection of multiple values stored in a single variable.
@@ -694,7 +683,7 @@ console.log(arr); // [1, 4] -->
 13. reduce() 🔥🔥
 14. forEach()
  
-<!-- 1️⃣ map() 🔥🔥 (MOST IMPORTANT) -->
+<!-- 1️⃣ map()(MOST IMPORTANT) -->
 map() Creates a new array by applying a function to each element of the array.
 does not change original array.
 
@@ -705,8 +694,7 @@ let arr = [1, 2, 3, 4];
 let result = arr.map(num => num * 2);
 console.log(result)    //[1, 2, 6, 8]-->
 
-
-<!-- 2️⃣ filter() 🔥🔥 -->
+<!-- 2️⃣ filter()-->
 “filter() creates a new array with elements that satisfy a given condition.”
 <!-- 
 let arr = [1, 2, 3, 4];
@@ -721,13 +709,13 @@ let ages = [12, 18, 22, 15];
 let adults = ages.filter(age => age >= 18);
 console.log(adults); // [18, 22] -->
 
+<!--3️⃣ reduce() -->
+reduce() is used to reduce an array to a single value (like sum, total, or result).
 
-<!-- ✅ 3️⃣ reduce() 🔥🔥 (Most Important) -->
-reduce() is an array method that reduces all elements of an array into a single value by applying a function on each element.
-Reduces array to single value.
-Example:-
-Jaise shopping cart bill 🛒
-Sab items ka total ek final amount
+array.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, initialValue);
+
 <!-- 
 let arr = [100, 200, 300];
 let total = arr.reduce((acc, curr) => {
@@ -746,15 +734,11 @@ curr → current value
 0 → initial value
 
 <!-- 4️⃣ forEach() -->
-forEach() executes a function on each element but does not return a new array.
-
-Example:-
-Jaise attendance check 📋
-Sirf dekhna hai, result store nahi karna
+forEach() is used to loop through each element of an array.
 <!-- 
-let arr = [1, 2, 3];
+let numbers = [1, 2, 3];
 
-arr.forEach(num => {
+numbers.forEach(function(num) {
   console.log(num);
 }); -->
 
@@ -814,20 +798,21 @@ console.log(numbers.every(num => num > 0));
 // true -->
 
 ### 1️⃣9️⃣ What is array destructuring?
+Array destructuring means taking values from an array and storing them in variables.
+
 Array destructuring ka matlab hai array ke values ko directly variables me nikal lena, bina index use kiye.
 <!-- 
 let arr = [10, 20, 30];
-
 let [a, b, c] = arr;
-
 console.log(a); // 10
 console.log(b); // 20
 console.log(c); // 30 -->
-
 ====================================================
 =========================================
 🟣 1️⃣ Objects in JavaScript
 "Object is a collection of key-value pairs used to store structured data."
+<!-- Real-life example -->
+Like a student ID card with different details.
 <!-- 
 let student = {
   name: "Kajal",
@@ -1028,7 +1013,6 @@ Example internal structure:
   1: 20,
   2: 30
 }
-
 ================================================================================================================
 ✅ What is a String?
 A string is a sequence of characters used to represent text.
@@ -1123,6 +1107,20 @@ let rev = str.split("").reverse().join("");
 console.log(str === rev); // true
 ```
 =================================================================================
+8. Events:-
+Events are actions performed by users.
+
+Examples:
+click
+hover
+submit
+<!-- Real-life example -->
+Pressing a button in a mobile app.
+<!-- 
+button.addEventListener("click", function(){
+ alert("Button clicked");
+}); -->
+
 =================================================================================
 4️⃣ Asynchronous JavaScript 🔥🔥🔥
 Very important for frontend jobs:
@@ -1363,16 +1361,6 @@ async function getUsers(){
 
 getUsers() -->
 
-
-
-<!-- 1️⃣4️⃣ What is Currying? -->
-Transforming a function with multiple arguments into multiple nested functions.
-<!-- 
-function add(a) {
-  return function(b) {
-    return a + b;
-  }
-} -->
 ---------------------------------------------------------
 <!-- ❓2. What is Blocking and Non-Blocking code? -->
 Blocking: Stops execution until task finishes.
@@ -1511,41 +1499,6 @@ student.__proto__ = human
 console.log(student.walk)-->true
 Because student human से property ले रहा है।
 
-
-<!-- ✅ 4️⃣ Pure vs Impure Function --> IMP
-"A pure function is a function that always returns the same output for the same input and does not cause any side effects.
-
-<!-- Same input doge → hamesha same output dega -->
-<!-- 
-function add(a, b) {
-  return a + b;
-}
-
-console.log(add(2, 3)); // 5 -->
-
-<!-- Why are pure functions preferred? -->
-👉 Because:
-Easy to test
-No side effects
-Better performance optimization
-Global variable change karna
-DOM change karna
-API call karna
-Console log karna
-File write karna
-
-<!-- 🔹 2️⃣ Impure Function -->
-“An impure function is a function that does not always return the same output for the same input
-<!-- 
-let count = 0;
-
-function increase() {
-  count++;
-}
-
-increase();
-console.log(count); // 1
- -->
 
 <!-- 📦 1️⃣Rest Operator (...) -->
  Rest parameter collects multiple values into one array.
