@@ -1,13 +1,59 @@
+<!-- 21. What is JSON? -->
+
+JSON means JavaScript Object Notation used to store and transfer data.
+
+{
+ "name":"Kajalti",
+ "age":21
+}
+
+<!-- 30. What is ES6? -->
+ES6 is a modern version of JavaScript.
+Features:
+let / const
+arrow functions
+classes
+modules
+promises
+
 <!-- 🔥 1. What is JavaScript? -->
-JavaScript is a high-level, interpreted programming language used to add interactivity and dynamic behavior to web pages.
-It run in the browser and on the server(node.js).
-It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
+JavaScript is a high-level, interpreted programming language used to add interactive and dynamic behavior to web pages.
+It run in the browser and also on the server(node.js).It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
 <!-- For example: -->
 When you click a button and a popup appears.
-<!-- 
-button.addEventListener("click", function() {
+
+HTML:-
+<button id="btn">Click Me</button>
+
+JS:-
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", function(){
   alert("Button Clicked");
-}); -->
+}); 
+
+--------------------------------------------------------------------------
+
+handle events → user actions (click, hover, keypress) को handle करना
+
+manipulate the DOM → JavaScript से webpage के elements (text, style, content) बदलना
+
+<!-- document.getElementById("title").innerHTML = "Hello Kajalti"; -->
+
+validate forms → form में डाला गया data सही है या नहीं check करना
+<!-- 
+if(name === ""){
+ alert("Please enter your name");
+} -->
+
+fetch data from APIs → server या API से data लेकर webpage पर दिखाना
+<!-- 
+fetch("https://api.example.com/users")
+.then(response => response.json())
+.then(data => console.log(data));
+
+ -->
+-------------------------------------------------------------------------------------------------------
 
 <!-- 🌍 Uses of JavaScript -->
 ✅ Web Development (Frontend)
@@ -276,9 +322,37 @@ let b = null;
 console.log(b); // null -->
 
 16. What is strict mode?
-Strict mode is a way to write safer JavaScript by enabling error free javaScript code.
+Strict mode makes JavaScript more secure and prevents common mistakes.
 
-<!-- x = 10; // allowed (bad practice) -->
+"use strict";
+x = 10;
+Error because variable is not declared.
+
+🔟 Difference between == and ===
+| Operator | Meaning              |
+| -------- | -------------------- |
+| `==`     | Compare value only   |
+| `===`    | Compare value + type |
+
+5 == "5"   // true
+5 === "5"  // false
+
+<!-- 1️⃣4️⃣ What is the difference between null and undefined? -->
+| null                    | undefined                          |
+| ----------------------- | ---------------------------------- |
+| Intentional empty value | Variable declared but not assigned |
+<!-- 
+let a
+console.log(a) // undefined
+
+let b = null -->
+
+<!-- 1️⃣5️⃣ What is the difference between map() and forEach()? -->
+| map                     | forEach               |
+| ----------------------- | --------------------- |
+| Returns new array       | Does not return array |
+| Used for transformation | Used for iteration    |
+
 ------------------------------------------------------------------------------------
 <!-- 🟠 Functions :- -->
 ✔ What is a function
@@ -374,7 +448,8 @@ const greet = function() {
 };
 
 greet(); -->
------------------------------------------------------ 🔥 1️⃣ Difference Between normal Function and Arrow Function. -->
+----------------------------------------------------- 
+🔥 1️⃣ Difference Between normal Function and Arrow Function. -->
 A normal function has its own this and arguments object, and it can be used as a constructor with the new keyword.
 
 ✅ Normal Function
@@ -400,17 +475,15 @@ The child does not have their own identity card,
 so they use the parent’s ID.
 Similarly, an arrow function uses the parent’s this.
 
-Simple Example:-
+Normal function
 <!-- 
-const greet = () => {
-    console.log("Hello");
-}; -->
+function add(a,b){
+ return a+b
+} -->
 
-📌 Arrow Function with Parameters:-
-<!--
- const add = (a, b) => {
-    return a + b;
-}; -->
+Arrow function
+
+<!-- const add = (a,b) => a+b --> 
 ----------------------------------------------------
 <!-- 🔥 3. What is Hoisting? -->
 Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
@@ -1113,7 +1186,7 @@ Events are actions performed by users.
 Examples:
 click
 hover
-submit
+submit 
 <!-- Real-life example -->
 Pressing a button in a mobile app.
 <!-- 
@@ -1315,7 +1388,6 @@ myPromise
 👉 .then() → success handle karta hai
 👉 .catch() → error handle karta hai
 
-
 <!-- 
 fetch(url)
 .then(rev => rev.json())
@@ -1341,7 +1413,7 @@ Promise.all([p1, p2])
   .then(results => console.log(results)); -->
 
 👉 Output: ["First", "Second"]
---------------------------------------------------------d
+------------------------------------------------------------------------
 
 <!-- 🔥 9. async/await kya hai? -->
 async/await is a syntax used to handle asynchronous operations (Promises) in a cleaner way.
@@ -1431,7 +1503,7 @@ That is like bind()
 <!-- 
 const newFunc = greet.bind({name: "Kajalti"}, "Delhi");
 newFunc(); -->
-=================================================================================
+===========================================================================
 <!-- What is Lexical Scope -->
 Lexical scope means a function can use variables from the place where it was created (written in the code).
 
@@ -1451,7 +1523,6 @@ Welcome Kajalti
 
 <!-- Why this works -->
 showUser() can access username because of lexical scope.
-
 
 <!-- 🔥 2️⃣ Execution Context -->
 <!-- 🔹 What is Execution Context? -->
@@ -1520,7 +1591,7 @@ const arr2 = [...arr1, 4, 5];
 
 console.log(arr2); -->
 [1, 2, 3, 4, 5]
-================================================================================================================
+===========================================================================
 7️⃣ DOM (Frontend Interviews):-
 <!-- What is DOM -->
 DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
@@ -1588,7 +1659,7 @@ let b = document.querySelector("#text");
 ---------------------------------------------------------------------------------
 <!-- 🔥 2️⃣ Manipulating DOM -->
 <!-- How do you change HTML content using JavaScript? -->
-DOM manipulation allows dynamic changes to content, style, and structure of web pages using JavaScript.
+DOM manipulation means changes to content, style, and structure of web pages using JavaScript.
 
 <!-- 🔹 innerHTML -->
 Changes HTML inside element.
@@ -1604,13 +1675,12 @@ element.textContent = "New Text";
 element.style.color = "red";
 
 <!-- 🔹 classList -->
-
 element.classList.add("active");
 element.classList.remove("active");
 element.classList.toggle("active");
 
-NOTE:- Agar class hai → remove karega
-       Agar class nahi hai → add karega
+NOTE:- Agar class hai → remove karega 
+       Agar class nahi hai → add karega  
 
 Mini Projects:-
 <!DOCTYPE html>
@@ -1660,26 +1730,6 @@ Example:-
 Todo List App
 User adds task → JS creates new <li>.
 
-
-<!-- 5️⃣ Event Handling -->
-Events are user interactions.
-
-Examples:
-click
-input
-change
-submit
-mouseover
-<!-- 
-const btn = document.querySelector("#btn")
-
-btn.addEventListener("click", function(){
-    alert("Button clicked")
-}) -->
-
-Real World Example
-Click Add to Cart button.
-
 <!-- 7. How do you create a new element in the DOM? -->
 let div = document.createElements("div")
 div.textContent = "Hello"
@@ -1692,9 +1742,27 @@ classList is used to add, remove, or toggle CSS classes.
 element.classList.add("active")
 element.classList.remove("active")
 element.classList.toggle("active")
+--------------------------------------------------------------------------------
+<!-- 5️⃣ Event Handling -->
+handle events → handle user actions like click, hover, key. 
+Examples:
+click
+input 
+change
+submit
+mouseover
+<!-- 
+const btn = document.querySelector("#btn")
+
+btn.addEventListener("click", function(){
+    alert("Button clicked")
+}) -->
+
+Real World Example
+Clicking the "Add to Cart" button on an e-commerce website.
 
 <!-- 10. What is an Event Listener? -->
-An event listener is used to handle user actions like click, hover, or keypress.
+An event listener listens for user actions like click or key press and runs a function.
 <!-- 
 button.addEventListener("click", function(){
   alert("Button Clicked")
@@ -1703,9 +1771,7 @@ button.addEventListener("click", function(){
 11. What does setAttribute() do?
 It is used to set an HTML attribute.
 element.setAttribute("href", "https://google.com")
-
------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
 🔥 BOM (Browser Object Model)
 BOM allows JavaScript to interact with browser features outside the document.
 
@@ -1714,7 +1780,7 @@ Global object in browser.
 
 <!-- console.log(window.innerWidth); -->
 
-<!-- 🔹 navigator -->
+<!-- 🔹 navigator --> 
 Gives browser information.
 
 <!-- console.log(navigator.userAgent); -->
@@ -1743,7 +1809,7 @@ console.log("End"); -->
 
 
 <!-- 1️⃣ Event Bubbling:--->
-Event Bubbling means the event starts from the target element and bubbles up to its parent elements.
+Event Bubbling means the event starts from the target element and propagate up to its parent elements.
 Event bubbles from child to parent.
 
 <!-- Real-World -->
@@ -1775,7 +1841,8 @@ Event Capturing: Event goes from parent to child.
 
 
 <!-- 🔥 6. What is Event Delegation? -->
-Event Delegation means attaching a single event listener to a parent element to handle events of its children.
+Event delegation means adding one event listener to a parent element instead of many child elements.
+
 This improves performance because we avoid attaching multiple event listeners to individual child elements
 <!-- Real World Example -->
 Clicking items in product list of Amazon.
@@ -1789,7 +1856,7 @@ Clicking items in product list of Amazon.
 let list = document.getElementById("list");
 
 list.addEventListener("click", function(event) {
-  if (event.target.tagName === "LI") {
+  if (event.target.tagName === "LI") { 
     console.log("Clicked:", event.target.textContent);
   }
 });
@@ -1800,6 +1867,9 @@ Here I attached a single event listener to the parent <ul> element.When a child 
 -------------------------------------------------------
 <!-- 🔥 12. What is Debouncing? -->
 Debouncing is a technique that delays the execution of a function until a specified time has passed after the last event trigger.
+
+Function runs after user stops action.
+
 <!-- Debouncing me function tab run hota hai jab user action stop kare. -->
 🎯 Real-Life Example
 A real-life example of debouncing is a search bar.
@@ -1819,6 +1889,8 @@ Google Search suggestions.
 <!-- 🔥 13. What is Throttling? -->
 Throttling is a technique that limits a function to run only once within a specified time interval.
 
+Function runs once in a fixed time interval.
+
 <!-- 🌍 Real-Life Example -->
 🚗 Toll Plaza Example
 Imagine there is a toll gate.
@@ -1836,13 +1908,13 @@ element.addEventListener("click", function() {
 }); -->
 -------------------------------------------------------
 <!-- 🔥 15. What is localStorage? -->
-Local Storage is a client-side web storage mechanism that stores data in key-value pairs in the browser with no expiration time.
+Local Storage is a client-side web storage mechanism that stores data in key-value pairs in the browser permanently.
 
 <!-- Real-Life Example -->
 Imagine a website that saves:
-🌙 Dark mode preference
-🛒 Cart items 
-🔐 Login status
+Dark mode preference
+Cart items 
+ogin status
 Even if you close the browser and open it again,
 your settings are still saved.
 👉 That is localStorage.
@@ -1911,6 +1983,16 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
 Performance optimization means improving the speed and efficiency of a web application.
 
 <img src="image.jpg" loading="lazy" alt="example">
+
+
+10. Memoization:-
+Memoization stores function results to improve performance.
+
+11. Modules:-
+Modules allow you to split code into multiple files.
+export function add(){}
+
+import {add} from "./file.js"
 
 
 🔥 8. Error Handling:-
