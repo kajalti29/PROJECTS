@@ -1,0 +1,29 @@
+<!-- Get element using getElementById
+Add click event to button
+Change text using innerText -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Hello</p>
+    <button id="btn">Clicked</button>
+
+
+    <script>
+        let text = document.getElementById("text");
+        let btn = document.getElementById("btn")
+
+        btn.addEventListener("click", function(){
+        text.innerText = "change text";
+            
+        })
+
+    </script>
+</body>
+</html> 
