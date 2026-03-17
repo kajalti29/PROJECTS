@@ -1,0 +1,32 @@
+<!--
+🧠 Logic
+Select element
+Use remove() -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Element</title>
+</head>
+<body>
+    <input type="input" id="input">
+    <button id="add">Add</button>
+    <ul id="list"></ul>
+
+    <script>
+        let input = document.getElementById("input");
+        let add = document.getElementById("add");
+        let list = document.getElementById("list");
+
+        add.addEventListener("click", function(){
+            let li = document.createElement("li");
+            li.innerText = input.value;
+            list.appendChild(li);
+            input.value = "";
+        });
+    </script>
+</body>
+</html>
