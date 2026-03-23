@@ -15,7 +15,7 @@ arrow functions
 classes
 modules
 promises
-
+-----------------------------------------------------------------------------------
 <!-- 🔥 1. What is JavaScript? -->
 JavaScript is a high-level, interpreted programming language used to add interactive and dynamic behavior to web pages.
 It run in the browser and also on the server(node.js).It allows us to handle events, manipulate the DOM, validate forms, and fetch data from APIs.
@@ -135,7 +135,7 @@ naming rules:-
  Var:- 
  var is a function-scoped variable declaration keyword introduced in ES5. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined, which may lead to unexpected behavior.”
 
-🌍 Real-Life Example:sd
+🌍 Real-Life Example: 
 Think of var like a company notice board.
 If someone changes the notice, everyone in the company sees the updated message.
 <!-- 
@@ -598,6 +598,16 @@ outer() returns the inner() function.
 inner() remembers the variable count because of closure.
 So each time counter() is called, count increases instead of resetting.
 (Isliye har baar counter() call karne par count increase hota hai, reset nahi hota. 😎)
+<!-- 
+function outer() {
+  let a = 10;
+  function inner() {
+    console.log(a);
+  }
+  return inner;
+}
+let result = outer();
+result(); // 10 -->
 
 <!-- 🔹 Why do we use Closure? -->
 We use closure protect data inside a function.They are widely used in callbacks, event handlers, and functional programming.
@@ -1194,11 +1204,9 @@ button.addEventListener("click", function(){
  alert("Button clicked");
 }); -->
 
-=================================================================================
+======================================================================================================================================================================================================================================================================
 4️⃣ Asynchronous JavaScript 🔥🔥🔥
-Very important for frontend jobs:
-
-<!-- 🔥 7. What is the difference between synchronous and asynchronous? -->
+<!--7. What is the difference between synchronous and asynchronous? -->
 ✅ Synchronous Javascript:-
 Synchronous Javascript execute Code runs line by line.
 <!-- Real-Life Example -->
@@ -1356,7 +1364,7 @@ Inside Timeout
 <!-- 🔥 8. What is a Promise? -->
 A Promise is an object that represents a future value — either resolved or rejected.
 It has three states: pending, fulfilled, and rejected.
-We handle promises using .then(), .catch(), and .finally().
+We handle promises using .then(), .catch(), and .finally().d
 
 <!-- Real-life Example -->
 Imagine you take an exam.
@@ -1591,13 +1599,13 @@ const arr2 = [...arr1, 4, 5];
 
 console.log(arr2); -->
 [1, 2, 3, 4, 5]
-===========================================================================
+===================================================================================================================================
 7️⃣ DOM (Frontend Interviews):-
 <!-- What is DOM -->
 DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
 
 <!-- 🌍 Real-world Example -->
-When you click Like button on Instagram, JavaScript updates the DOM to change the icon color.
+When you click Like button on Instagram, JavaScript updates the DOM to change the icon color.  
 
 HTML
 <!-- <p id="text">Hello</p> -->
