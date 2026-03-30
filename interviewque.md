@@ -1422,19 +1422,33 @@ Promise.all([p1, p2])
 
 👉 Output: ["First", "Second"]
 ------------------------------------------------------------------------
+<!-- What is async/await ? -->
+“async/await is used to handle API calls in a cleaner and readable way.”
 
-<!-- 🔥 9. async/await kya hai? -->
+<!-- 3. What is an async function? -->
 async/await is a syntax used to handle asynchronous operations (Promises) in a cleaner way.
 
 async → makes a function return a Promise
 await → pauses the function until the Promise resolves
+Syntax:-
+<!-- 
+async function getData() {
+  const res = await fetch(url);
+} -->
+
+
+async function getData() {
+  const res = await fetch("https://api.example.com");
+  const data = await res.json();
+  console.log(data);
+}
+
+Example:-
 <!-- 
 async function getUsers(){
 
   let response = await fetch("https://jsonplaceholder.typicode.com/users")
-
   let data = await response.json()
-
   console.log(data)
 
 }
@@ -1873,13 +1887,14 @@ Here I attached a single event listener to the parent <ul> element.When a child 
 <!-- Use event.stopPropagation() to stop it. -->
 -------------------------------------------------------
 <!-- 🔥 12. What is Debouncing? -->
-Debouncing is a technique that delays the execution of a function until a specified time has passed after the last event trigger.
-
-Function runs after user stops action.
+Debouncing limits how often a function runs.
+how often(kitni bar)
 
 <!-- Debouncing me function tab run hota hai jab user action stop kare. -->
 🎯 Real-Life Example
 A real-life example of debouncing is a search bar.
+to avoid too many API calls.”
+
 When a user types continuously, the search function does not run on every keystroke.
 Instead, it runs only after the user stops typing for a short delay.
 <!-- 
@@ -1968,6 +1983,10 @@ getData(function(){
 ✅ Solution:
 Promises
 async/await
+
+================================================================================================================
+<!-- What is API? -->
+API is used to get data from server (like weather app).
 
 <!-- 8️⃣ Fetch API -->
 Fetch API is used to call backend APIs and get data from servers.
