@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Weather App</h2>
+
+        <div class="serach-box">
+            <input type="text" id="cityInput"
+            placeholder="Enter city Name">
+            <button id="btn">Search</button>
+        </div>
+
+        <button id="toggle">Toggle</button>
+
+        <div id="loading" class="hidden">Loading</div>
+        <div id="error" class="hidden">City not found</div>
+
+        <div id="weathercard" class="weathe-card hidden">
+            <h2 id="cityName"></h2>
+            <img id="icon" alt="weather icon" width="80"/>
+            <p id="temp"></p>
+            <p id="condition"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+        </div>
+
+        <div class="histroty">
+            <h3>Resent Searches</h3>
+            <button onclick="clearHistory()">Clear History</button>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

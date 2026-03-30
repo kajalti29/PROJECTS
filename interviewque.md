@@ -1470,7 +1470,7 @@ imp:-
 JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread
 -------------------------------------------------------
 <!--this Keyword 🔥 (Very Important) -->
-this refers to the object that is currently executing the function.
+this refers to the object that is calling the function.
 
 <!-- 🔥 3️⃣ this Inside Object -->
 const student = {
@@ -1898,7 +1898,7 @@ to avoid too many API calls.”
 When a user types continuously, the search function does not run on every keystroke.
 Instead, it runs only after the user stops typing for a short delay.
 <!-- 
-function debounce(fn, delay){
+function debounce(func, delay){
   let timer;
   return function(){
     clearTimeout(timer);
@@ -1909,18 +1909,10 @@ Real World Example
 Google Search suggestions.
 
 <!-- 🔥 13. What is Throttling? -->
-Throttling is a technique that limits a function to run only once within a specified time interval.
-
-Function runs once in a fixed time interval.
-
+It ensures a function runs at a fixed interval.
+“Used for performance optimization in scroll or resize events.”
 <!-- 🌍 Real-Life Example -->
-🚗 Toll Plaza Example
-Imagine there is a toll gate.
-100 cars arrive at the same time 🚗🚗🚗
-But the gate allows only 1 car to pass every 5 seconds
-👉 No matter how many cars arrive,
-only one car is allowed to pass within each fixed time interval.
-This is exactly how throttling works.
+
 
 <!-- 3️⃣ addEventListener -->
 addEventListener is used to attach an event handler to an element.
