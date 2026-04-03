@@ -1,0 +1,2 @@
+I built a Notebook App using React where users can create, edit, delete, and store notes. I used useState for managing notes and useEffect for syncing data with localStorage. I implemented operations like add, edit, and delete using array methods like map and filter, ensuring data persistence even after refresh.”
+

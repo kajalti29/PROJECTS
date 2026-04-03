@@ -93,7 +93,7 @@ loading.classList.remove("hidden");
 card.classList.add("hidden");
 error.classList.add("hidden"); -->
 
-Loading show
+Loading show 
 Old data hide 
 Error hide
 
@@ -137,5 +137,67 @@ icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 👉 Network error → error show
 
 🔟 Dark Mode Toggle:-
-document.body.classList.toggle("dark");
+<!-- document.body.classList.toggle("dark"); -->
+👉 Theme switch
 
+
+1️⃣1️⃣ Search History (LocalStorage) ⭐:-
+<!-- localStorage.setItem("history", JSON.stringify(history)); -->
+
+👉 Data save browser me
+
+Duplicate Avoid Logic:-
+<!--
+if (!lowerHistory.includes(city.toLowerCase())) -->
+
+👉 Same city repeat nahi hogi
+
+Max 5 Limit:-
+<!-- 
+if (history.length > 5) {
+  history.shift();
+} -->
+
+👉 “I used localStorage with duplicate handling and a size limit to manage recent searches.”
+
+1️⃣2️⃣ Show History (Dynamic List):-
+
+<!-- const li = document.createElement("li"); -->
+👉 List dynamically create
+<!-- 
+li.onclick = () => {
+  input.value = city;
+  getWeather();
+}; -->
+👉 Click → same city search again
+
+1️⃣3️⃣ Clear History:-
+
+<!-- localStorage.removeItem("history"); -->
+
+👉 Sab delete
+
+1️⃣4️⃣ Auto Load History:-
+<!-- showHistory(); -->
+👉 Page load → history show
+
+🔥 Full Flow (Ek line me)
+👉 Input → Validation → API Call → Data → UI Update → Icon → Save History
+
+“I built a weather app where I capture user input, fetch real-time data using the Fetch API, handle loading and error states, dynamically update the UI including weather icons, and store recent searches using localStorage with duplicate control.”
+
+-------------------------------------------
+“I built a weather app using HTML, CSS, and JavaScript where users can search for a city and get real-time weather data. I used the Fetch API to call OpenWeather API, handled loading and error states, and dynamically updated the UI including weather icons. I also added search history using localStorage and a dark mode toggle.”
+
+
+👉 What:
+Weather app
+
+👉 How:
+Fetch API + JavaScript (dynamic UI)
+
+👉 Features:
+
+Weather icons
+Search history
+Dark mode
