@@ -9,7 +9,7 @@ JavaScript has two main categories of data types 👇
 
 <!-- Primitive data types store single immutable values directly in memory, while non-primitive data types store collections of values by reference. -->
 
-🔹 1.  Primitive Data Types (Simple values):-
+🔹 1.  Primitive Data Types (Simple values):- 
 Primitive data types are simple values that are stored directly in memory and are immutable (cannot be changed).
 
 Types of Primitive

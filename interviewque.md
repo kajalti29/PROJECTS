@@ -120,6 +120,17 @@ first(); -->
 4️⃣ "Hello" print ho gaya
 5️⃣ second() complete → stack se pop
 6️⃣ first() complete → stack se pop
+<!-- ==============================================================13. What is event delegation? -->
+Event delegation is a technique where a parent element handles events of its child elements using event bubbling.
+
+<!-- 14. What is event bubbling? -->
+Event bubbling means an event starts from the target element and bubbles up to parent elements.
+
+<!-- 18. What is debounce? -->
+Debounce limits how often a function runs (useful for search input).
+
+<!-- 19. What is throttle? -->
+Throttle ensures a function runs at a fixed interval.
 ------------------------------------------------------------------------
 <!-- What is variable ? -->
 A variable is a container used to store data(value) in a program.
@@ -487,7 +498,7 @@ const greet = (name) => {
 <!-- Arrow Functions -->
 An Arrow Function is a shorter and modern way to write a function in JavaScript using the => syntax and does not have its own this.
 <!-- Real-World Example --> 
-A child using their parent’s ID.
+A child using their parent’s ID. 
 The child does not have their own identity card,
 so they use the parent’s ID.
 Similarly, an arrow function uses the parent’s this.
@@ -501,6 +512,16 @@ function add(a,b){
 Arrow function
 
 <!-- const add = (a,b) => a+b --> 
+
+<!-- 8. What is this keyword? -->
+this refers to the object that is currently calling the function.
+<!-- 
+const obj = {
+  name: "Kajal",
+  greet() {
+    console.log(this.name);
+  }
+}; -->
 ----------------------------------------------------
 <!-- 🔥 3. What is Hoisting? -->
 Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
@@ -1364,7 +1385,7 @@ Inside Timeout
 <!-- 🔥 8. What is a Promise? -->
 A Promise is an object that represents a future value — either resolved or rejected.
 It has three states: pending, fulfilled, and rejected.
-We handle promises using .then(), .catch(), and .finally().d
+We handle promises using .then(), .catch(), and .finally().
 
 <!-- Real-life Example -->
 Imagine you take an exam.
@@ -1424,6 +1445,12 @@ Promise.all([p1, p2])
 ------------------------------------------------------------------------
 <!-- What is async/await ? -->
 “async/await is used to handle API calls in a cleaner and readable way.”
+async/await is a cleaner way to handle promises.
+<!-- 
+async function getData() {
+  const res = await fetch(url);
+  const data = await res.json();
+} -->
 
 <!-- 3. What is an async function? -->
 async/await is a syntax used to handle asynchronous operations (Promises) in a cleaner way.
