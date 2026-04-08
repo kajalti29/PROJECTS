@@ -632,3 +632,460 @@ continue → skip current iteration.
 // Output: 1 2 4 5 -->
 
 =================================================================================================================================================
+ARRAYS IN JAVASCRIPT
+<!--1. What is Array? -->
+“An array is a collection of multiple values stored in a single variable.”
+It is a Mutable and Index starts from 0.
+<!-- let numbers = [10, 20, 30, 40]; -->
+
+Why we use Array:-
+👉 Multiple values store karne ke liye
+👉 Code clean aur easy banane ke liye
+
+<!-- 🔹 3. Index (Very Important) -->
+
+👉 Array index 0 se start hota hai
+<!-- 
+let arr = [10, 20, 30];
+
+console.log(arr[0]); // 10
+console.log(arr[1]); // 20 -->
+
+METHODS:-
+🔥 slice(start, end) = start se uthao, end se pehle tak
+slice() returns a new array without changing the original array.
+<!-- 
+let arr = [1, 2, 3, 4, 5];
+let result = arr.slice(1, 4); 
+console.log(result); // [2, 3, 4]
+console.log(arr);    // [1, 2, 3, 4, 5] -->
+
+Index:   0       1        2        3
+Value: ["Apple","Banana","Mango","Orange"]
+
+🔥 splice() – 
+splice() changes the original array by adding, removing, or replacing elements.
+<!-- 
+let arr = [1, 2, 3, 4];
+arr.splice(1, 2);
+console.log(arr); // [1, 4] -->
+
+
+<!-- 1️⃣ map()(MOST IMPORTANT) -->
+map() Creates a new array by applying a function to each element of the array.
+does not change original array.
+
+Jaise factory machine 🏭
+Raw items → process → new items
+<!-- 
+let arr = [1, 2, 3, 4];
+let result = arr.map(num => num * 2);
+console.log(result)    //[1, 2, 6, 8]-->
+
+<!-- 2️⃣ filter()-->
+“filter() creates a new array with elements that satisfy a given condition.”
+<!-- 
+let arr = [1, 2, 3, 4];
+let even = arr.filter(num % 2 === 0);
+console.log(even); //[2, 4] -->
+
+Example:-
+Jaise college entrance cutoff list 🎓
+Sirf eligible students pass
+<!-- 
+let ages = [12, 18, 22, 15];
+let adults = ages.filter(age => age >= 18);
+console.log(adults); // [18, 22] -->
+
+
+<!--3️⃣ reduce() -->
+reduce() is an array method reduce to a single value (like sum, total, or result).
+
+array.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, initialValue);
+
+<!-- 
+let arr = [100, 200, 300];
+let total = arr.reduce((acc, curr) => {
+    return acc + curr;
+}, 0);
+console.log(total)  //600 -->
+
+<!-- 
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10 -->
+
+Explanation:
+acc → accumulator
+curr → current value
+0 → initial value
+
+<!-- 4️⃣ forEach() -->
+forEach() is used to loop through each element of an array.
+<!-- 
+let numbers = [1, 2, 3];
+
+numbers.forEach(function(num) {
+  console.log(num);
+}); -->
+------------------------------------------------------------------------------------------------------------------
+🔹 1. push() – Add element at end
+<!-- 
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr);  //[1, 2, 3, 4] -->
+
+🔹 2. pop() – Remove element from end
+<!-- 
+let arr = [1, 2, 3];
+arr.pop();
+console.log(arr); // [1, 2]
+ -->
+
+🔹 3. unshift() – Add element at start
+<!-- 
+let arr = [2, 3];
+arr.unshift(1);
+console.log(arr); // [1, 2, 3]
+ -->
+
+🔹 4. shift() – Remove element from start
+<!-- 
+let arr = [1, 2, 3];
+arr.shift();
+console.log(arr); // [2, 3] -->
+
+🔹 5. length – Array size 
+<!-- 
+let arr = [10, 20, 30];
+console.log(arr.length); // 3
+ -->
+
+🔹6. concat() – Merges two or more array(Join arrays)
+<!-- 
+let a = [1, 2];
+let b = [3, 4];
+let c = a.concat(b);
+console.log(c);      //[1, 2, 3, 4] -->
+
+🔹 7. indexOf() – Find index
+<!-- 
+let arr = [10, 20, 30];
+console.log(arr.indexOf(20)); // 1
+ -->
+ 
+ 🔹 8. includes() – Check value exists or not.
+ Ye value true or false me deta hai.
+<!-- 
+let arr = [1, 2, 3];
+console.log(arr.includes(2)); // true -->
+
+🔹9. sort() – Sort array
+sort() sorts the elements of an array.
+sort() array ke elements ko sahi order me set karta hai.
+<!-- 
+let arr = [3, 1, 4, 2];
+arr.sort();
+console.log(arr); // [1, 2, 3, 4] -->
+
+<!-- 
+let fruits = ["Banana", "Apple", "Mango"];
+fruits.sort();
+console.log(fruits);            
+                      //["Apple", "Banana", "Mango"]
+ -->
+
+🔹 10. reverse() – Reverse array
+<!-- 
+let arr = [1, 2, 3];
+arr.reverse();
+console.log(arr); // [3, 2, 1]
+ -->
+
+🔹 11. join() – Convert array to string
+<!-- 
+let arr = ["Hello", "World"];
+console.log(arr.join(" ")); // Hello World
+ -->
+
+🔹 12. find() – Find first match
+<!-- 
+let arr = [10, 20, 30];
+let result = arr.find(num => num > 15);
+console.log(result); // 20 -->
+
+
+🔹 13. findIndex() – Index of first match
+<!-- 
+let arr = [10, 20, 30];
+console.log(arr.findIndex(num => num > 15)); // 1 -->
+
+🔹 14. some() – At least one true?
+Returns true if at least one element matches.
+<!-- 
+let numbers = [1, 2, 3];
+
+console.log(numbers.some(num => num > 2)); 
+// true -->
+
+🔹15. every() – All true?
+Returns true if all elements match.
+<!-- 
+let numbers = [1, 2, 3];
+
+console.log(numbers.every(num => num > 0));
+// true -->
+
+-----------------------------------------------------------
+
+### 1️⃣9️⃣ What is array destructuring?
+Array destructuring means taking values from an array and storing them in variables.
+
+Array destructuring ka matlab hai array ke values ko directly variables me nikal lena, bina index use kiye.
+<!-- 
+let arr = [10, 20, 30];
+let [a, b, c] = arr;
+console.log(a); // 10 
+console.log(b); // 20
+console.log(c); // 30 -->
+-----------------------------------------------------------------------------------------------------------------
+✅ What is a String?
+A string is a sequence of characters used to represent text.
+Strings are immutable
+
+<!-- let name = "Kajalti"; -->
+
+<!-- 🟤 2️⃣ String Methods :- -->
+🔹 1. length :- Find length of string
+<!-- 
+let str = "Hello";
+console.log(str.length); // 5
+ -->
+🔹 2. toUpperCase() :- 
+<!-- 
+let str = "hello";
+console.log(str.toUpperCase()); // HELLO -->
+
+🔹 3. toLowerCase():-
+<!-- 
+let str = "HELLO";
+console.log(str.toLowerCase()); // hello -->
+
+🔹 4. trim():- 
+<!-- 
+let str = "  hi  ";
+console.log(str.trim()); // "hi" -->
+
+🔹 5. includes():-
+<!-- 
+let str = "I love JS";
+console.log(str.includes("JS")); // true -->
+
+
+🔹 6. slice():-
+👉 String ka part nikalta hai
+<!-- 
+let str = "JavaScript";
+console.log(str.slice(0, 4)); // Java -->
+
+🔹 7. substring():-
+👉 slice() jaisa hi hota hai
+<!-- 
+let str = "HelloWorld";
+console.log(str.substring(0, 5)); // Hello -->
+
+🔹 8. replace():-
+👉 Word ko change karta hai
+<!-- 
+let str = "I like tea";
+console.log(str.replace("tea", "coffee"));
+// I like coffee
+ -->
+
+🔹 9. split():- 
+👉 String ko array me tod deta hai
+<!-- 
+let str = "a,b,c";
+console.log(str.split(",")); // ["a","b","c"] -->
+
+🔹 10. charAt():- 
+👉 Given index ka character deta hai
+
+<!-- 
+let str = "Hello";
+console.log(str.charAt(1)); // e -->
+
+🔹 11. indexOf():- 
+👉 Word ka index batata hai
+<!-- 
+let str = "Hello JS";
+console.log(str.indexOf("JS")); // 6 -->
+
+🔹 12. concat():-
+👉 Strings ko jodta hai
+<!-- 
+let a = "Hello";
+let b = "World";
+console.log(a.concat(" ", b)); // Hello World -->
+
+
+### 1️⃣ Reverse a String
+```js
+let str = "hello";
+let rev = str.split("").reverse().join("");
+console.log(rev); // olleh
+
+
+🔟 Check Palindrome
+js
+let str = "madam";
+let rev = str.split("").reverse().join("");
+
+console.log(str === rev); // true
+```
+-------------------------------------------------------------
+1️⃣ Objects in JavaScript
+"Object is a collection of key-value pairs used to store structured data."
+<!-- Real-life example -->
+Like a student ID card with different details.
+<!-- 
+let student = {
+  name: "Kajal",
+  age: 23,
+  city: "Indore"
+};
+ -->
+Here:
+name, age, city → keys
+"Kajal", 21, "Bhopal" → values
+
+<!-- 🔥 2️⃣ Object Destructuring (Very Common) -->
+Object ke andar ki values ko directly variables me nikalna.
+<!-- 
+let student = {
+  name: "Kajal",
+  age: 23,
+  city: "Indore"
+};
+
+let { name, age } = student;
+
+console.log(name); // Kajal
+console.log(age);  // 23
+-->
+
+<!--Accessing Object Properties -->
+JavaScript me object ki properties (values) ko access karne ke 2 simple tareeke hote hain 👇
+<!-- 
+let student = {
+    name: "Rahul",
+    age: 20,
+    city: "Indore"
+}; -->
+
+1️⃣ Dot Notation (Most Common)
+<!-- 
+console.log(student.name);   // Rahul
+console.log(student.age);    // 20 -->
+
+2️⃣ Bracket Notation
+<!-- 
+console.log(student["name"]); // Rahul
+console.log(student["age"]);  // 20
+ -->
+
+<!-- Q: Difference between dot and bracket notation? -->
+Dot notation is used when key is fixed.
+Bracket notation is used when key is dynamic.
+
+<!-- ❓ Difference between Shallow and Deep Copy? -->
+A shallow copy copies only the first level of an object.
+and shares nested references.
+
+<!-- const obj1 = {
+  name: "Kajal",
+  address: {
+    city: "Delhi"
+  }
+};
+
+const obj2 = { ...obj1 }; // Shallow copy
+
+obj2.address.city = "Mumbai";
+
+console.log(obj1.address.city); // Mumbai ❗ -->
+
+
+A deep copy copies all levels of the object, including nested objects.
+It creates completely independent copies.
+<!-- 
+const obj1 = {
+  name: "Kajal",
+  address: {
+    city: "Delhi"
+  }
+};
+
+const obj2 = JSON.parse(JSON.stringify(obj1)); // Deep copy
+
+obj2.address.city = "Mumbai";
+
+console.log(obj1.address.city); // Delhi ✅
+// Delhi ✅ -->
+
+ JSON (parse, stringify) :-
+🔹 What is JSON?
+JSON = JavaScript Object Notation
+is a data format used to send and receive data.
+
+JSON.stringify() converts a JavaScript object into a JSON string, while JSON.parse() converts a JSON string back into a JavaScript object.
+
+🔹 JSON.stringify():-
+👉 Converts a JavaScript object → JSON string
+stringify → object ko string me convert karta hai
+
+<!-- 
+const user = {
+  name: "Kajal",
+  age: 22
+};
+
+const jsonData = JSON.stringify(user);
+
+console.log(jsonData);
+// {"name":"Kajal","age":22} -->
+
+ JSON.parse():-
+👉 Converts a JSON string → JavaScript object
+parse → string ko object me convert karta hai
+
+<!-- 
+const jsonData = '{"name":"Kajal","age":22}';
+
+const user = JSON.parse(jsonData);
+
+console.log(user.name); // Kajal -->
+
+
+<!-- 5️⃣ What is an object method? -->
+English: Function inside an object
+<!-- 1️⃣7️⃣ Is object mutable? -->
+✅ Yes, objects are mutable.
+
+✅ 1️⃣ Do you know objects convert to arrays?
+Yes. We can convert object to array using:
+Object.keys()
+Object.values()
+Object.entries()
+<!-- 
+let user = { name: "Kajal", age: 22 };
+console.log(Object.keys(user));    
+// ["name", "age"]
+console.log(Object.values(user));  
+// ["Kajal", 22]
+console.log(Object.entries(user)); 
+// [["name","Kajal"], ["age",22]] -->
+----------------------------------------------------------------------------------------------------------
+FUNCTION:-
