@@ -5,7 +5,6 @@ On the frontend, it helps in handling user interactions and updating the UI dyna
 <!-- Example: -->
 “In my projects, I have used JavaScript to fetch data from APIs and update the UI.”
 
-
 <button onclick="changeText()">Click me</button>
 <p id="text">Hello</p>
 
@@ -16,6 +15,7 @@ function changeText() {
 </script>
 “Here JavaScript is handling user interaction and updating the UI.”
 
+For example, on button click, it can update content dynamically using DOM manipulation without reloading the page.”
 
 2. API Example (BEST for interview)
 <!-- 
@@ -65,11 +65,11 @@ Helps build real-time apps (chat, notifications)
 
 <!-- 3.How JavaScript Works in Browser -->
 “Basically, when a web page loads, HTML provides the structure and CSS handles the styling.
-Then the JavaScript engine in the browser runs the code and can dynamically update the page using the DOM, so users can see changes instantly without reloading.”
+Then the JavaScript engine in the browser runs the code and can dynamically update the page using the DOM, so users can see changes contend without page reloading.”
 
 <!--4. why called “JavaScript scripting language"  -->
 “JavaScript is called a scripting language because it runs directly in the browser and controls the behavior of the web page.
-For example, handling user actions like clicks, form validation, or updating content in real time.”
+For example, handling user actions, form validation, or updating content in real time.”
 
 <!-- 5. JavaScript Features (Short Points) -->
 Interpreted – runs directly, no compilation needed
@@ -77,9 +77,9 @@ Dynamically typed – no need to define variable types
 Platform independent – works on any browser/system
 Event-driven – responds to user actions (click, input)
 Client & server side – runs in browser and with Node.js
-Object-oriented – supports objects and classes
+Object-oriented – supports objects and classes.
 
-//6. Is JavaScript Single-Threaded? -->
+<!-- 6. Is JavaScript Single-Threaded?  -->
 Yes, JavaScript is single-threaded because it has only one call stack and can execute one task at a time.
 
 console.log("Task 1");
@@ -131,7 +131,7 @@ naming rules:-
 
 <!-- 9. Difference between var, let, and const? -->
  Var:- 
- var is a function-scoped variable declaration keyword introduced in ES5. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined, which may lead to unexpected behavior.”
+ var is a function-scoped variable declaration keyword introduced in ES5. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined.
 
 🌍 Real-Life Example: 
 A company notice board.
@@ -164,7 +164,6 @@ console.log(topic); // Math -->
 
 Const:- 
 “const is a block-scoped variable introduced in ES6. It does not allow reassignment and re-declaration in the same scope. It is hoisted but remains in the Temporal Dead Zone until initialized
-
 
 <!-- Real-Life Example: -->
 A government law.
@@ -307,8 +306,9 @@ A function is a block of code that parform the specific code and can be reused.
 function add(a, b) {
   return a + b;
 } -->
--------------------------------------------------------------------------<!-- 🔥 JavaScript Operators:- -->
-operators are symbol used to peform operation on value & variable.
+-------------------------------------------------------------------------
+<!-- 🔥 JavaScript Operators:- -->
+operators are specia symbol used to peform operation on value & variable.
 Example: + , - , * , / , == , ===.
 
 1️⃣ Arithmetic Operators
@@ -377,13 +377,14 @@ Example: 5 < 10 (5 chhota hai 10 se)
 
 
 4️⃣ Logical Operators
-Used with conditions.
-👉 Multiple conditions ko join karne ke liye
+Logical operators are used to combine multiple conditions.
 
 Operator	Meaning
-&&	AND (sab true hona chahiye)
-`	
-!	NOT (ulta kar deta hai)
+&& → both must be true 
+|| → at least one true
+! → reverse the result
+
+“Logical AND (&&) returns true only when both conditions are true, while Logical OR (||) returns true if at least one condition is true.”
 <!-- 
 let age = 20;
 
@@ -394,7 +395,8 @@ Login, signup, eligibility check.
 
 5️⃣ Unary Operators:-
 Work on a single operand.
-👉 Single value par kaam.
+Example: ++, --
+
 | Operator | Kaam            |
 | -------- | --------------- |
 | `++`     | 1 add           |
@@ -586,7 +588,7 @@ while loop is used when the number of iterations is unknown and depends on a con
 while (condition) {
   // code to run 
 }
-<!-- 
+<!--  
  let i = 1;
  while (i <= 5) {
    console.log(i);
@@ -613,7 +615,7 @@ do {
 // Output: 6  (executes once even if condition false) -->
 --------------------------------------------------------------------------------------------------
 <!-- 🔹 6️⃣ Loop Control Statements:- -->
-break → exit loop immediately.
+break → stop loop immediately.
 <!-- 
 for (let i = 1; i <= 5; i++) {
   if (i === 3) break;
