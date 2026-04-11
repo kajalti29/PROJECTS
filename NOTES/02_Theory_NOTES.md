@@ -1089,3 +1089,249 @@ console.log(Object.entries(user));
 // [["name","Kajal"], ["age",22]] -->
 ----------------------------------------------------------------------------------------------------------
 FUNCTION:-
+<!-- Functions -->
+A function is a block of code that performs a specific task and can be reused whenever needed.”
+
+“It’s like a machine — you give input, it does some work, and gives output.”
+<!-- 
+function greet() {
+  console.log("Hello");
+}
+
+greet(); -->
+In this example, we define a function called greet, and when we call it, it prints ‘Hello’.
+So instead of writing the same code again, we can just call the function.”
+
+<!-- "Why do we use functions in JavaScript?" -->
+* Avoid repetition
+* Organize code
+* Improve readability
+
+
+<!--;
+👉 What are Parameter vs Argument ? -->
+
+“Parameters are the variables defined in a function, and arguments are the actual values we pass calling the function.”
+
+“In function add(a, b), a and b are parameters.
+When we call add(2, 3), 2 and 3 are arguments.”
+<!-- 
+function add(a, b) {   // a, b → parameters
+  console.log(a + b);
+}
+
+add(2, 3);  // 2, 3 → arguments -->
+
+“In this example, a and b are parameters defined in the function.
+When we call the function with add(2, 3), the values 2 and 3 are arguments.”
+
+
+<!-- ;
+👉 What is Return Keyword ? -->
+“Return is used to send a value back from a function.”
+
+“For example, the function calculates a sum and returns the result, which we can store or use later.”
+<!-- 
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(2, 3);
+console.log(result); // 5 -->
+
+<!-- Anonymous Function-->
+“An anonymous function is a function without a name.
+<!-- 
+const greet = function(){
+  console.lo("HI");
+};
+
+greet(); -->
+
+“This is an anonymous function because it doesn’t have a name.
+It is assigned to a variable and then called using that variable.”
+
+<!-- 22. What is recursion? -->
+Function calling itself.
+----------------------------------------------------------------------------------------------------------------
+<!-- 1️⃣ Function Declaration vs Function Expression -->
+✅ Function Declaration :-
+“A function declaration is defined using the function keyword with a name, and it is hoisted, so we can call it before its definition.
+
+“ for example Function Declaration is like a pre-defined rule”
+<!-- 
+function greet() {
+  console.log("Hello");
+}
+
+greet(); -->
+
+“This is a function declaration where the function is defined with a name.
+It is hoisted, so we can call it even before its definition.”
+
+✅ Function Expression :-
+A function expression is a function stored inside a variable, and it is not hoisted, so we can call it only after it is defined.”
+
+"For Example Function Expression is like an appointment letter — valid only after it is assigned.””
+<!-- 
+const greet = function() {
+  console.log("Hello");
+};
+
+greet(); -->
+
+This is a function expression where a function is assigned to a variable.
+It is not hoisted like function declaration, so we cannot call it before defining it.”
+--------------------------------------------------------------------------
+<!--1️⃣ Difference Between normal Function and Arrow Function. -->
+A normal function has its own this and arguments object, and it can be used as a constructor with the new keyword.
+
+“Normal function is like a person working independently.
+It has its own this.”
+
+✅ Normal Function
+<!-- 
+function greet(name) {
+  return "Hello " + name;
+} -->
+
+An arrow function does not have its own this and arguments object and it cannot be used as a constructor.
+
+“Arrow function is like a child using parent’s help.
+It doesn’t have its own this, it uses the parent’s this.”
+
+✅ Arrow Function
+<!-- 
+const greet = (name) => {
+  return "Hello " + name;
+}; -->
+--------------------------------------------------------------------------
+🔥 Arrow Function :-
+“An arrow function is a shorter way to write a function using the => syntax.
+It does not have its own this and instead uses the this value from its parent scope.”
+
+<!-- For Example:- -->
+“Arrow function is like a child using parent’s help.
+It doesn’t have its own this, it uses the parent’s this.”
+
+<!-- const add = (a, b) => a + b; -->
+
+<!-- 🔥 3. What is Hoisting? -->
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
+
+Imagine your name is already written on the attendance list before the class starts.
+Even if the teacher calls your name first,
+your name is already in the list.
+👉 That means your name was prepared earlier.
+<!-- 
+console.log(a);
+var a = 5; -->
+Output: undefined 
+
+<!-- 🔥 What is TDZ? -->
+Temporal Dead Zone is the time between entering a block and the variable declaration where a let or const variable cannot be accessed.
+
+<!-- 🌍 Real-world Example -->
+"TDZ is like a booked movie seat — it exists, but you can't use it until the movie starts."
+<!-- 
+console.log(a); // ❌ ReferenceError
+let a = 10; -->
+
+<!-- Callback Functions -->
+“A callback function is a function that is passed as an argument to another function and is executed after that function completes its task.”
+OR:-
+“Callback is a function passed to another function and executed later.”
+<!-- Real-World Example: -->
+“Like an online order — first payment is done, then we get a confirmation message.
+So the confirmation comes after the task is completed, just like a callback function.”
+<!-- 
+function greet(name) {
+    console.log("Hello " + name);
+}
+function processUser(callback) {
+    callback("Rahul");
+}
+processUser(greet); -->
+
+“Here, we pass the greet function as a callback to another function.
+After the task is done, it calls the callback and prints the message.”
+
+<!-- Why Callbacks Are Important? -->
+Event handling
+API calls
+setTimeout / setInterval 
+Asynchronous programming
+
+<!-- ✅ 3️⃣ Higher Order Function (HOF) -->
+“A higher-order function is a function that either takes another function as an argument or returns a function.”
+
+<!-- Example:- -->
+“Like a washing machine — you choose a mode like quick wash or heavy wash, and the behavior changes.
+Similarly, a higher-order function changes its behavior based on the function we pass.”
+
+<!--
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+function add(x, y) {
+  return x + y;
+}
+console.log(calculate(5, 3, add)); // 8 -->
+
+“Here, calculate is a higher-order function because it takes another function as a parameter.
+We pass add function as an argument, and it performs the operation.”
+
+<!-- 🔥 4️⃣ What is Closure? -->
+A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.It is used for data hiding and private variables.
+
+<!-- Real-life example -->
+“It’s like a backpack — you carry things from the past and can use them later.”
+
+<!-- 
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  }
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2 -->
+
+“Here, the outer function returns the inner function.
+Even after the outer function is executed, the inner function still remembers the count variable.
+
+So every time we call counter(), the value increases instead of resetting.
+This happens because of closure.”
+
+<!-- 🔹 Why do we use Closure? -->
+Data hiding
+Private variables
+Counters
+Used in callbacks and event handlers
+
+
+<!-- IIFE (Immediately Invoked Function Expression) -->
+👉 IIFE is a function that runs immediately after it is defined.
+
+🔹 Basic Syntax
+<!-- ✅ Normal IIFE -->
+<!-- 
+(function () {
+  console.log("IIFE executed");
+})(); -->
+“Here, the function is defined and executed immediately without calling it separately.”
+
+
+<!-- ✅ Arrow Function IIFE -->
+(() => {
+  console.log("Arrow IIFE executed");
+})();
+
+🎯 Why We Use IIFE:-
+To avoid global variable pollution
+To create a private scope
+
