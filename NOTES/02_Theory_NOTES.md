@@ -1,5 +1,5 @@
 <!--1. What is JavaScript? -->
-“JavaScript is a programming language used both on the frontend and backend.”.
+“JavaScript is a programming language used both on the frontend and backend. .
 On the frontend, it helps in handling user interactions and updating the UI dynamically, and on the backend we can use it with Node.js to build APIs and servers.”
 
 <!-- Example: -->
@@ -1097,20 +1097,21 @@ A function is a block of code that performs a specific task and can be reused wh
 function greet() {
   console.log("Hello");
 }
-
 greet(); -->
 In this example, we define a function called greet, and when we call it, it prints ‘Hello’.
 So instead of writing the same code again, we can just call the function.”
 
 <!-- "Why do we use functions in JavaScript?" -->
-* Avoid repetition
+* Avoid repetition 
 * Organize code
-* Improve readability
+* Improve readability 
 
+<!--👉Real use: -->
+Event handling
+API calls
+Reusable logic
 
-<!--;
-👉 What are Parameter vs Argument ? -->
-
+<!--What are Parameter vs Argument ? -->
 “Parameters are the variables defined in a function, and arguments are the actual values we pass calling the function.”
 
 “In function add(a, b), a and b are parameters.
@@ -1119,15 +1120,12 @@ When we call add(2, 3), 2 and 3 are arguments.”
 function add(a, b) {   // a, b → parameters
   console.log(a + b);
 }
-
 add(2, 3);  // 2, 3 → arguments -->
 
 “In this example, a and b are parameters defined in the function.
 When we call the function with add(2, 3), the values 2 and 3 are arguments.”
 
-
-<!-- ;
-👉 What is Return Keyword ? -->
+<!--👉 What is Return Keyword ? -->
 “Return is used to send a value back from a function.”
 
 “For example, the function calculates a sum and returns the result, which we can store or use later.”
@@ -1135,7 +1133,6 @@ When we call the function with add(2, 3), the values 2 and 3 are arguments.”
 function sum(a, b) {
   return a + b;
 }
-
 let result = sum(2, 3);
 console.log(result); // 5 -->
 
@@ -1159,11 +1156,10 @@ Function calling itself.
 “A function declaration is defined using the function keyword with a name, and it is hoisted, so we can call it before its definition.
 
 “ for example Function Declaration is like a pre-defined rule”
-<!-- 
+<!--                          
 function greet() {
   console.log("Hello");
 }
-
 greet(); -->
 
 “This is a function declaration where the function is defined with a name.
@@ -1179,7 +1175,6 @@ const greet = function() {
 };
 
 greet(); -->
-
 This is a function expression where a function is assigned to a variable.
 It is not hoisted like function declaration, so we cannot call it before defining it.”
 --------------------------------------------------------------------------
@@ -1191,7 +1186,7 @@ It has its own this.”
 
 ✅ Normal Function
 <!-- 
-function greet(name) {
+function greet(name) { 
   return "Hello " + name;
 } -->
 
@@ -1207,8 +1202,10 @@ const greet = (name) => {
 }; -->
 --------------------------------------------------------------------------
 🔥 Arrow Function :-
-“An arrow function is a shorter way to write a function using the => syntax.
-It does not have its own this and instead uses the this value from its parent scope.”
+“An arrow function is a shorter way to write a function in javaScript using the => syntax.
+It does not have its own this and instead, it uses the this value from its parent scope.”
+
+That’s why arrow functions are very useful in callbacks and asynchronous code because it helps us avoid losing the correct this value.”
 
 <!-- For Example:- -->
 “Arrow function is like a child using parent’s help.
@@ -1262,6 +1259,38 @@ API calls
 setTimeout / setInterval 
 Asynchronous programming
 
+<!-- 🔥 4️⃣ What is Closure? -->
+A closure is a function that remembers variables from its outer scope even after the outer function has finished execution. It is used for data hiding and private variables.
+
+<!-- Real-life example -->
+“Closure is used when we want to keep data private and maintain state.”
+<!-- 
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  }
+}
+const counter = outer();
+counter(); // 1
+counter(); // 2 -->
+“Here, the outer function returns the inner function.
+Even after the outer function is executed, the inner function still remembers the count variable.
+
+So every time we call counter(), the value increases.
+This happens because of closure.”
+
+<!-- 🔹 Why do we use Closure? -->
+Data hiding
+Private variables
+Counters
+Used in callbacks and event handlers
+
+<!-- 👉 If they ask: Why use closure? -->
+“We use closures for data privacy and to maintain state without using global variables.”
+
 <!-- ✅ 3️⃣ Higher Order Function (HOF) -->
 “A higher-order function is a function that either takes another function as an argument or returns a function.”
 
@@ -1281,39 +1310,6 @@ console.log(calculate(5, 3, add)); // 8 -->
 “Here, calculate is a higher-order function because it takes another function as a parameter.
 We pass add function as an argument, and it performs the operation.”
 
-<!-- 🔥 4️⃣ What is Closure? -->
-A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.It is used for data hiding and private variables.
-
-<!-- Real-life example -->
-“It’s like a backpack — you carry things from the past and can use them later.”
-
-<!-- 
-function outer() {
-  let count = 0;
-
-  return function inner() {
-    count++;
-    console.log(count);
-  }
-}
-
-const counter = outer();
-counter(); // 1
-counter(); // 2 -->
-
-“Here, the outer function returns the inner function.
-Even after the outer function is executed, the inner function still remembers the count variable.
-
-So every time we call counter(), the value increases instead of resetting.
-This happens because of closure.”
-
-<!-- 🔹 Why do we use Closure? -->
-Data hiding
-Private variables
-Counters
-Used in callbacks and event handlers
-
-
 <!-- IIFE (Immediately Invoked Function Expression) -->
 👉 IIFE is a function that runs immediately after it is defined.
 
@@ -1321,7 +1317,7 @@ Used in callbacks and event handlers
 <!-- ✅ Normal IIFE -->
 <!-- 
 (function () {
-  console.log("IIFE executed");
+  console.log("IIFE executed"); 
 })(); -->
 “Here, the function is defined and executed immediately without calling it separately.”
 
@@ -1335,3 +1331,442 @@ Used in callbacks and event handlers
 To avoid global variable pollution
 To create a private scope
 
+<!-- ✅What is Pure Function vs Impure Function --> 
+“A pure function is a function that always returns the same output for the same input and does not have any side effects. 
+<!-- 
+function add(a, b) {
+  return a + b;
+} -->
+
+<!--Impure Function -->
+“An impure function is a function that does not always return the same output for the same input
+<!-- 
+let count = 0;
+
+function increase() {
+  count++;
+}s
+    
+increase();
+console.log(count); // 1
+ -->
+
+<!-- Why are pure functions preferred? -->
+Because:
+Easy to test
+No side effects 
+Better performance optimization 
+DOM change  
+API call karna 
+Console log karna
+write File
+
+<!--this Keyword 🔥 (Very Important) -->
+this refers to the object that is calling the function.
+
+<!-- 🔥 3️⃣ this Inside Object -->
+const student = {
+  name: "Kajal",
+  age: 21,
+  info() {
+    console.log(this.name);
+  }
+};
+
+student.info();
+
+=====================================================================
+3. ES6 Features (Modern JavaScript)
+<!-- What is ES6 Features? -->
+ES6 (ECMAScript 2015) is a version of JavaScript that introduced new features to make coding easier, cleaner, and more powerful.
+These features are called ES6 features.
+
+<!-- 🔥 Examples of ES6 Features -->
+let and const
+Arrow functions 
+Template literals 
+Destructuring
+Spread and Rest operator
+Promises
+Async/Await
+Modules (import/export)
+
+<!-- 🎯 Why ES6 is Important? -->
+👉 Because:-
+Code becomes shorter and cleaner
+Easier to understand
+Helps in writing modern applications (React, APIs, etc.)
+
+
+<!-- 🔥3. Template Literals ? -->
+“Template literals allow embedding variables inside strings using backticks.”
+
+👉 Real-life Example:
+Like filling a form message:
+“Hello Kajal, your order is ready”
+
+<!-- 
+let name = "kajalti";
+console.log(`Hello ${name}`); -->
+
+👉 Why use?
+Easy string interpolation
+Multi-line strings
+
+<!-- 🔥 4. Destructuring  -->
+“Destructuring is used to extract values from arrays or objects into variables.”
+
+👉 Real-life Example:
+You get a student record, but you only need name and marks.
+
+<!--
+ const student = { name: "Kajal", marks: 90 };
+
+const { name, marks } = student; -->
+
+“Destructuring is like picking only required data from a large object.”
+
+👉 Why use?
+Cleaner code
+Easy data access
+
+<!-- 🔥 5. Spread & Rest Operator (...) -->
+
+👉 Spread (expand values):-
+“Spread is used to expand elements, 
+👉 Real-life Example:
+Copying notes from one notebook to another.
+<!-- 
+let arr1 = [1, 2];
+let arr2 = [...arr1, 3, 4];
+ -->
+
+👉 Rest (collect values):-
+Rest is used to collect multiple values.”
+👉 Real-life Example:
+Teacher collects marks of all students in one list.
+<!-- 
+function sum(...numbers){
+  return numbers.reduce((a, b) => a + b);
+} -->
+
+<!-- 🔥 6. What is a Promise? -->
+A Promise is an object that represents a future value — either resolved or rejected.
+It has three states: pending, resolve, and rejected.
+We handle promises using .then(), .catch(), and .finally().
+
+<!-- Real-life Example -->
+Imagine you take an exam.
+If you pass → You will receive a certificate (resolve).
+If you fail → You will not receive a certificate (reject).
+The result will come in the future — not immediately
+
+✅ Promise Syntax
+<!-- 
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Operation Successful");
+  } else {
+    reject("Operation Failed");
+  } -->
+
+<!-- 
+🎯 .then() and .catch()
+myPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  }); -->
+
+👉 Why use?
+Avoid callback hell
+Better async handling
+
+👉 .then() → success handle karta hai
+👉 .catch() → error handle karta hai
+
+<!-- 
+fetch(url)
+.then(rev => rev.json())
+.then(data => console.log(data))
+.catch(err => console.log(err)) -->
+
+🔥 2️⃣ What is Promise Chaining?
+Promise chaining is executing multiple asynchronous operations sequentially using multiple .then() methods.
+<!-- 
+Promise.resolve(10)
+  .then(num => num * 2)
+  .then(num => num + 5)
+  .then(result => console.log(result)); -->
+👉 Output: 25
+
+🔥 3️⃣ What is Promise.all()?
+Promise.all() runs multiple promises in parallel and returns a single promise.
+<!-- 
+const p1 = Promise.resolve("First");
+const p2 = Promise.resolve("Second");
+
+Promise.all([p1, p2])
+  .then(results => console.log(results)); -->
+
+👉 Output: ["First", "Second"]
+
+<!-- 🔥 5. Async / Await ⭐ -->
+👉 Cleaner way to handle promises.
+👉 Real-life Example:
+You wait for food delivery before eating.
+<!-- 
+async function eatFood() {
+  let food = await foodOrder;
+  console.log(food);
+} -->
+
+👉 Meaning:
+Code waits until task is complete.
+<!-- 
+async function getData() {
+  let res = await fetch("api");
+  console.log(res);
+} -->
+
+👉 Why use?
+Looks like normal code
+Easier to read
+
+<!-- 🔥 6. Modules (import / export) -->
+“Modules are like separate files that we can reuse when needed.”
+👉 Real-life Example:
+Different subjects in different books 📚
+You use only the required one.
+<!-- 
+// math.js
+export const add = (a, b) => a + b;
+
+// main.js
+import { add } from "./math.js"; -->
+================================================================================================================
+<!--7. What is the difference between synchronous and asynchronous? -->
+🔹 1. Synchronous (Sync):-
+Synchronous Javascript execute Code runs line by line.
+👉 Next task starts only after previous task is finished
+
+<!--Real-life Example:- -->
+👉 Like standing in a queue 🧍‍♂️
+First person finishes → then next person
+No skipping
+<!-- 
+console.log("Start");
+console.log("Task 1");
+console.log("End");
+-->
+👉 Output: 
+Start 
+Task 1
+End 
+
+🔹 2. Asynchronous (Async):-
+“Asynchronous Javascript code allows multiple tasks to run without blocking the execution.”
+
+
+Sync → ek ke baad ek
+Async → wait kiye bina next line chalti hai.
+
+
+
+<!-- 👉 What is difference between setTimeout and setInterval? -->
+<!-- setTimeout -->
+setTimeout run a function only once after a specified time delay.
+Syntax:-
+setTimeout(function, delay)
+delay is in milliseconds
+1000 ms = 1 second
+<!-- 
+setTimeout(() => {
+  console.log("Hello after 3 seconds")
+}, 3000)
+-->
+Output after 3 seconds
+Hello after 3 seconds
+
+<!-- Real-Life Example 2: Popup Message  -->
+A website shows welcome popup after 5 seconds.
+
+setTimeout(() => {
+  alert("Welcome to our website!")
+}, 5000)
+
+
+<!-- setInterval -->
+setInterval run a function repeatedly at fixed intervals
+until it is cleared.
+<!-- 
+setInterval(() => {
+  console.log("Running every 2 seconds");
+}, 2000); -->
+
+<!-- Real-Life Example 2: Live Notifications -->
+Example: Instagram / WhatsApp
+Checking new messages every 5 seconds.
+
+setInterval(() => {
+  console.log("Checking new notifications...")
+}, 5000)
+In real apps this calls an API.
+
+
+<!-- ❓2. What is Blocking and Non-Blocking code? -->
+Blocking: Stops execution until task finishes.
+Non-Blocking: Doesn’t stop execution.
+
+<!-- ❓4. What are different ways to handle async in JS? -->
+Callback
+Promise
+Async/Await
+
+imp:-
+<!-- 👉 “Why is JavaScript called single-threaded but still asynchronous?” -->
+JavaScript has a single call stack, but it uses Web APIs and the Event Loop to handle asynchronous tasks in the background without blocking the main thread.
+===================================================================================================================
+<!-- 🔹 Difference Between call(), apply(), and bind() -->
+Ye teen methods this ko control karte hain.
+
+✅ 1️⃣ call():-
+call() calls the function immediately and passes arguments one by one.
+Example:-
+👉 You use your friend’s phone and call someone immediately. 
+<!-- 
+function greet(city) {
+  console.log(this.name + " from " + city);
+}
+
+greet.call({ name: "Kajalti" }, "Delhi"); -->
+o/p :- Kajalti from Delhi
+
+✅ apply():-
+apply() calls the function immediately but passes arguments as an array.
+(Arguments array me deta hai).
+Example:-
+👉 You use your friend’s phone and call immediately,
+but you pass details as a list
+
+<!-- greet.apply({ name: "Kajalti" }, ["Delhi"]); -->
+
+✅ bind():- 
+bind() does not call the function immediately. It returns a new function with a fixed this value that can be called later.
+Example:-
+👉 You take your friend’s phone,
+but call later
+
+<!-- 
+const newFunc = greet.bind({name: "Kajalti"}, "Delhi");
+newFunc(); -->
+
+----------------------------------------------------------------------------------------------------------------
+<!--What is Lexical Scope -->
+👉 Lexical scope means a function can use variables from where it is written, not where it is called.
+It can access variables from its parent scope.
+This is decided at the time of writing the code.”
+
+<!-- Example: User Login System -->
+Imagine a login system where username is stored in a parent function.
+<!-- 
+function login(){
+  let username = "Kajalti"
+  function showUser(){
+    console.log("Welcome " + username)
+  }
+  showUser()
+}
+login()
+-->
+Welcome Kajalti
+
+
+<!--What is Execution Context? -->
+“Execution Context is an environment where JavaScript code is executed.”
+Hindi:-
+Execution Context ek environment hota hai jahan JavaScript code execute hota hai.
+
+
+<!-- 17. What is prototype? -->
+A prototype is an object from which other objects inherit properties and methods.
+
+<!-- 18. What is prototypal inheritance? -->
+Prototypal inheritance is a mechanism in JavaScript where one object inherits properties and methods from another object using the prototype chain.
+<!-- 
+let human = {
+  walk: true
+}
+
+let student = {
+  study: true 
+}
+
+student.__proto__ = human
+
+console.log(student.walk)-->true
+Because student human से property ले रहा है।
+------------------------------------------------------------------------------------------------------------------------
+✅ 1️⃣ Call Stack:-
+👉 Call Stack runs code line by line.
+👉 Works on LIFO (Last In First Out).
+
+
+✅ 2️⃣ Event Loop:-
+👉 Event Loop waits for stack to be empty and then runs async tasks.
+
+
+✅ 3️⃣ Microtasks:-
+👉 High priority tasks
+
+
+✅ 4️⃣ Macrotasks
+👉 Low priority tasks
+👉 Microtasks ke baad run hote hain
+
+------------------------------------------------------------------
+7️⃣ DOM (Frontend Interviews):-
+<!-- What is DOM -->
+DOM (Document Object Model) is a programming interface that allows JavaScript to access, modify, add, or delete HTML elements and change the content of a web page.
+
+<!--Real-world Example -->
+When you click Like button on Instagram, JavaScript updates the DOM to change the icon color.  
+
+HTML
+<!-- <p id="text">Hello</p> -->
+
+JavaScript
+<!-- document.getElementById("text").innerText = "Hi"; -->
+
+
+✅ 2️⃣ Selecting Elements
+
+👉 Elements ko select karna sabse basic aur important hai
+Methods:
+document.getElementById()
+document.getElementsByClassName()
+document.querySelector() ⭐
+document.querySelectorAll()
+
+<!--Q.Difference between querySelector and querySelectorAll? -->
+querySelector returns first matching element.
+querySelectorAll returns all matching elements.
+
+<!-- 3. Difference between innerHTML and textContent? -->
+innerHTML → Reads and writes HTML content including tags
+textContent → Reads and writes only text
+
+element.innerHTML = "<b>Hello</b>"
+element.textContent = "Hello"
+
+<!-- Difference between getElementById() and querySelector() -->
+getElementById() → id name only
+querySelector() → CSS selector (#, ., tag) 
+Example:-  
+let a = document.getElementById("text");
+let b = document.querySelector("#text"); 
+---------------------------------------------------------
