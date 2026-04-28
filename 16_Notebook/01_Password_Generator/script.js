@@ -11,33 +11,32 @@ const lowerChars = "abcdefghijklmnopqrstuvwxyz";
 const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+";
 
-function generatePassword(){
-    let chars = "";
+function generatePassword() {
+  let chars = "";
 
-    if (uppercase.checked) chars += upperChars;
-    if (lowercase.checked) chars += lowerChars;
-    if (numbers.checked) chars += numberChars;
-    if (symbols.checked) chars += symbolChars;
+  if (uppercase.checked) chars += upperChars;
+  if (lowercase.checked) chars += lowerChars;
+  if (numbers.checked) chars += numberChars;
+  if (symbols.checked) chars += symbolChars;
 
-
-if(chars == ""){
+  if (chars === "") {
     alert("Please select at least one option!");
     return;
-}
+  }
 
-let password = "";
-for(let i=0; i<lengthField.Value; i++){
+  let password = "";
+
+  for (let i = 0; i < Number(lengthField.value); i++) {
     password += chars[Math.floor(Math.random() * chars.length)];
-}
+  }
 
-passwordField.value = password;
+  passwordField.value = password;
   checkStrength(password);
-
 }
 
-function copyPassword(){
-    navigation.clipboard.writeTExt(passwordField.value);
-    alert("password copied!");
+function copyPassword() {
+  navigator.clipboard.writeText(passwordField.value);
+  alert("Password copied!");
 }
 
 function checkStrength(password) {
