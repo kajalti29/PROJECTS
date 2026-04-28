@@ -94,3 +94,4 @@ UseEffect is a React Hook is used to handle side effects like API call, Timer, E
 
 “I can add features like search functionality, categories, drag-and-drop, cloud storage, and authentication for multi-user support.”
 
+=========================================================================

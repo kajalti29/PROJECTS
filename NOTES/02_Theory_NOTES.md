@@ -1,6 +1,19 @@
+<!-- 7. What is Event Loop? -->
+Event Loop handles asynchronous operations in JavaScript.
+
+<!-- 11. Difference between null and undefined? -->
+undefined → variable declared but not assigned.
+null → intentionally empty value.
+
+
+========================================================
 <!--1. What is JavaScript? -->
 “JavaScript is a programming language used both on the frontend and backend. .
 On the frontend, it helps in handling user interactions and updating the UI dynamically, and on the backend we can use it with Node.js to build APIs and servers.”
+
+OR:_
+
+JavaScript is a high-level, interpreted programming language used to make web pages interactive.
 
 <!-- Example: -->
 “In my projects, I have used JavaScript to fetch data from APIs and update the UI.”
@@ -131,7 +144,7 @@ naming rules:-
 
 <!-- 9. Difference between var, let, and const? -->
  Var:- 
- var is a function-scoped variable declaration keyword introduced in ES5. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined.
+ var is a function-scoped. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined.
 
 🌍 Real-Life Example: 
 A company notice board.
@@ -146,7 +159,7 @@ if (true) {
 console.log(message); // Meeting Cancelled -->
 
 Let:-
-“let is a block-scoped variable introduced in ES6. It allows reassignment but does not allow re-declaration in the same scope. It is hoisted but remains in the Temporal Dead Zone until initialized.”
+“let is a block-scoped. It allows reassignment but does not allow re-declaration in the same scope. It is hoisted but stay in the Temporal Dead Zone until  it is initialization.”
 
 <!-- Real-Life Example: -->
 A classroom whiteboard.
@@ -163,7 +176,7 @@ console.log(topic); // Math -->
 👉 Outside value stays the same.
 
 Const:- 
-“const is a block-scoped variable introduced in ES6. It does not allow reassignment and re-declaration in the same scope. It is hoisted but remains in the Temporal Dead Zone until initialized
+“const is a block-scoped. It does not allow re-declaration and reassignment in the same scope. It is hoisted but stay in the Temporal Dead Zone until it is initialization, but its internal data can still be modified.
 
 <!-- Real-Life Example: -->
 A government law.
@@ -1361,10 +1374,10 @@ API call karna
 Console log karna
 write File
 
-<!--this Keyword 🔥 (Very Important) -->
+<!--this Keyword (Very Important) -->
 this refers to the object that is calling the function.
 
-<!-- 🔥 3️⃣ this Inside Object -->
+<!--3️⃣ this Inside Object -->
 const student = {
   name: "Kajal",
   age: 21,
@@ -1373,15 +1386,14 @@ const student = {
   }
 };
 
-student.info();
-
+student.info(); 
 =====================================================================
 3. ES6 Features (Modern JavaScript)
 <!-- What is ES6 Features? -->
 ES6 (ECMAScript 2015) is a version of JavaScript that introduced new features to make coding easier, cleaner, and more powerful.
 These features are called ES6 features.
 
-<!-- 🔥 Examples of ES6 Features -->
+<!--Examples of ES6 Features -->
 let and const
 Arrow functions 
 Template literals 
@@ -1391,14 +1403,13 @@ Promises
 Async/Await
 Modules (import/export)
 
-<!-- 🎯 Why ES6 is Important? -->
+<!--Why ES6 is Important? -->
 👉 Because:-
 Code becomes shorter and cleaner
 Easier to understand
 Helps in writing modern applications (React, APIs, etc.)
 
-
-<!-- 🔥3. Template Literals ? -->
+<!--3. Template Literals ? -->
 “Template literals allow embedding variables inside strings using backticks.”
 
 👉 Real-life Example:
@@ -1515,8 +1526,9 @@ Promise.all([p1, p2])
 
 👉 Output: ["First", "Second"]
 
-<!-- 🔥 5. Async / Await ⭐ -->
-👉 Cleaner way to handle promises.
+<!-- 5. Async / Await ⭐ -->
+Async/Await is used to handle promises easily.
+
 👉 Real-life Example:
 You wait for food delivery before eating.
 <!-- 
@@ -1537,7 +1549,7 @@ async function getData() {
 Looks like normal code
 Easier to read
 
-<!-- 🔥 6. Modules (import / export) -->
+<!--6. Modules (import / export) -->
 “Modules are like separate files that we can reuse when needed.”
 👉 Real-life Example:
 Different subjects in different books 📚

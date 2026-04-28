@@ -1,0 +1,1 @@
+“I first created different character sets like uppercase, lowercase, numbers and symbols. Then I combined them. After that, I used a loop and Math.random() to pick random characters and generate a password.”
