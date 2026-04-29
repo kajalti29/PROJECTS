@@ -14,6 +14,15 @@ Then I combine all selected characters into one string.
 After that, I use a loop and Math.random() to generate random characters.
 Finally, I display the password and check its strength.
 
+<!-- ✅ 1. What did you build? -->
+“I built a Password Generator web application using HTML, CSS, and JavaScript. This app generates strong and secure passwords based on user-selected options like length, uppercase, lowercase, numbers, and special characters.”
+
+<!-- ✅ 2. How did you build it? -->kaise bnaya
+I designed the user interface using HTML and CSS, and implemented the logic using JavaScript. I used functions, arrays, and random number generation to create passwords dynamically. I also used DOM manipulation to update the password on the screen based on user input.
+
+<!-- ✅ 3. Why did you build it? -->
+I built this project to improve my JavaScript skills, especially logic building and DOM manipulation. Also, password security is an important real-world problem, so I wanted to create something useful.”
+
 <!-- ❓ Q3. What is the main purpose of your project? -->
 👉 To generate strong and secure passwords.
 
