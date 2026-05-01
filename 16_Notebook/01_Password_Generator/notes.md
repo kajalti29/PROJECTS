@@ -6,6 +6,9 @@
 
 "I'm not fully sure, but I think…"
 
+<!-- readonly -->
+Readonly means a property or variable whose value can be accessed but cannot be modified.
+
 <!-- ❓ Tell me about your project -->
 I created a Password Generator application using HTML, CSS and JavaScript.
 It allows users to select password length and character types like uppercase, lowercase, numbers and symbols.

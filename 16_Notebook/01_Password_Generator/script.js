@@ -1,5 +1,6 @@
 const passwordField = document.getElementById("password");
 const lengthField = document.getElementById("length");
+
 const uppercase = document.getElementById("uppercase");
 const lowercase = document.getElementById("lowercase");
 const numbers = document.getElementById("numbers");
