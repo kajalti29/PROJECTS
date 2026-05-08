@@ -29,4 +29,38 @@ Normal import:
 <!-- import About from "./About"; -->
 --------------------------------------------------------------
 
+🌐 API Handling in React (MUST MASTER)
 
+<!-- 1. What is API? -->
+API stands for Application Programming Interface. It acts as a bridge that allows different software applications to communicate and exchange data.
+
+<!-- 2. what is Fetch() -->
+"fetch() is used to send a request to an API and get data from the server.
+
+<!-- What are REST  -->
+REST methods are HTTP methods used to perform CRUD operations between frontend and backend.
+
+<!-- 2. REST API Basics -->
+REST me different HTTP methods hote hain:
+| Method | Use             | 
+| ------ | --------------- |
+| GET    | Data fetch      |
+| POST   | New data create |
+| PUT    | Update data     |
+| DELETE | Remove data     |
+
+useEffect:-
+UseEffect is a React Hook is used to handle side effects like API call, Timer, Event listener, DOM Update.
+
+If you call an API directly inside the component body:
+```js id="k7v9yx"
+fetch("API")
+```
+then the API will be called on every render of the component ❌
+
+This can cause:
+* unnecessary API requests
+* performance issues
+* infinite re-rendering
+
+That’s why `useEffect()` is used to control when the API call should run.
