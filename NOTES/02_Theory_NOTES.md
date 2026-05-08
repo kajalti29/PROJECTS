@@ -4,8 +4,6 @@ Event Loop handles asynchronous operations in JavaScript.
 <!-- 11. Difference between null and undefined? -->
 undefined → variable declared but not assigned.
 null → intentionally empty value.
-
-
 ========================================================
 <!--1. What is JavaScript? -->
 “JavaScript is a programming language used both on the frontend and backend. .
@@ -18,7 +16,7 @@ JavaScript is a high-level, interpreted programming language used to make web pa
 <!-- Example: -->
 “In my projects, I have used JavaScript to fetch data from APIs and update the UI.”
 
-<button onclick="changeText()">Click me</button>
+<button onclick="changeText()">Click me</button> 
 <p id="text">Hello</p>
 
 <script>
@@ -70,12 +68,12 @@ btn.addEventListener("click", function(){
 <!--Uses of JavaScript -->
 Makes websites interactive
 Handles button clicks & user actions
-Used for form validation
+Used for form validation 
 Updates UI without page reload
 Works on backend (Node.js)
 Used for APIs (fetch/send data)
-Helps build real-time apps (chat, notifications)
-
+build real-time apps (chat, notifications)
+ 
 <!-- 3.How JavaScript Works in Browser -->
 “Basically, when a web page loads, HTML provides the structure and CSS handles the styling.
 Then the JavaScript engine in the browser runs the code and can dynamically update the page using the DOM, so users can see changes contend without page reloading.”
@@ -101,7 +99,8 @@ console.log("Task 3");
 👉 Output runs line by line (synchronously)
 
 <!-- 7. What is Call Stack in JavaScript -->
-“Call Stack manages function execution in JavaScript using LIFO, where the last called function executes first.”
+Call Stack is a data structure used by JavaScript to manage function calls.
+It follows LIFO (Last In First Out) order.
 
 “First, first() is called and added to the stack.
 Then inside it, second() is called and pushed on top.
@@ -112,7 +111,7 @@ function first() {
   second();
 }
 
-function second() {
+function second() { 
   console.log("Hello"); 
 }
 

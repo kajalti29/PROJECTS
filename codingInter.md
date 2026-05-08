@@ -430,3 +430,13 @@ function changeText(){
 }
 </script>
 --------------------------------------------------------------
+Map():-
+map() JavaScript का array method है जो हर element पर function चलाकर नया transformed array return करता है।
+
+map() is a JavaScript array method that applies a function to each element and returns a new transformed array.
+
+<!-- 
+const nums = [1, 2, 3, 4];
+const result = nums.map(num => num * 2);
+console.log(result); -->
+
