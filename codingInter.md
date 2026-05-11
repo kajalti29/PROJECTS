@@ -885,3 +885,213 @@ function debounce(fn, delay) {
 
 <!-- 3. Throttling:- -->
 Throttling limits function execution to once in a specified time interval.
+
+========================================================================
+ample 1
+
+“Button click pe paragraph hide karo.”
+
+Example 2
+
+“Input me jo user type kare usko realtime show karo.”
+
+Example 3
+
+“Ek counter banao with + and - button.”
+
+Example 4
+
+“Todo app me delete functionality add karo.”
+
+# Example 1
+
+## Button Click Pe Paragraph Hide Karo
+
+```html id="12yhq4"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hide Paragraph</title>
+</head>
+<body>
+
+  <p id="para">Hello Kajal</p>
+
+  <button id="btn">Hide</button>
+
+  <script>
+
+    let para = document.getElementById("para");
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function () {
+
+      para.style.display = "none";
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
+
+---
+
+# Example 2
+
+## Input Me Jo User Type Kare Usko Realtime Show Karo
+
+```html id="n0mvdf"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Realtime Input</title>
+</head>
+<body>
+
+  <input type="text" id="input">
+
+  <h1 id="text"></h1>
+
+  <script>
+
+    let input = document.getElementById("input");
+    let text = document.getElementById("text");
+
+    input.addEventListener("input", function () {
+
+      text.innerText = input.value;
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
+
+---
+
+# Example 3
+
+## Counter App (+ and - Button)
+
+```html id="w2wzzv"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter</title>
+</head>
+<body>
+
+  <h1 id="count">0</h1>
+
+  <button id="plus">+</button>
+  <button id="minus">-</button>
+
+  <script>
+
+    let count = 0;
+
+    let number = document.getElementById("count");
+
+    let plus = document.getElementById("plus");
+    let minus = document.getElementById("minus");
+
+    plus.addEventListener("click", function () {
+
+      count++;
+      number.innerText = count;
+
+    });
+
+    minus.addEventListener("click", function () {
+
+      count--;
+      number.innerText = count;
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
+
+---
+
+# Example 4
+
+## Todo App Me Delete Functionality
+
+```html id="fmr90u"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo</title>
+</head>
+<body>
+
+  <input type="text" id="input">
+
+  <button id="add">Add</button>
+
+  <ul id="list"></ul>
+
+  <script>
+
+    let input = document.getElementById("input");
+    let add = document.getElementById("add");
+    let list = document.getElementById("list");
+
+    add.addEventListener("click", function () {
+
+      let li = document.createElement("li");
+
+      li.innerText = input.value;
+
+      let delBtn = document.createElement("button");
+
+      delBtn.innerText = "Delete";
+
+      delBtn.addEventListener("click", function () {
+
+        li.remove();
+
+      });
+
+      li.appendChild(delBtn);
+
+      list.appendChild(li);
+
+      input.value = "";
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
+
+---
+
+# In 4 Examples Me Important DOM Concepts
+
+| Concept          | Use                |
+| ---------------- | ------------------ |
+| getElementById   | element select     |
+| addEventListener | event handling     |
+| innerText        | text change        |
+| value            | input value        |
+| createElement    | new element banana |
+| appendChild      | element add karna  |
+| remove           | delete karna       |
+| style.display    | hide/show          |
+
+Ye sab fresher interviews me bahut common hain 🚀
