@@ -433,10 +433,118 @@ function changeText(){
 Map():-
 map() JavaScript का array method है जो हर element पर function चलाकर नया transformed array return करता है।
 
-map() is a JavaScript array method that applies a function to each element and returns a new transformed array.
+map() is an array method that applies a function to each element and returns a new transformed array.
 
 <!-- 
 const nums = [1, 2, 3, 4];
 const result = nums.map(num => num * 2);
 console.log(result); -->
+
+
+A real-life example of map() is updating product prices after adding tax or discount to every item in an array.
+map() applies a function to each element and returns a new transformed array.
+
+const prices = [100, 200, 300];
+const finalPrices = prices.map(price => price + 18);
+console.log(finalPrices);
+
+O/P:-
+[ 118, 218, 318 ]
+
+<!-- reduce():- -->
+reduce() is an array method used to reduce all array elements into a single value.
+It can return:
+Sum
+Total
+Count
+Average
+Object 
+Array
+
+<!-- Real-Life Example -->
+A real-life example of reduce() is calculating the total bill amount of items in a shopping cart.
+
+<!-- 
+const cart = [500, 1000, 1500];
+const totalBill = cart.reduce((acc, price) => acc + price, 0); 
+console.log(totalBill);-->
+
+array.reduce((accumulator, currentValue) => {
+   return updatedValue;
+}, initialValue);
+
+<!-- 
+const nums = [1, 2, 3, 4];
+const total = nums.reduce((acc, curr) => acc + curr, 0);
+console.log(total); -->
+
+<!-- filter():- -->
+filter() is an array method used to return only those elements that satisfy a condition.
+It creates a new array with matching elements.
+array.filter((value, index, array) => {
+   return condition;
+});
+<!-- 
+const nums = [10, 20, 30, 40];
+const result = nums.filter(num => num > 20);
+console.log(result); -->
+
+Output
+[30, 40]
+
+👉 Only numbers greater than 20 are returned.
+
+filter() का real-life example है shopping website में केवल expensive products या active users को दिखाना।
+
+A real-life example of filter() is showing only expensive products or active users from a list based on a condition.
+
+<!-- forEach():- -->
+forEach() is an array method used to iterate over each element of an array.
+It executes a function for every element but does not return a new array.
+
+forEach() JavaScript का array method है जो array के हर element पर function execute करता है, लेकिन नया array return नहीं करता।
+
+A real-life example of forEach() is displaying a list of students or users one by one.
+<!-- 
+const students = ["Kajal", "Rahul", "Aman"];
+
+students.forEach(student => {
+  console.log(student);
+}); -->
+
+
+<!-- find():- -->
+find() is an array method used to return the first element that satisfies a given condition.
+
+A real-life example of find() is searching for a specific user or product by ID from a list.
+
+<!--
+ const users = [
+  { id: 1, name: "Kajal" },
+  { id: 2, name: "Rahul" }
+];
+const user = users.find(u => u.id === 2);
+console.log(user); -->
+
+O/P:-
+{ id: 2, name: "Rahul" }
+
+🔹 1. push() – Add element at end
+<!-- 
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr);  //[1, 2, 3, 4] -->
+
+🔹 2. pop() – Remove element from end
+<!-- 
+let arr = [1, 2, 3];
+arr.pop();
+console.log(arr); // [1, 2]
+ -->
+-------------------------------------------------------------------------------------------------------
+| find()                | filter()                      |
+| --------------------- | ----------------------------- |
+| Returns first element | Returns all matching elements |
+| Returns single value  | Returns array                 |
+
 
