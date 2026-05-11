@@ -435,21 +435,21 @@ map() JavaScript का array method है जो हर element पर functio
 
 map() is an array method that applies a function to each element and returns a new transformed array.
 
+A real-life example of map() is updating product prices after adding tax or discount to every item in an array.
+map() applies a function to each element and returns a new transformed array.
+<!-- 
+const prices = [100, 200, 300];
+const finalPrices = prices.map(price => price + 18);
+console.log(finalPrices); -->
+
+O/P:-
+[ 118, 218, 318 ]
+
 <!-- 
 const nums = [1, 2, 3, 4];
 const result = nums.map(num => num * 2);
 console.log(result); -->
 
-
-A real-life example of map() is updating product prices after adding tax or discount to every item in an array.
-map() applies a function to each element and returns a new transformed array.
-
-const prices = [100, 200, 300];
-const finalPrices = prices.map(price => price + 18);
-console.log(finalPrices);
-
-O/P:-
-[ 118, 218, 318 ]
 
 <!-- reduce():- -->
 reduce() is an array method used to reduce all array elements into a single value.
@@ -548,3 +548,340 @@ console.log(arr); // [1, 2]
 | Returns single value  | Returns array                 |
 
 
+--------------------------------------------------------------------------------------------------------------------------
+<!-- Conditions in JavaScript:- -->
+Conditions are used to make decisions in JavaScript.
+They check whether something is:
+
+true or false
+
+and execute code accordingly.
+
+
+## 1. `if`
+ Executes code when the condition is true.
+
+if (condition) {
+   // code
+}
+<!-- 
+let age = 18;
+
+if (age >= 18) {
+  console.log("Eligible");
+} -->
+
+## 2. `if...else`
+👉 Executes one block if condition is true, otherwise another block.
+if (condition) {
+
+} else {
+
+}
+<!-- 
+let age = 16;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+} -->
+
+## 3. `else if`
+👉 Used to check multiple conditions.
+
+if () {
+} else if () {
+
+}
+<!-- 
+let marks = 75;
+
+if (marks >= 90) {
+  console.log("A");
+} else if (marks >= 60) {
+  console.log("B");
+} else {
+  console.log("Fail");
+} -->
+
+## 4. Ternary Operator
+
+👉 Short form of `if...else`.
+condition ? true : false
+<!-- 
+let age = 20;
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result); -->
+
+## 5. `switch`
+👉 Used to compare multiple cases.
+
+switch(value)
+<!-- 
+
+let day = 2;
+
+switch(day) {
+  case 1:
+    console.log("Monday");
+    break;
+
+  case 2:
+    console.log("Tuesday");
+    break;
+
+  default:
+    console.log("Invalid");
+} -->
+-------------------------------------------------------------------------------------------
+<!-- Loops in JavaScript:- -->
+Loops are used to execute a block of code repeatedly until a condition becomes false.
+
+<!-- 1. for Loop -->
+👉 Used when number of iterations is known.
+<!-- 
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+} -->
+
+Output
+1
+2
+3
+4
+5
+
+<!-- 2. while Loop -->
+👉 Used when number of iterations is Unknown.
+<!-- 
+let i = 1;
+
+while (i <= 5) {
+  console.log(i);
+  i++;
+} -->
+
+<!-- 3. do...while Loop -->
+👉 Executes at least one time.
+<!-- 
+let i = 1;
+
+do {
+  console.log(i);
+  i++;
+} while (i <= 5); -->
+
+<!-- 4. for...of -->
+👉 Used to iterate array values.
+<!-- 
+const arr = [10, 20, 30];
+
+for (let value of arr) {
+  console.log(value);
+} -->
+
+<!-- 5. for...in -->
+👉 Used to iterate object keys.
+<!-- 
+const user = {
+  name: "Kajal",
+  age: 21
+};
+
+for (let key in user) {
+  console.log(key);
+} -->
+
+
+real-life example:-
+const students = ["Kajal", "Rahul", "Aman"];
+
+for (let student of students) {
+  console.log(student);
+}
+----------------------------------------------------------------------
+
+<!-- 8. DOM Manipulation ⭐ -->
+DOM Manipulation means accessing and changing HTML elements using JavaScript.
+
+<!-- 1. Select Element -->
+<!-- By ID -->
+document.getElementById("heading");
+<!-- By Class -->
+document.getElementsByClassName("box");
+<!-- Query Selector -->
+document.querySelector(".box");
+
+<!-- 2. Change Text -->
+document.getElementById("title").innerText = "Hello";
+
+<!-- 3. Change HTML -->
+document.getElementById("demo").innerHTML = "<h1>Hi</h1>";
+
+<!-- 4. Change CSS -->
+document.getElementById("box").style.color = "red";
+
+<!-- 5. Add Event -->
+button.addEventListener("click", () => {  
+  alert("Button Clicked");});
+
+<!-- 6. Create Element -->
+const p = document.createElement("p");p.innerText = "New Paragraph";document.body.appendChild(p);
+--------------------------------------------------------------
+<!-- Events:- -->
+Events are actions performed by the user or browser that JavaScript can detect and handle.
+
+| Event   | Definition                        |
+| ------- | --------------------------------- |
+| click   | Triggered when element is clicked |
+| change  | Triggered when value changes      |
+| submit  | Triggered when form submits       |
+| keydown | Triggered when key is pressed     |
+| keyup   | Triggered when key is released    |
+
+1. click Event:-
+👉 Triggered when user clicks an element.
+<!-- 
+button.addEventListener("click", () => {
+  console.log("Button Clicked");
+}); -->
+
+2. change Event
+👉 Triggered when input/select value changes.
+<!-- 
+input.addEventListener("change", () => { 
+   console.log("Value Changed");
+   }); -->
+
+Real-Life Example
+Selecting country from dropdown.
+
+3. submit Event
+👉 Triggered when form is submitted.
+<!-- 
+form.addEventListener("submit", (e) => { 
+   e.preventDefault(); 
+  console.log("Form Submitted");
+  }); -->
+  
+Real-Life Example
+Login/Register form submission.
+
+4. Keyboard Events
+👉 Triggered when keyboard keys are pressed.
+
+keydown
+input.addEventListener("keydown", () => {
+    console.log("Key Pressed");
+    });
+
+keyup
+input.addEventListener("keyup", () => {  console.log("Key Released");});
+-----------------------------------------------------------------------
+<!-- ES6 Features in JavaScript -->
+ES6 (ECMAScript 2015) introduced modern JavaScript features that make code shorter, cleaner, and easier to write.
+
+<!-- 2. Template Literals -->
+👉Template Literals Used to insert variables or dyanamic values inside strings using backticks ` `.
+
+const name = "Kajal";
+console.log(`My name is ${name}`); 
+O/P:-
+My name is Kajal.
+
+<!-- 3. Destructuring -->
+Destructuring is used to extract values from arrays or objects into variables.
+
+<!-- Object Destructuring -->
+const user = {
+  name: "Kajal",
+  age: 21
+};
+
+const { name, age } = user;
+
+console.log(name);
+
+<!-- Array Destructuring -->
+
+const nums = [10, 20];
+
+const [a, b] = nums;
+
+<!-- 4. Spread Operator (...) -->
+Spread operator is used to expand or copy arrays and objects.
+
+const arr1 = [1, 2];
+
+const arr2 = [...arr1, 3];
+
+<!-- 5. Rest Operator (...) -->
+Rest operator collects multiple arguments into a single array.
+
+function sum(...nums) {
+  console.log(nums);
+}
+
+sum(1, 2, 3);
+
+-----------------------------------------------------------------------
+<!-- 1. Event Bubbling in JavaScript -->
+Event Bubbling means an event starts from the child element and bubbles up to the parent elements.
+
+Real-Life Example
+👉 Clicking a button inside a card also triggers card click event
+
+Child → Parent → Grandparent
+
+<div id="parent">
+  <button id="child">Click</button>
+</div>
+
+document.getElementById("parent")
+  .addEventListener("click", () => {
+    console.log("Parent Clicked");
+});
+
+document.getElementById("child")
+  .addEventListener("click", () => {
+    console.log("Button Clicked");
+});
+
+O/P:-
+Button Clicked
+Parent Clicked
+👉 First child executes, then parent.
+
+<!-- Stop Event Bubbling -->
+event.stopPropagation();
+
+
+<!-- 2. Debouncing:- -->
+Debouncing delays function execution until a certain time passes after the last event trigger.
+
+<!-- Real-Life Example -->
+👉 Search bar API calls.
+
+Without debounce:
+
+API calls on every keypress ❌
+
+With debounce:
+
+API call after user stops typing ✅
+<!-- 
+function debounce(fn, delay) {
+  let timer;
+
+  return function () {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      fn();
+    }, delay);
+  };
+} -->
+
+<!-- 3. Throttling:- -->
+Throttling limits function execution to once in a specified time interval.
