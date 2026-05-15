@@ -164,37 +164,27 @@ Earlier developers used var, but nowadays mostly let and const are preferred bec
 It is function-scoped, which means it works inside inside a function. It allows redeclaration and update. It is also hoisted and initialized with undefined. Because of this, it can sometimes create confusion or bugs in large applications. That’s why modern JavaScript uses let and const instead of var.”
 
 🌍 Real-Life Example: 
-A company notice board.
-If someone changes the notice, everyone in the company sees the updated message.
+“var is like a whiteboard where anyone can rewrite the same thing again and again.”
 <!-- 
-var city = "Bhopal";
-
-var city = "Indore"; // redeclare allowed
-
-city = "Delhi"; // update allowed
-
-console.log(city); -->
-“Here I created a variable using var.
-Then I redeclared it and updated its value.
-JavaScript allows both operations with var, that’s why it is less secure.”
+var name = "Amit";
+var name = "Rahul";
+console.log(name); -->
 
 Let:-
-“let is block-scoped. It allows reassignment but does not allow re-declaration in the same scope. It is hoisted but stay in the Temporal Dead Zone until  it is initialization.”
+“let is block-scoped,which means it works inside a block { }. It allows reassignment but does not allow re-declaration in the same scope. It is hoisted but not initialized.
 
 <!-- Real-Life Example: -->
 A classroom whiteboard.
 Changes inside one classroom do not affect others.
 <!-- 
 let score = 50;
-
 score = 80; // update allowed
-
 console.log(score); -->
 
 👉 Outside value stays the same.
 
 Const:- 
-“const is block-scoped. It does not allow redeclaration or reassignment in the same scope. It is hoisted but remains in the Temporal Dead Zone until initialization. However, in the case of objects and arrays, their internal data can still be modified.”
+“const is block-scoped. It does not allow redeclaration or reassignment in the same scope. It is used for fixes value.
 
 <!-- Real-Life Example: -->
 A government law.
@@ -1237,7 +1227,7 @@ It doesn’t have its own this, it uses the parent’s this.”
 const greet = (name) => {
   return "Hello " + name;
 }; -->
---------------------------------------------------------------------------
+--------------------------------------------------------------------------=================================================================================================================
 🔥 Arrow Function :-
 “An arrow function is a shorter way to write a function in javaScript using the => syntax.
 It does not have its own this and instead, it uses the this value from its parent scope.”
@@ -1251,7 +1241,7 @@ It doesn’t have its own this, it uses the parent’s this.”
 <!-- const add = (a, b) => a + b; -->
 
 <!-- 🔥 3. What is Hoisting? -->
-Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before code execution.
 
 Imagine your name is already written on the attendance list before the class starts.
 Even if the teacher calls your name first,
@@ -1261,6 +1251,29 @@ your name is already in the list.
 console.log(a);
 var a = 5; -->
 Output: undefined 
+
+
+JavaScript, hoisting means:
+<!-- 👉 “declaration upar chali jati hai, but value nahi.” -->
+console.log(name);
+var name = "Amit";
+
+<!-- 2. How does hoisting work? -->
+<!-- ⭐ Why hoisting is used? -->
+“JavaScript first stores variables/functions in memory, then runs the code.”
+
+<!-- 3. What if variable used before declaration? -->
+“var → undefined, let/const → error.”
+
+<!-- 5. Why var gives undefined but let gives error? -->
+“var is initialized with undefined, but let is not initialized.”
+
+<!-- 6. What is TDZ? -->
+“Time period when let/const exist but cannot be used before declaration.”
+
+<!-- 7. Are functions hoisted? -->
+“Yes, function declarations are fully hoisted.”
+
 
 <!-- 🔥 What is TDZ? -->
 Temporal Dead Zone is the time between entering a block and the variable declaration where a let or const variable cannot be accessed.
