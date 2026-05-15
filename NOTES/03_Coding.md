@@ -155,3 +155,24 @@ console.log(rev); -->
 
 Logic: Built-in method reverse use kiya.
 
+=======================================================
+scope
+closure
+hoisting
+asynchronous behavior
+in sabka output puchte hain.
+
+// function outer() {
+//     let count = 0;
+
+//     return function () {
+//         count++;
+//         console.log(count);
+//     };
+// }
+
+// const counter = outer();
+
+// counter();
+// counter();
+// counter();

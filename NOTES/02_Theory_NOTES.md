@@ -6,15 +6,32 @@ undefined → variable declared but not assigned.
 null → intentionally empty value.
 ========================================================
 <!--1. What is JavaScript? -->
-“JavaScript is a programming language used both on the frontend and backend. .
-On the frontend, it helps in handling user interactions and updating the UI dynamically, and on the backend we can use it with Node.js to build APIs and servers.”
+“JavaScript is a programming language used both on the frontend and backend. On the frontend, it helps in handling user interactions and updating the UI dynamically, and on the backend we can use it with Node.js to build APIs and servers.”
 
 OR:_
 
-JavaScript is a high-level, interpreted programming language used to make web pages interactive.
+“JavaScript is a programming language used to create dynamic and interactive web applications.”
+It is used for:
+Dynamic websites
+Form validation
+API calls
+DOM manipulation
+Web applications
 
 <!-- Example: -->
 “In my projects, I have used JavaScript to fetch data from APIs and update the UI.”
+
+<h1 id="name">Loading...</h1>
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((data) => {
+    document.getElementById("name").innerText = data[0].name;
+  });
+
+“In this code, I am fetching data from an API using fetch().
+After receiving the response, I convert it into JSON format and then update the UI dynamically using DOM manipulation.”
+
 
 <button onclick="changeText()">Click me</button> 
 <p id="text">Hello</p>
@@ -27,15 +44,6 @@ function changeText() {
 “Here JavaScript is handling user interaction and updating the UI.”
 
 For example, on button click, it can update content dynamically using DOM manipulation without reloading the page.”
-
-2. API Example (BEST for interview)
-<!-- 
-fetch("https://api.example.com/data")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  }); -->
-  “Here I’m using JavaScript to fetch data from an API.”
 
 
 ✅ 3. Backend Example (Node.js basic)
@@ -141,41 +149,51 @@ naming rules:-
 4] Cannot use reserved keywords.
 5] Variable names are case-sensitive.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+How to Speak in Front of Recruiter
+
+“In JavaScript, we use var, let, and const to declare variables.
+Earlier developers used var, but nowadays mostly let and const are preferred because they provide better scope management and reduce bugs.”
+
+
 <!-- 9. Difference between var, let, and const? -->
  Var:- 
- var is a function-scoped. It allows both re-declaration and reassignment. It is hoisted and initialized with undefined.
+“var is function-scoped. It allows redeclaration and reassignment, and it is hoisted with undefined.
+“var is function-scoped. It allows redeclaration and reassignment, and it is hoisted with undefined.
+Because of redeclaration, sometimes it may create unexpected bugs in large applications, so nowadays developers mostly prefer let and const.”
 
 🌍 Real-Life Example: 
 A company notice board.
 If someone changes the notice, everyone in the company sees the updated message.
 <!-- 
-var message = "Meeting at 10 AM";
+var city = "Bhopal";
 
-if (true) {
-  var message = "Meeting Cancelled";
-}
+var city = "Indore"; // redeclare allowed
 
-console.log(message); // Meeting Cancelled -->
+city = "Delhi"; // update allowed
+
+console.log(city); -->
+“Here I created a variable using var.
+Then I redeclared it and updated its value.
+JavaScript allows both operations with var, that’s why it is less secure.”
 
 Let:-
-“let is a block-scoped. It allows reassignment but does not allow re-declaration in the same scope. It is hoisted but stay in the Temporal Dead Zone until  it is initialization.”
+“let is block-scoped. It allows reassignment but does not allow re-declaration in the same scope. It is hoisted but stay in the Temporal Dead Zone until  it is initialization.”
 
 <!-- Real-Life Example: -->
 A classroom whiteboard.
 Changes inside one classroom do not affect others.
 <!-- 
-let topic = "Math";
+let score = 50;
 
-if (true) {
-  let topic = "Science";
-  console.log(topic); // Science 
-}
+score = 80; // update allowed
 
-console.log(topic); // Math -->
+console.log(score); -->
+
 👉 Outside value stays the same.
 
 Const:- 
-“const is a block-scoped. It does not allow re-declaration and reassignment in the same scope. It is hoisted but stay in the Temporal Dead Zone until it is initialization, but its internal data can still be modified.
+“const is block-scoped. It does not allow redeclaration or reassignment in the same scope. It is hoisted but remains in the Temporal Dead Zone until initialization. However, in the case of objects and arrays, their internal data can still be modified.”
 
 <!-- Real-Life Example: -->
 A government law.
@@ -185,6 +203,12 @@ const country = "India";
 
 country = "USA"; // Error -->
 👉 You cannot change it.
+
+const user = {
+    name: "Kajal"
+};
+user.name = "Rahul"; // allowed
+console.log(user.name);
 -----------------------------------------------------------------------------------------
 <!-- 10. What is Scope? -->
 Scope defines where a variable can be accessed in a program.
@@ -1287,7 +1311,7 @@ function outer() {
 }
 const counter = outer();
 counter(); // 1
-counter(); // 2 -->
+counter(); // 2 -->  
 “Here, the outer function returns the inner function.
 Even after the outer function is executed, the inner function still remembers the count variable.
 
@@ -1296,13 +1320,35 @@ This happens because of closure.”
 
 <!-- 🔹 Why do we use Closure? -->
 Data hiding
-Private variables
+maintaining Private variables
 Counters
-Used in callbacks and event handlers
+Used in callbacks and
+event handlers
 
 <!-- 👉 If they ask: Why use closure? -->
 “We use closures for data privacy and to maintain state without using global variables.”
 
+<!-- 1. What is Lexical Scope? -->
+“Lexical scope means a function can access variables from its parent scope.”
+<!-- 
+function outer() {
+    let name = "Kajal";
+
+    function inner() {
+        console.log(name);
+    }
+    inner(); 
+}
+outer(); -->
+
+
+scope
+closure
+hoisting
+asynchronous behavior
+in sabka output puchte hain.
+
+===========================================================
 <!-- ✅ 3️⃣ Higher Order Function (HOF) -->
 “A higher-order function is a function that either takes another function as an argument or returns a function.”
 
@@ -1587,6 +1633,22 @@ Sync → ek ke baad ek
 Async → wait kiye bina next line chalti hai.
 
 
+| Synchronous       | Asynchronous  |
+| ----------------- | ------------- |
+| Runs line by line | Does not wait |
+| Blocking          | Non-blocking  |
+
+<!-- 15. What is Destructuring? -->
+Destructuring extracts values from arrays or objects.
+Example
+const user = {
+    name: "Kajal",
+    age: 22
+};
+
+const { name, age } = user;
+
+console.log(name);
 
 <!-- 👉 What is difference between setTimeout and setInterval? -->
 <!-- setTimeout -->

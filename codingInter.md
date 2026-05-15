@@ -429,7 +429,7 @@ function changeText(){
   document.getElementById("text").textContent = "Welcome";
 }
 </script>
---------------------------------------------------------------
+----------=----------------------------------------------------==================================================================================================
 Map():-
 map() JavaScript का array method है जो हर element पर function चलाकर नया transformed array return करता है।
 
@@ -701,6 +701,9 @@ for (let student of students) {
   console.log(student);
 }
 ----------------------------------------------------------------------
+<!-- 6. What is the DOM? -->
+DOM stands for Document Object Model.
+It allows JavaScript to access and change HTML elements.
 
 <!-- 8. DOM Manipulation ⭐ -->
 DOM Manipulation means accessing and changing HTML elements using JavaScript.
@@ -827,7 +830,8 @@ sum(1, 2, 3);
 
 -----------------------------------------------------------------------
 <!-- 1. Event Bubbling in JavaScript -->
-Event Bubbling means an event starts from the child element and bubbles up to the parent elements.
+<!-- 7. What is Event Bubbling? -->
+Event Bubbling means an event starts from the child element to arent elements.
 
 Real-Life Example
 👉 Clicking a button inside a card also triggers card click event
