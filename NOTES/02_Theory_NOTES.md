@@ -16,7 +16,7 @@ Dynamic websites
 Form validation
 API calls
 DOM manipulation
-Web applications
+Web applications 
 
 <!-- Example: -->
 “In my projects, I have used JavaScript to fetch data from APIs and update the UI.”
@@ -150,17 +150,18 @@ naming rules:-
 5] Variable names are case-sensitive.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-How to Speak in Front of Recruiter
 
 “In JavaScript, we use var, let, and const to declare variables.
 Earlier developers used var, but nowadays mostly let and const are preferred because they provide better scope management and reduce bugs.”
 
-
 <!-- 9. Difference between var, let, and const? -->
  Var:- 
-“var is function-scoped. It allows redeclaration and reassignment, and it is hoisted with undefined.
-“var is function-scoped. It allows redeclaration and reassignment, and it is hoisted with undefined.
-Because of redeclaration, sometimes it may create unexpected bugs in large applications, so nowadays developers mostly prefer let and const.”
+
+ var old way hai JavaScript me variable banane ka. Ye function ke andar kaam karta hai. Isme hum same variable ko dubara bana bhi sakte hain aur change bhi kar sakte hain. Isliye kabhi kabhi confusion ho jata hai, especially bade project me. Is wajah se aaj kal let aur const use karte hain.”
+
+
+
+It is function-scoped, which means it works inside inside a function. It allows redeclaration and update. It is also hoisted and initialized with undefined. Because of this, it can sometimes create confusion or bugs in large applications. That’s why modern JavaScript uses let and const instead of var.”
 
 🌍 Real-Life Example: 
 A company notice board.
