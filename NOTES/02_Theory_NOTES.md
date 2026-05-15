@@ -1332,7 +1332,7 @@ Even after the outer function is executed, the inner function still remembers th
 So every time we call counter(), the value increases.
 This happens because of closure.”
 
-<!-- 🔹 Why do we use Closure? -->
+<!-- Why do we use Closure? -->
 Data hiding
 maintaining Private variables
 Counters
