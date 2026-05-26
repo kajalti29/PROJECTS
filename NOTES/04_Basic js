@@ -1,0 +1,119 @@
+Got it 👍 Here are **simple interview answers with code examples**:
+
+---
+
+# ⭐ 1. Variables
+
+### ❓ What is a variable?
+
+**“A variable is used to store data in JavaScript.”**
+
+```js id="v1"
+let name = "Amit";
+console.log(name);
+```
+
+---
+
+# ⭐ 2. var vs let vs const
+
+### ❓ Difference?
+
+**“var is function-scoped, let and const are block-scoped.”**
+
+```js id="v2"
+var a = 10;
+let b = 20;
+const c = 30;
+```
+
+---
+
+# ⭐ 3. Data Types
+
+### ❓ What are data types?
+
+**“Data types define the type of value in JavaScript.”**
+
+```js id="v3"
+let num = 10;        // number
+let str = "Hello";   // string
+let isTrue = true;   // boolean
+```
+
+---
+
+# ⭐ 4. typeof
+
+### ❓ What is typeof?
+
+**“It is used to check data type.”**
+
+```js id="v4"
+console.log(typeof 10);      // number
+console.log(typeof "Hi");    // string
+```
+
+---
+
+# ⭐ 5. null vs undefined
+
+```js id="v5"
+let a;
+console.log(a); // undefined
+
+let b = null;
+console.log(b); // null
+```
+
+---
+
+# ⭐ 6. Truthy & Falsy
+
+### ❓ What is it?
+
+**“Values that act like true or false in conditions.”**
+
+---
+
+# 🔴 Falsy values
+
+```js id="v6"
+if (0) console.log("Yes"); else console.log("No"); // No
+```
+
+👉 Falsy values:
+
+* 0
+* ""
+* null
+* undefined
+* NaN
+* false
+
+---
+
+# 🟢 Truthy values
+
+```js id="v7"
+if ("hello") console.log("Yes"); // Yes
+```
+
+👉 Truthy examples:
+
+* "hello"
+* 1
+* []
+* {}
+
+---
+
+# ⭐ Important confusing example
+
+```js id="v8"
+console.log([] == false); // true
+```
+
+👉 Because of type conversion
+
+---

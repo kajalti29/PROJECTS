@@ -4,7 +4,7 @@ Event Loop handles asynchronous operations in JavaScript.
 <!-- 11. Difference between null and undefined? -->
 undefined → variable declared but not assigned.
 null → intentionally empty value.
-========================================================
+========================================================================
 <!--1. What is JavaScript? -->
 “JavaScript is a programming language used both on the frontend and backend. On the frontend, it helps in handling user interactions and updating the UI dynamically, and on the backend we can use it with Node.js to build APIs and servers.”
 
@@ -1240,6 +1240,11 @@ It doesn’t have its own this, it uses the parent’s this.”
 
 <!-- const add = (a, b) => a + b; -->
 
+⭐ Why use Arrow Function?
+Shorter code
+Cleaner syntax
+Easy to write
+
 <!-- 🔥 3. What is Hoisting? -->
 Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before code execution.
 
@@ -1292,16 +1297,22 @@ OR:-
 “Like an online order — first payment is done, then we get a confirmation message.
 So the confirmation comes after the task is completed, just like a callback function.”
 <!-- 
-function greet(name) {
-    console.log("Hello " + name);
+function greet(callback) {
+  console.log("Hello");
+  callback();
 }
-function processUser(callback) {
-    callback("Rahul");
+function sayBye() {
+  console.log("Bye");
 }
-processUser(greet); -->
+greet(sayBye); -->
+O/P:-
+Hello
+Bye
 
-“Here, we pass the greet function as a callback to another function.
-After the task is done, it calls the callback and prints the message.”
+greet() is a function
+sayBye() function ko argument me pass kiya gaya
+callback() call hone par sayBye() run hua
+
 
 <!-- Why Callbacks Are Important? -->
 Event handling
@@ -1333,6 +1344,10 @@ So every time we call counter(), the value increases.
 This happens because of closure.”
 
 <!-- Why do we use Closure? -->
+To store data safely
+To hide variables (data privacy)
+To remember values
+Used in counter, event handlers, API logic
 Data hiding
 maintaining Private variables
 Counters
